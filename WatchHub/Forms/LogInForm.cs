@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WatchHub
 {
     public partial class LoginForm : Form
     {
         Database dataBase = new Database();
+
+        private bool isManager, isUser;
+        
         public LoginForm()
         {
             InitializeComponent();
@@ -59,31 +63,9 @@ namespace WatchHub
 
         private void loginButtonLoginForm_Click(object sender, EventArgs e)
         {
-            var userName = userTextBoxLoginForm.Text;
-            var password = passwordTextBoxLoginForm.Text;
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
+            BtnLogin();
 
-            string querystring = $"select manager_id, login, password from manager where login = '{userName}' and password = '{password}'";
-
-            SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            if (table.Rows.Count == 1)
-            {
-                MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ManagerForm managerForm = new ManagerForm();
-                this.Hide();
-                managerForm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Такого аккаунта не сущевствует!", "Акаунта нет!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
         private void linkToSingUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -91,6 +73,77 @@ namespace WatchHub
             SignUpForm signUpForm = new SignUpForm();
             this.Hide();
             signUpForm.Show();
+        }
+
+        private void isManagerRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            isManager = true;
+            isUser = false;
+        }
+
+        private void BtnLogin()
+        {
+            if (isManager == true)
+            {
+                var userName = userTextBoxLoginForm.Text;
+                var password = passwordTextBoxLoginForm.Text;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataTable table = new DataTable();
+
+                string querystring = $"select manager_id, login, password from manager where login = '{userName}' and password = '{password}'";
+
+                SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (table.Rows.Count == 1)
+                {
+                    MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ManagerForm managerForm = new ManagerForm();
+                    this.Hide();
+                    managerForm.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Такого аккаунта не сущевствует!", "Акаунта нет!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            else if (isUser == true)
+            {
+                var userName = userTextBoxLoginForm.Text;
+                var password = passwordTextBoxLoginForm.Text;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataTable table = new DataTable();
+
+                string querystring = $"select user_id, login, password from users where login = '{userName}' and password = '{password}'";
+
+                SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (table.Rows.Count == 1)
+                {
+                    MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UserForm userForm = new UserForm();
+                    this.Hide();
+                    userForm.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Такого аккаунта не сущевствует!", "Акаунта нет!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void isUserRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            isUser = true;
+            isManager = false;
         }
     }
 }

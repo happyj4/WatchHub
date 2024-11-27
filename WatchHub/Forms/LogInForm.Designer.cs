@@ -32,6 +32,8 @@
             this.passwordTextBoxLoginForm = new System.Windows.Forms.TextBox();
             this.loginButtonLoginForm = new System.Windows.Forms.Button();
             this.linkToSingUp = new System.Windows.Forms.LinkLabel();
+            this.isManagerRadioBtn = new System.Windows.Forms.RadioButton();
+            this.isUserRadioBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // userTextBoxLoginForm
@@ -46,7 +48,7 @@
             // 
             // passwordTextBoxLoginForm
             // 
-            this.passwordTextBoxLoginForm.Location = new System.Drawing.Point(97, 201);
+            this.passwordTextBoxLoginForm.Location = new System.Drawing.Point(97, 188);
             this.passwordTextBoxLoginForm.Name = "passwordTextBoxLoginForm";
             this.passwordTextBoxLoginForm.Size = new System.Drawing.Size(177, 20);
             this.passwordTextBoxLoginForm.TabIndex = 3;
@@ -56,7 +58,7 @@
             // 
             // loginButtonLoginForm
             // 
-            this.loginButtonLoginForm.Location = new System.Drawing.Point(142, 240);
+            this.loginButtonLoginForm.Location = new System.Drawing.Point(148, 290);
             this.loginButtonLoginForm.Name = "loginButtonLoginForm";
             this.loginButtonLoginForm.Size = new System.Drawing.Size(75, 23);
             this.loginButtonLoginForm.TabIndex = 2;
@@ -67,7 +69,7 @@
             // linkToSingUp
             // 
             this.linkToSingUp.AutoSize = true;
-            this.linkToSingUp.Location = new System.Drawing.Point(118, 279);
+            this.linkToSingUp.Location = new System.Drawing.Point(128, 316);
             this.linkToSingUp.Name = "linkToSingUp";
             this.linkToSingUp.Size = new System.Drawing.Size(127, 13);
             this.linkToSingUp.TabIndex = 4;
@@ -75,11 +77,37 @@
             this.linkToSingUp.Text = "Ще не маєте аккаунта?";
             this.linkToSingUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkToSingUp_LinkClicked);
             // 
+            // isManagerRadioBtn
+            // 
+            this.isManagerRadioBtn.AutoSize = true;
+            this.isManagerRadioBtn.Location = new System.Drawing.Point(97, 230);
+            this.isManagerRadioBtn.Name = "isManagerRadioBtn";
+            this.isManagerRadioBtn.Size = new System.Drawing.Size(82, 17);
+            this.isManagerRadioBtn.TabIndex = 5;
+            this.isManagerRadioBtn.TabStop = true;
+            this.isManagerRadioBtn.Text = "Я менджер";
+            this.isManagerRadioBtn.UseVisualStyleBackColor = true;
+            this.isManagerRadioBtn.CheckedChanged += new System.EventHandler(this.isManagerRadioBtn_CheckedChanged);
+            // 
+            // isUserRadioBtn
+            // 
+            this.isUserRadioBtn.AutoSize = true;
+            this.isUserRadioBtn.Location = new System.Drawing.Point(189, 230);
+            this.isUserRadioBtn.Name = "isUserRadioBtn";
+            this.isUserRadioBtn.Size = new System.Drawing.Size(93, 17);
+            this.isUserRadioBtn.TabIndex = 6;
+            this.isUserRadioBtn.TabStop = true;
+            this.isUserRadioBtn.Text = "Я користувач";
+            this.isUserRadioBtn.UseVisualStyleBackColor = true;
+            this.isUserRadioBtn.CheckedChanged += new System.EventHandler(this.isUserRadioBtn_CheckedChanged);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 511);
+            this.Controls.Add(this.isUserRadioBtn);
+            this.Controls.Add(this.isManagerRadioBtn);
             this.Controls.Add(this.linkToSingUp);
             this.Controls.Add(this.loginButtonLoginForm);
             this.Controls.Add(this.passwordTextBoxLoginForm);
@@ -98,6 +126,8 @@
         private System.Windows.Forms.TextBox passwordTextBoxLoginForm;
         private System.Windows.Forms.Button loginButtonLoginForm;
         private System.Windows.Forms.LinkLabel linkToSingUp;
+        private System.Windows.Forms.RadioButton isManagerRadioBtn;
+        private System.Windows.Forms.RadioButton isUserRadioBtn;
     }
 }
 
