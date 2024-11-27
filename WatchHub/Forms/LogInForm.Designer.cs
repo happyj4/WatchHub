@@ -31,6 +31,7 @@
             this.userTextBoxLoginForm = new System.Windows.Forms.TextBox();
             this.passwordTextBoxLoginForm = new System.Windows.Forms.TextBox();
             this.loginButtonLoginForm = new System.Windows.Forms.Button();
+            this.linkToSingUp = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // userTextBoxLoginForm
@@ -63,11 +64,23 @@
             this.loginButtonLoginForm.UseVisualStyleBackColor = true;
             this.loginButtonLoginForm.Click += new System.EventHandler(this.loginButtonLoginForm_Click);
             // 
+            // linkToSingUp
+            // 
+            this.linkToSingUp.AutoSize = true;
+            this.linkToSingUp.Location = new System.Drawing.Point(118, 279);
+            this.linkToSingUp.Name = "linkToSingUp";
+            this.linkToSingUp.Size = new System.Drawing.Size(127, 13);
+            this.linkToSingUp.TabIndex = 4;
+            this.linkToSingUp.TabStop = true;
+            this.linkToSingUp.Text = "Ще не маєте аккаунта?";
+            this.linkToSingUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkToSingUp_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 511);
+            this.Controls.Add(this.linkToSingUp);
             this.Controls.Add(this.loginButtonLoginForm);
             this.Controls.Add(this.passwordTextBoxLoginForm);
             this.Controls.Add(this.userTextBoxLoginForm);
@@ -84,6 +97,7 @@
         private System.Windows.Forms.TextBox userTextBoxLoginForm;
         private System.Windows.Forms.TextBox passwordTextBoxLoginForm;
         private System.Windows.Forms.Button loginButtonLoginForm;
+        private System.Windows.Forms.LinkLabel linkToSingUp;
     }
 }
 

@@ -85,5 +85,12 @@ namespace WatchHub
                 MessageBox.Show("Такого аккаунта не сущевствует!", "Акаунта нет!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void linkToSingUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignUpForm signUpForm = new SignUpForm();
+            this.Hide();
+            signUpForm.Show();
+        }
     }
 }
