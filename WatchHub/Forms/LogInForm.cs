@@ -24,41 +24,12 @@ namespace WatchHub
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void userTextBoxLoginForm_Enter(object sender, EventArgs e)
-        {
-            if (userTextBoxLoginForm.Text == "Username")
-            {
-                userTextBoxLoginForm.Text = "";
-            }
-        }
-
-        private void userTextBoxLoginForm_Leave(object sender, EventArgs e)
-        {
-            if (userTextBoxLoginForm.Text == "")
-            {
-                userTextBoxLoginForm.Text = "Username";
-            }
-        }
-
-        private void passwordTextBoxLoginForm_Enter(object sender, EventArgs e)
-        {
-            if (passwordTextBoxLoginForm.Text == "Password")
-            {
-                passwordTextBoxLoginForm.Text = "";
-            }
-        }
-
-        private void passwordTextBoxLoginForm_Leave(object sender, EventArgs e)
-        {
-            if (passwordTextBoxLoginForm.Text == "")
-            {
-                passwordTextBoxLoginForm.Text = "Password";
-            }
-        }
+       
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            passwordTextBoxLoginForm.UseSystemPasswordChar = true; 
+            pictureBoxOpen.Visible = false;
         }
 
         private void loginButtonLoginForm_Click(object sender, EventArgs e)
@@ -138,6 +109,20 @@ namespace WatchHub
                     MessageBox.Show("Такого аккаунта не сущевствует!", "Акаунта нет!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void pictureBoxOpen_Click(object sender, EventArgs e)
+        {
+            passwordTextBoxLoginForm.UseSystemPasswordChar = true; 
+            pictureBoxOpen.Visible = false;
+            pictureBoxClosed.Visible = true;
+        }
+
+        private void pictureBoxClosed_Click(object sender, EventArgs e)
+        {
+            passwordTextBoxLoginForm.UseSystemPasswordChar = false; 
+            pictureBoxOpen.Visible = true;
+            pictureBoxClosed.Visible = false;
         }
 
         private void isUserRadioBtn_CheckedChanged(object sender, EventArgs e)
