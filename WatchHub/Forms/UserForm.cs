@@ -15,6 +15,12 @@ namespace WatchHub
         public UserForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
