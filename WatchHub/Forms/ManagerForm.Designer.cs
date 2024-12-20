@@ -70,9 +70,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.refresh_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.changeBtn = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -449,41 +449,44 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.saveBtn);
+            this.panel2.Controls.Add(this.changeBtn);
+            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnNew);
             this.panel2.Location = new System.Drawing.Point(589, 474);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(148, 175);
             this.panel2.TabIndex = 4;
             // 
-            // button4
+            // saveBtn
             // 
-            this.button4.Location = new System.Drawing.Point(14, 123);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Зберегти";
-            this.button4.UseVisualStyleBackColor = true;
+            this.saveBtn.Location = new System.Drawing.Point(14, 123);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(115, 23);
+            this.saveBtn.TabIndex = 3;
+            this.saveBtn.Text = "Зберегти";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // button3
+            // changeBtn
             // 
-            this.button3.Location = new System.Drawing.Point(14, 93);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Змінити";
-            this.button3.UseVisualStyleBackColor = true;
+            this.changeBtn.Location = new System.Drawing.Point(14, 93);
+            this.changeBtn.Name = "changeBtn";
+            this.changeBtn.Size = new System.Drawing.Size(115, 23);
+            this.changeBtn.TabIndex = 2;
+            this.changeBtn.Text = "Змінити";
+            this.changeBtn.UseVisualStyleBackColor = true;
+            this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(14, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Видалити";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(14, 54);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(115, 23);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Видалити";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnNew
             // 
@@ -590,9 +593,9 @@
         private System.Windows.Forms.TextBox dial_color_textBox;
         private System.Windows.Forms.Button refresh_btn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button changeBtn;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.PictureBox pictureBox1;

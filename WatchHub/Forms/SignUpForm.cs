@@ -51,7 +51,7 @@ namespace WatchHub
             {
                 MessageBox.Show("Акаунт успешно создан","Успех!");
                 LoginForm loginForm = new LoginForm();
-                loginForm.ShowDialog();
+                loginForm.Show();
                 Hide();
             }
             else
