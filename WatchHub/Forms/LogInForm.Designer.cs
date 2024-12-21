@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.userTextBoxLoginForm = new System.Windows.Forms.TextBox();
             this.passwordTextBoxLoginForm = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxClosed = new System.Windows.Forms.PictureBox();
             this.pictureBoxOpen = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClosed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpen)).BeginInit();
             this.SuspendLayout();
@@ -146,11 +149,27 @@
             this.pictureBoxOpen.TabStop = false;
             this.pictureBoxOpen.Click += new System.EventHandler(this.pictureBoxOpen_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tempus Sans ITC", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(143, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 46);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "ВХІД";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 511);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBoxOpen);
             this.Controls.Add(this.pictureBoxClosed);
             this.Controls.Add(this.label2);
@@ -183,6 +202,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxClosed;
         private System.Windows.Forms.PictureBox pictureBoxOpen;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
