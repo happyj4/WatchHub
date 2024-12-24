@@ -126,5 +126,8 @@
   <ItemGroup>
     <None Include="Resources\3844477_disable_eye_inactive_see_show_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\290114_clock_time_timer_watch_wrist watch_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

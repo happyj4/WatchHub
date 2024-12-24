@@ -361,5 +361,20 @@ namespace WatchHub
             Change();
             ClearFields();
         }
+
+        private void mechanism_type_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

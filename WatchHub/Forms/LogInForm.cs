@@ -73,8 +73,8 @@ namespace WatchHub
                     MessageBox.Show("Ви успішно увійшли!", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ManagerForm managerForm = new ManagerForm();
                     this.Hide();
-                    managerForm.ShowDialog();
-                    this.Show();
+                    managerForm.Show();
+                    
                 }
                 else
                 {

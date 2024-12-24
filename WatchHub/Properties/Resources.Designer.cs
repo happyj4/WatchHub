@@ -73,6 +73,16 @@ namespace WatchHub.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _290114_clock_time_timer_watch_wrist_watch_icon {
+            get {
+                object obj = ResourceManager.GetObject("290114_clock_time_timer_watch_wrist watch_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3844476_eye_see_show_view_watch_icon {
             get {
                 object obj = ResourceManager.GetObject("3844476_eye_see_show_view_watch_icon", resourceCulture);
