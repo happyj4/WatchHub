@@ -254,12 +254,29 @@ namespace WatchHub
 
         private void phoneNumberTextBoxSignUp_Enter(object sender, EventArgs e)
         {
+           
             phoneNumberTextBoxSignUp.Text = "";
+
         }
 
         private void phoneNumberTextBoxSignUp_Leave(object sender, EventArgs e)
         {
+            if (phoneNumberTextBoxSignUp.Text == "")
+            {
+                phoneNumberTextBoxSignUp.Text = "Номер телефону";
+            }
 
+            else if ((Regex.IsMatch(phoneNumberTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$")))
+            {
+
+                MessageBox.Show("Помилка: номер телефону не може складатися  з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                phoneNumberTextBoxSignUp.Text = "";
+            }
+            else if (phoneNumberTextBoxSignUp.Text.Length < 12)
+            {
+                MessageBox.Show("Помилка: Країна повинно бути більше тринадцяти символів.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                phoneNumberTextBoxSignUp.Text = "";
+            }
         }
 
         private void pictureBoxOpen_Click(object sender, EventArgs e)

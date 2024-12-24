@@ -48,38 +48,45 @@
             // 
             // userTextBoxLoginForm
             // 
+            this.userTextBoxLoginForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.userTextBoxLoginForm.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.userTextBoxLoginForm.Location = new System.Drawing.Point(97, 133);
+            this.userTextBoxLoginForm.Location = new System.Drawing.Point(154, 142);
             this.userTextBoxLoginForm.Name = "userTextBoxLoginForm";
-            this.userTextBoxLoginForm.Size = new System.Drawing.Size(177, 20);
+            this.userTextBoxLoginForm.Size = new System.Drawing.Size(177, 24);
             this.userTextBoxLoginForm.TabIndex = 3;
             // 
             // passwordTextBoxLoginForm
             // 
-            this.passwordTextBoxLoginForm.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.passwordTextBoxLoginForm.Location = new System.Drawing.Point(97, 188);
+            this.passwordTextBoxLoginForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordTextBoxLoginForm.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.passwordTextBoxLoginForm.Location = new System.Drawing.Point(154, 191);
             this.passwordTextBoxLoginForm.Name = "passwordTextBoxLoginForm";
-            this.passwordTextBoxLoginForm.Size = new System.Drawing.Size(177, 20);
+            this.passwordTextBoxLoginForm.Size = new System.Drawing.Size(177, 22);
             this.passwordTextBoxLoginForm.TabIndex = 3;
             this.passwordTextBoxLoginForm.UseSystemPasswordChar = true;
             // 
             // loginButtonLoginForm
             // 
-            this.loginButtonLoginForm.Location = new System.Drawing.Point(148, 290);
+            this.loginButtonLoginForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.loginButtonLoginForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.loginButtonLoginForm.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.loginButtonLoginForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.loginButtonLoginForm.Location = new System.Drawing.Point(132, 312);
             this.loginButtonLoginForm.Name = "loginButtonLoginForm";
-            this.loginButtonLoginForm.Size = new System.Drawing.Size(75, 23);
+            this.loginButtonLoginForm.Size = new System.Drawing.Size(142, 67);
             this.loginButtonLoginForm.TabIndex = 2;
             this.loginButtonLoginForm.Text = "Вхід";
-            this.loginButtonLoginForm.UseVisualStyleBackColor = true;
+            this.loginButtonLoginForm.UseVisualStyleBackColor = false;
             this.loginButtonLoginForm.Click += new System.EventHandler(this.loginButtonLoginForm_Click);
             // 
             // linkToSingUp
             // 
             this.linkToSingUp.AutoSize = true;
-            this.linkToSingUp.LinkColor = System.Drawing.Color.Gray;
-            this.linkToSingUp.Location = new System.Drawing.Point(128, 316);
+            this.linkToSingUp.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.linkToSingUp.LinkColor = System.Drawing.Color.Transparent;
+            this.linkToSingUp.Location = new System.Drawing.Point(129, 410);
             this.linkToSingUp.Name = "linkToSingUp";
-            this.linkToSingUp.Size = new System.Drawing.Size(127, 13);
+            this.linkToSingUp.Size = new System.Drawing.Size(185, 22);
             this.linkToSingUp.TabIndex = 4;
             this.linkToSingUp.TabStop = true;
             this.linkToSingUp.Text = "Ще не маєте аккаунта?";
@@ -88,9 +95,10 @@
             // isManagerRadioBtn
             // 
             this.isManagerRadioBtn.AutoSize = true;
-            this.isManagerRadioBtn.Location = new System.Drawing.Point(97, 230);
+            this.isManagerRadioBtn.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.isManagerRadioBtn.Location = new System.Drawing.Point(49, 235);
             this.isManagerRadioBtn.Name = "isManagerRadioBtn";
-            this.isManagerRadioBtn.Size = new System.Drawing.Size(82, 17);
+            this.isManagerRadioBtn.Size = new System.Drawing.Size(105, 26);
             this.isManagerRadioBtn.TabIndex = 5;
             this.isManagerRadioBtn.TabStop = true;
             this.isManagerRadioBtn.Text = "Я менджер";
@@ -100,9 +108,10 @@
             // isUserRadioBtn
             // 
             this.isUserRadioBtn.AutoSize = true;
-            this.isUserRadioBtn.Location = new System.Drawing.Point(189, 230);
+            this.isUserRadioBtn.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.isUserRadioBtn.Location = new System.Drawing.Point(206, 235);
             this.isUserRadioBtn.Name = "isUserRadioBtn";
-            this.isUserRadioBtn.Size = new System.Drawing.Size(93, 17);
+            this.isUserRadioBtn.Size = new System.Drawing.Size(125, 26);
             this.isUserRadioBtn.TabIndex = 6;
             this.isUserRadioBtn.TabStop = true;
             this.isUserRadioBtn.Text = "Я користувач";
@@ -112,18 +121,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 191);
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(43, 180);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(96, 33);
             this.label1.TabIndex = 7;
             this.label1.Text = "Пароль:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 139);
+            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(43, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(78, 33);
             this.label2.TabIndex = 8;
             this.label2.Text = "Логін:";
             // 
@@ -131,9 +142,9 @@
             // 
             this.pictureBoxClosed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxClosed.BackgroundImage")));
             this.pictureBoxClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxClosed.Location = new System.Drawing.Point(289, 188);
+            this.pictureBoxClosed.Location = new System.Drawing.Point(337, 191);
             this.pictureBoxClosed.Name = "pictureBoxClosed";
-            this.pictureBoxClosed.Size = new System.Drawing.Size(33, 31);
+            this.pictureBoxClosed.Size = new System.Drawing.Size(22, 22);
             this.pictureBoxClosed.TabIndex = 9;
             this.pictureBoxClosed.TabStop = false;
             this.pictureBoxClosed.Click += new System.EventHandler(this.pictureBoxClosed_Click);
@@ -142,9 +153,9 @@
             // 
             this.pictureBoxOpen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxOpen.BackgroundImage")));
             this.pictureBoxOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxOpen.Location = new System.Drawing.Point(289, 188);
+            this.pictureBoxOpen.Location = new System.Drawing.Point(337, 191);
             this.pictureBoxOpen.Name = "pictureBoxOpen";
-            this.pictureBoxOpen.Size = new System.Drawing.Size(33, 31);
+            this.pictureBoxOpen.Size = new System.Drawing.Size(22, 22);
             this.pictureBoxOpen.TabIndex = 10;
             this.pictureBoxOpen.TabStop = false;
             this.pictureBoxOpen.Click += new System.EventHandler(this.pictureBoxOpen_Click);
@@ -152,10 +163,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tempus Sans ITC", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(143, 59);
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(97, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 46);
+            this.label3.Size = new System.Drawing.Size(177, 79);
             this.label3.TabIndex = 11;
             this.label3.Text = "ВХІД";
             // 
@@ -168,6 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(408, 511);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBoxOpen);
@@ -181,7 +194,7 @@
             this.Controls.Add(this.passwordTextBoxLoginForm);
             this.Controls.Add(this.userTextBoxLoginForm);
             this.Name = "LoginForm";
-            this.Text = "Login ";
+            this.Text = "Вхід";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClosed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpen)).EndInit();

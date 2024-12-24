@@ -537,6 +537,7 @@
             this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ManagerForm";
             this.Text = "ManagerForm";
             this.Load += new System.EventHandler(this.ManagerForm_Load);

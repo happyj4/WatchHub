@@ -70,7 +70,7 @@ namespace WatchHub
 
                 if (table.Rows.Count == 1)
                 {
-                    MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ви успішно увійшли!", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ManagerForm managerForm = new ManagerForm();
                     this.Hide();
                     managerForm.ShowDialog();
@@ -78,7 +78,7 @@ namespace WatchHub
                 }
                 else
                 {
-                    MessageBox.Show("Такого аккаунта не сущевствует!", "Акаунта нет!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Такого акаунту не існує!", "Акаунту немає!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -98,7 +98,7 @@ namespace WatchHub
 
                 if (table.Rows.Count == 1)
                 {
-                    MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ви успішно увійшли в додаток!", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     UserForm userForm = new UserForm();
                     this.Hide();
                     userForm.ShowDialog();
@@ -106,8 +106,13 @@ namespace WatchHub
                 }
                 else
                 {
-                    MessageBox.Show("Такого аккаунта не сущевствует!", "Акаунта нет!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Такого аккаунту не існує!", "Акаунту нема!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+
+            else if (isUser == false && isManager == false)
+            {
+                MessageBox.Show("Оберіть кто ви є!", "Оберіть !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
