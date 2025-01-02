@@ -139,41 +139,60 @@ namespace WatchHub
             }
 
         }
-        
 
-        // last_name
-        private void surnameTextBoxSignUp_Enter(object sender, EventArgs e)
-        {
-            surnameTextBoxSignUp.Text = "";
-        }
-
+        // surname
         private void surnameTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-
+            if (surnameTextBoxSignUp.Text == "")
+            {
+                surnameTextBoxSignUp.Text = "Прізвище";
+            }
+            else if (!(Regex.IsMatch(surnameTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$")))
+            {
+                MessageBox.Show("Помилка: прізвище повинно складатися тільки з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                surnameTextBoxSignUp.Text = "";
+            }
+            else if (surnameTextBoxSignUp.Text.Length < 2)
+            {
+                MessageBox.Show("Помилка: прізвище повинно бути більше однієї літери.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                surnameTextBoxSignUp.Text = "";
+            }
         }
 
         // email
-        private void emailTextBoxSignUp_Enter(object sender, EventArgs e)
-        {
-            emailTextBoxSignUp.Text = "";
-        }
-
         private void emailTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-
+            if (emailTextBoxSignUp.Text == "")
+            {
+                emailTextBoxSignUp.Text = "Електронна пошта";
+            }
+            else if (!(Regex.IsMatch(emailTextBoxSignUp.Text, @"^[^\s@]+@[^\s@]+\.[^\s@]+$")))
+            {
+                MessageBox.Show("Помилка: введіть коректну електронну адресу.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                emailTextBoxSignUp.Text = "";
+            }
         }
 
 
         // city
-        private void cityTextBoxSignUp_Enter(object sender, EventArgs e)
-        {
-            cityTextBoxSignUp.Text = "";
-        }
-
         private void cityTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-
+            if (cityTextBoxSignUp.Text == "")
+            {
+                cityTextBoxSignUp.Text = "Місто";
+            }
+            else if (!(Regex.IsMatch(cityTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$")))
+            {
+                MessageBox.Show("Помилка: місто повинно складатися тільки з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cityTextBoxSignUp.Text = "";
+            }
+            else if (cityTextBoxSignUp.Text.Length < 2)
+            {
+                MessageBox.Show("Помилка: назва міста повинна бути більше однієї літери.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cityTextBoxSignUp.Text = "";
+            }
         }
+
         // country
         private void countryTextBoxSignUp_Enter(object sender, EventArgs e)
         {
@@ -201,28 +220,41 @@ namespace WatchHub
         }
 
         // street
-        private void streetTextBoxSignUp_Enter(object sender, EventArgs e)
-        {
-            streetTextBoxSignUp.Text = "";
-        }
-
-
         private void streetTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-
+            if (streetTextBoxSignUp.Text == "")
+            {
+                streetTextBoxSignUp.Text = "Вулиця";
+            }
+            else if (!(Regex.IsMatch(streetTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\s]+$")))
+            {
+                MessageBox.Show("Помилка: назва вулиці повинна складатися тільки з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                streetTextBoxSignUp.Text = "";
+            }
+            else if (streetTextBoxSignUp.Text.Length < 2)
+            {
+                MessageBox.Show("Помилка: назва вулиці повинна бути більше однієї літери.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                streetTextBoxSignUp.Text = "";
+            }
         }
 
-        //house_number
-        private void houseNumberTextBoxSignUp_Enter(object sender, EventArgs e)
-        {
-            houseNumberTextBoxSignUp.Text = "";
-        }
 
-
+        // house_number
         private void houseNumberTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-
+            if (houseNumberTextBoxSignUp.Text == "")
+            {
+                houseNumberTextBoxSignUp.Text = "Номер будинку";
+            }
+            else if (!(Regex.IsMatch(houseNumberTextBoxSignUp.Text, @"^\d+$")))
+            {
+                MessageBox.Show("Помилка: номер будинку повинен містити тільки цифри.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                houseNumberTextBoxSignUp.Text = "";
+            }
         }
+
+
+        
 
         // password
         private void passwordTextBoxSignUp_Leave(object sender, EventArgs e)
@@ -238,15 +270,23 @@ namespace WatchHub
             passwordTextBoxSignUp.UseSystemPasswordChar = true;
         }
 
-        // login 
-        private void loginTextBoxSignUp_Enter(object sender, EventArgs e)
-        {
-            loginTextBoxSignUp.Text = "";
-        }
-
+        // login
         private void loginTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-
+            if (loginTextBoxSignUp.Text == "")
+            {
+                loginTextBoxSignUp.Text = "Логін";
+            }
+            else if (!(Regex.IsMatch(loginTextBoxSignUp.Text, @"^[a-zA-Z0-9_]+$")))
+            {
+                MessageBox.Show("Помилка: логін може містити тільки літери, цифри та підкреслення.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                loginTextBoxSignUp.Text = "";
+            }
+            else if (loginTextBoxSignUp.Text.Length < 3)
+            {
+                MessageBox.Show("Помилка: логін повинен бути більше трьох символів.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                loginTextBoxSignUp.Text = "";
+            }
         }
 
 
@@ -291,6 +331,26 @@ namespace WatchHub
             passwordTextBoxSignUp.UseSystemPasswordChar = false;
             pictureBoxOpen.Visible = true;
             pictureBoxClosed.Visible = false;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using WatchHub.Forms;
+using MigraDoc.DocumentObjectModel;
+using MigraDoc.Rendering;
 
 namespace WatchHub
 {
@@ -362,19 +365,114 @@ namespace WatchHub
             ClearFields();
         }
 
-        private void mechanism_type_textBox_TextChanged(object sender, EventArgs e)
-        {
+   
 
+        private void buttonClientOrderZvit_Click(object sender, EventArgs e)
+        {
+            ClientOrderZvit clientOrderZvit = new ClientOrderZvit();
+            clientOrderZvit.Show();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void buttonTop10watch_Click(object sender, EventArgs e)
         {
+            // Підключення до бази
+            Database db = new Database();
 
-        }
+            string query = @"
+SELECT TOP 10 
+    w.title AS watch_name,
+    w.brand,
+    SUM(oi.quantity) AS total_quantity_sold,
+    w.price
+FROM order_items oi
+JOIN watch w ON oi.watch_id = w.watch_id
+GROUP BY w.title, w.brand, w.price
+ORDER BY SUM(oi.quantity) DESC;
+";
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+            try
+            {
+                db.openConnection();
+                using (SqlCommand command = new SqlCommand(query, db.getConnection()))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (!reader.HasRows)
+                        {
+                            MessageBox.Show("Дані про продажі не знайдені.");
+                            return;
+                        }
 
+                        // Створення документа
+                        var document = new MigraDoc.DocumentObjectModel.Document();
+                        var section = document.AddSection();
+
+                        // Заголовок документа
+                        var title = section.AddParagraph("Топ-10 годинників за продажами");
+                        title.Format.Font.Size = 18;
+                        title.Format.Font.Bold = true;
+                        title.Format.SpaceAfter = "1cm";
+                        title.Format.Alignment = ParagraphAlignment.Center;
+
+                        // Дата створення звіту
+                        section.AddParagraph($"Дата створення звіту: {DateTime.Now:yyyy-MM-dd HH:mm}");
+                        section.AddParagraph("\n");
+
+                        // Створення таблиці
+                        var table = section.AddTable();
+                        table.Borders.Width = 0.75;
+
+                        // Додати колонки
+                        table.AddColumn("6cm"); // Назва годинника
+                        table.AddColumn("3cm"); // Бренд
+                        table.AddColumn("3cm"); // Загальна кількість
+                        table.AddColumn("3cm"); // Ціна
+
+                        // Додати заголовок таблиці
+                        var headerRow = table.AddRow();
+                        headerRow.Cells[0].AddParagraph("Назва годинника");
+                        headerRow.Cells[1].AddParagraph("Бренд");
+                        headerRow.Cells[2].AddParagraph("Продано одиниць");
+                        headerRow.Cells[3].AddParagraph("Ціна (грн)");
+
+                        headerRow.Format.Font.Bold = true;
+
+                        // Заповнення таблиці
+                        while (reader.Read())
+                        {
+                            var dataRow = table.AddRow();
+                            dataRow.Cells[0].AddParagraph(reader["watch_name"].ToString());
+                            dataRow.Cells[1].AddParagraph(reader["brand"].ToString());
+                            dataRow.Cells[2].AddParagraph(reader["total_quantity_sold"].ToString());
+                            dataRow.Cells[3].AddParagraph(Convert.ToDecimal(reader["price"]).ToString("F2"));
+                        }
+
+                        // Рендеринг PDF
+                        var renderer = new PdfDocumentRenderer(true)
+                        {
+                            Document = document
+                        };
+                        renderer.RenderDocument();
+
+                        string pdfFilePath = $"Top10WatchesReport.pdf";
+                        renderer.PdfDocument.Save(pdfFilePath);
+
+                        MessageBox.Show($"Звіт створено: {pdfFilePath}");
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Помилка SQL: {sqlEx.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+            }
+            finally
+            {
+                db.closeConnection();
+            }
         }
     }
 }

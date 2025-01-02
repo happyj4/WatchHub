@@ -77,17 +77,22 @@
             this.changeBtn = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.refresh_btn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.buttonTop10watch = new System.Windows.Forms.Button();
+            this.buttonClientOrderZvit = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +101,6 @@
             tabControl1.Controls.Add(this.tabPage1);
             tabControl1.Controls.Add(this.tabPage2);
             tabControl1.Controls.Add(this.tabPage3);
-            tabControl1.Controls.Add(this.tabPage4);
             tabControl1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             tabControl1.Location = new System.Drawing.Point(2, -6);
             tabControl1.Name = "tabControl1";
@@ -121,7 +125,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1882, 1000);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Управління товарами";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label20
             // 
@@ -188,7 +191,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(970, 464);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // description_textBox
             // 
@@ -288,7 +290,6 @@
             this.mechanism_type_textBox.Name = "mechanism_type_textBox";
             this.mechanism_type_textBox.Size = new System.Drawing.Size(209, 29);
             this.mechanism_type_textBox.TabIndex = 24;
-            this.mechanism_type_textBox.TextChanged += new System.EventHandler(this.mechanism_type_textBox_TextChanged);
             // 
             // price_textBox
             // 
@@ -569,16 +570,6 @@
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1787, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 20);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // refresh_btn
             // 
             this.refresh_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
@@ -595,33 +586,84 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1882, 1000);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Робота з клієнтами";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1882, 1000);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Статистика та звітності";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // label21
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 31);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1882, 1000);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Генерація документів";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(6, 18);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(90, 28);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "ЗВІТИ";
+            // 
+            // buttonTop10watch
+            // 
+            this.buttonTop10watch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonTop10watch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTop10watch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonTop10watch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonTop10watch.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonTop10watch.Location = new System.Drawing.Point(3, 84);
+            this.buttonTop10watch.Name = "buttonTop10watch";
+            this.buttonTop10watch.Size = new System.Drawing.Size(153, 75);
+            this.buttonTop10watch.TabIndex = 2;
+            this.buttonTop10watch.Text = "Звіт - \"ТОП-10 годинників за продажою\"";
+            this.buttonTop10watch.UseVisualStyleBackColor = false;
+            this.buttonTop10watch.Click += new System.EventHandler(this.buttonTop10watch_Click);
+            // 
+            // buttonClientOrderZvit
+            // 
+            this.buttonClientOrderZvit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonClientOrderZvit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClientOrderZvit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonClientOrderZvit.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonClientOrderZvit.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonClientOrderZvit.Location = new System.Drawing.Point(3, 3);
+            this.buttonClientOrderZvit.Name = "buttonClientOrderZvit";
+            this.buttonClientOrderZvit.Size = new System.Drawing.Size(153, 75);
+            this.buttonClientOrderZvit.TabIndex = 1;
+            this.buttonClientOrderZvit.Text = "Звіт - \"конкретне замовлення клієнта\"";
+            this.buttonClientOrderZvit.UseVisualStyleBackColor = false;
+            this.buttonClientOrderZvit.Click += new System.EventHandler(this.buttonClientOrderZvit_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.buttonClientOrderZvit);
+            this.panel3.Controls.Add(this.buttonTop10watch);
+            this.panel3.Location = new System.Drawing.Point(11, 58);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(160, 164);
+            this.panel3.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(1787, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // ManagerForm
             // 
@@ -631,7 +673,7 @@
             this.Controls.Add(tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ManagerForm";
-            this.Text = "ManagerForm";
+            this.Text = "Система";
             this.Load += new System.EventHandler(this.ManagerForm_Load);
             tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -640,6 +682,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -647,13 +692,31 @@
 
         #endregion
 
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox description_textBox;
+        private System.Windows.Forms.TextBox stock_quantity_textBox;
+        private System.Windows.Forms.TextBox indication_view_textBox;
+        private System.Windows.Forms.TextBox indication_type_textBox;
+        private System.Windows.Forms.TextBox glass_type_textBox;
+        private System.Windows.Forms.TextBox water_resistance_textBox;
+        private System.Windows.Forms.TextBox case_shape_textBox;
+        private System.Windows.Forms.TextBox brand_textBox;
+        private System.Windows.Forms.TextBox title_textBox;
+        private System.Windows.Forms.TextBox dial_color_textBox;
+        private System.Windows.Forms.TextBox case_color_textBox;
+        private System.Windows.Forms.TextBox watch_version_textBox;
+        private System.Windows.Forms.TextBox case_diameter_textBox;
+        private System.Windows.Forms.TextBox mechanism_type_textBox;
+        private System.Windows.Forms.TextBox price_textBox;
+        private System.Windows.Forms.TextBox housing_material_textBox;
+        private System.Windows.Forms.TextBox belt_material_textBox;
+        private System.Windows.Forms.TextBox id_textBox;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -667,37 +730,22 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox case_color_textBox;
-        private System.Windows.Forms.TextBox case_diameter_textBox;
-        private System.Windows.Forms.TextBox price_textBox;
-        private System.Windows.Forms.TextBox belt_material_textBox;
-        private System.Windows.Forms.TextBox housing_material_textBox;
-        private System.Windows.Forms.TextBox mechanism_type_textBox;
-        private System.Windows.Forms.TextBox watch_version_textBox;
-        private System.Windows.Forms.TextBox title_textBox;
-        private System.Windows.Forms.TextBox brand_textBox;
-        private System.Windows.Forms.TextBox id_textBox;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox description_textBox;
-        private System.Windows.Forms.TextBox stock_quantity_textBox;
-        private System.Windows.Forms.TextBox indication_view_textBox;
-        private System.Windows.Forms.TextBox indication_type_textBox;
-        private System.Windows.Forms.TextBox glass_type_textBox;
-        private System.Windows.Forms.TextBox water_resistance_textBox;
-        private System.Windows.Forms.TextBox case_shape_textBox;
-        private System.Windows.Forms.TextBox dial_color_textBox;
-        private System.Windows.Forms.Button refresh_btn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button changeBtn;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox_search;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button refresh_btn;
+        private System.Windows.Forms.Button buttonClientOrderZvit;
+        private System.Windows.Forms.Button buttonTop10watch;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -17,12 +17,16 @@ namespace WatchHub
         Database dataBase = new Database();
 
         private bool isManager, isUser;
+   
         
         public LoginForm()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
+
+    
+       
 
        
 
@@ -100,6 +104,7 @@ namespace WatchHub
                 {
                     MessageBox.Show("Ви успішно увійшли в додаток!", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     UserForm userForm = new UserForm();
+                    userForm.SetUserName(userName);
                     this.Hide();
                     userForm.ShowDialog();
                     this.Show();
