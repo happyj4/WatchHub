@@ -55,6 +55,7 @@ namespace WatchHub
             dataGridView1.Columns.Add("indication_view", "Вид індикації");
             dataGridView1.Columns.Add("stock_quantity", "Кількість на складі");
             dataGridView1.Columns.Add("description", "Опис");
+            dataGridView1.Columns.Add("gender", "Стать");
 
             dataGridView1.Columns.Add("IsNew", String.Empty);
             
@@ -66,7 +67,7 @@ namespace WatchHub
             dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetString(4), record.GetString(5),
              record.GetString(6), record.GetDecimal(7), record.GetDouble(8),   
                  record.GetString(9), record.GetString(10), record.GetString(11), record.GetString(12), record.GetString(13),
-                record.GetString(14), record.GetString(15), record.GetInt32(16), record.GetString(17), RowState.ModifiedNew);
+                record.GetString(14), record.GetString(15), record.GetInt32(16), record.GetString(17), record.GetString(18), RowState.ModifiedNew);
         }
 
         private void RefreshDataGrid(DataGridView dgw)
@@ -105,23 +106,24 @@ namespace WatchHub
                 DataGridViewRow row = dataGridView1.Rows[selectedRow];
 
                 id_textBox.Text = row.Cells[0].Value.ToString();
-                brand_textBox.Text = row.Cells[1].Value.ToString();
+                brand_comboBox.Text = row.Cells[1].Value.ToString();
                 title_textBox.Text = row.Cells[2].Value.ToString();
-                watch_version_textBox.Text = row.Cells[3].Value.ToString();
-                mechanism_type_textBox.Text = row.Cells[4].Value.ToString();
-                housing_material_textBox.Text = row.Cells[5].Value.ToString();
-                belt_material_textBox.Text = row.Cells[6].Value.ToString();
+                version_comboBox.Text = row.Cells[3].Value.ToString();
+                mechanism_comboBox.Text = row.Cells[4].Value.ToString();
+                caseMaterial_comboBox.Text = row.Cells[5].Value.ToString();
+                beltMaterial_comboBox.Text = row.Cells[6].Value.ToString();
                 price_textBox.Text = row.Cells[7].Value.ToString();
                 case_diameter_textBox.Text = row.Cells[8].Value.ToString();
-                case_color_textBox.Text = row.Cells[9].Value.ToString();
-                case_shape_textBox.Text = row.Cells[10].Value.ToString();
-                water_resistance_textBox.Text = row.Cells[11].Value.ToString();
-                dial_color_textBox.Text = row.Cells[12].Value.ToString();
-                glass_type_textBox.Text = row.Cells[13].Value.ToString();
-                indication_type_textBox.Text = row.Cells[14].Value.ToString();
-                indication_view_textBox.Text = row.Cells[15].Value.ToString();
+                caseColor_comboBox.Text = row.Cells[9].Value.ToString();
+                caseShape_comboBox.Text = row.Cells[10].Value.ToString();
+                waterRistance_comboBox.Text = row.Cells[11].Value.ToString();
+                dialColor_comboBox.Text = row.Cells[12].Value.ToString();
+                glassType_comboBofx.Text = row.Cells[13].Value.ToString();
+                indicationType_comboBox.Text = row.Cells[14].Value.ToString();
+                indicationView_comboBox.Text = row.Cells[15].Value.ToString();
                 stock_quantity_textBox.Text = row.Cells[16].Value.ToString();
                 description_textBox.Text = row.Cells[17].Value.ToString();
+                gender_comboBox.Text = row.Cells[18].Value.ToString();
 
 
             }
@@ -131,23 +133,24 @@ namespace WatchHub
         {
 
             id_textBox.Text = "";
-            brand_textBox.Text = "";
+            brand_comboBox.Text = "";
             title_textBox.Text = "";
-            watch_version_textBox.Text = "";
-            mechanism_type_textBox.Text = "";
-            housing_material_textBox.Text = "";
-            belt_material_textBox.Text = "";
+            version_comboBox.Text = "";
+            mechanism_comboBox.Text = "";
+            caseMaterial_comboBox.Text = "";
+            beltMaterial_comboBox.Text = "";
             price_textBox.Text = "";
             case_diameter_textBox.Text = "";
-            case_color_textBox.Text = "";
-            case_shape_textBox.Text = "";
-            water_resistance_textBox.Text = "";
-            dial_color_textBox.Text = "";
-            glass_type_textBox.Text = "";
-            indication_type_textBox.Text = "";
-            indication_view_textBox.Text = "";
+            caseColor_comboBox.Text = "";
+            caseShape_comboBox.Text = "";
+            waterRistance_comboBox.Text = "";
+            dialColor_comboBox.Text = "";
+            glassType_comboBofx.Text = "";
+            indicationType_comboBox.Text = "";
+            indicationView_comboBox.Text = "";
             stock_quantity_textBox.Text = "";
             description_textBox.Text = "";
+            gender_comboBox.Text = "";
 
         }
 
@@ -159,11 +162,11 @@ namespace WatchHub
 
             if (dataGridView1.Rows[index].Cells[0].Value.ToString() == string.Empty)
             {
-                dataGridView1.Rows[index].Cells[18].Value = RowState.Deleted;
+                dataGridView1.Rows[index].Cells[19].Value = RowState.Deleted;
                 return;
             }
 
-            dataGridView1.Rows[index].Cells[18].Value = RowState.Deleted;
+            dataGridView1.Rows[index].Cells[19].Value = RowState.Deleted;
         }
 
         private void Update()
@@ -172,7 +175,7 @@ namespace WatchHub
 
             for (int index = 0; index < dataGridView1.Rows.Count; index++)
             {
-                var rowState = (RowState)dataGridView1.Rows[index].Cells[18].Value;
+                var rowState = (RowState)dataGridView1.Rows[index].Cells[19].Value;
 
                 if (rowState == RowState.Existed)
                     continue;
@@ -206,6 +209,8 @@ namespace WatchHub
                     var indication_view = dataGridView1.Rows[index].Cells[15].Value.ToString();
                     var stock_quantity = Convert.ToInt32(dataGridView1.Rows[index].Cells[16].Value);
                     var description = dataGridView1.Rows[index].Cells[17].Value.ToString();
+                    var gender = dataGridView1.Rows[index].Cells[18].Value.ToString();
+
 
                     var changeQuery = "UPDATE watch SET " +
                         "brand = @brand, title = @title, watch_version = @watch_version, " +
@@ -213,7 +218,7 @@ namespace WatchHub
                         "price = @price, case_diameter = @case_diameter, case_color = @case_color, case_shape = @case_shape, " +
                         "water_resistance = @water_resistance, dial_color = @dial_color, glass_type = @glass_type, " +
                         "indication_type = @indication_type, indication_view = @indication_view, " +
-                        "stock_quantity = @stock_quantity, description = @description " +
+                        "stock_quantity = @stock_quantity, description = @description, gender = @gender " + 
                         "WHERE watch_id = @id";
 
                     using (var command = new SqlCommand(changeQuery, dataBase.getConnection()))
@@ -236,6 +241,7 @@ namespace WatchHub
                         command.Parameters.AddWithValue("@indication_view", indication_view);
                         command.Parameters.AddWithValue("@stock_quantity", stock_quantity);
                         command.Parameters.AddWithValue("@description", description);
+                        command.Parameters.AddWithValue("@gender", gender);
 
                         command.ExecuteNonQuery();
                     }
@@ -263,7 +269,7 @@ namespace WatchHub
 
             string searchString = $"select * from watch where concat (brand, title, watch_version, mechanism_type, housing_material, " +
                 $"belt_material, price, case_diameter, case_color, case_shape, water_resistance, dial_color, glass_type, indication_type, " +
-                $"indication_view, stock_quantity, description) like '%" + textBox_search.Text + "%'";
+                $"indication_view, stock_quantity, description, gender) like '%" + textBox_search.Text + "%'";
 
             SqlCommand com = new SqlCommand(searchString, dataBase.getConnection());
 
@@ -305,25 +311,26 @@ namespace WatchHub
            
 
                 var id = id_textBox.Text;
-                var brand = brand_textBox.Text;
+                var brand = brand_comboBox.Text;
                 var title = title_textBox.Text;
-                var watch_version = watch_version_textBox.Text;
-                var mechanism_type = mechanism_type_textBox.Text;
-                var housing_material = housing_material_textBox.Text;
-                var belt_material = belt_material_textBox.Text;
+                var watch_version = version_comboBox.Text;
+                var mechanism_type = mechanism_comboBox.Text;
+                var housing_material = caseMaterial_comboBox.Text;
+                var belt_material = beltMaterial_comboBox.Text;
                 decimal price;
                 double case_diameter;
-                var case_color = case_color_textBox.Text;
-                var case_shape = case_shape_textBox.Text;
-                var water_resistance = water_resistance_textBox.Text;
-                var dial_color = dial_color_textBox.Text;
-                var glass_type = glass_type_textBox.Text;
-                var indication_type = indication_type_textBox.Text;
-                var indication_view = indication_view_textBox.Text;
+                var case_color = caseColor_comboBox.Text;
+                var case_shape = caseShape_comboBox.Text;
+                var water_resistance = waterRistance_comboBox.Text;
+                var dial_color = dialColor_comboBox.Text;
+                var glass_type = glassType_comboBofx.Text;
+                var indication_type = indicationType_comboBox.Text;
+                var indication_view = indicationView_comboBox.Text;
                 int stock_quantity;
                 var description = description_textBox.Text;
+                var gender = gender_comboBox.Text;
 
-                string errorMessage = null;
+            string errorMessage = null;
 
 
             if (dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString() != string.Empty)
@@ -347,8 +354,8 @@ namespace WatchHub
                 if (errorMessage == null )
                 {
                     dataGridView1.Rows[selectedRowIndex].SetValues(id, brand, title, watch_version, mechanism_type, housing_material, belt_material,
-                    price, case_diameter, case_color, case_shape, water_resistance, dial_color, glass_type, indication_type, indication_view, stock_quantity, description);
-                    dataGridView1.Rows[selectedRowIndex].Cells[18].Value = RowState.Modified;
+                    price, case_diameter, case_color, case_shape, water_resistance, dial_color, glass_type, indication_type, indication_view, stock_quantity, description,gender);
+                    dataGridView1.Rows[selectedRowIndex].Cells[19].Value = RowState.Modified;
                 }
                 
 
@@ -473,6 +480,11 @@ ORDER BY SUM(oi.quantity) DESC;
             {
                 db.closeConnection();
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

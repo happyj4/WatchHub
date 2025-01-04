@@ -32,23 +32,24 @@ namespace WatchHub
             {
                 dataBase.openConnection();
 
-                var brand = brand_textBox_add.Text;
+                var brand = brand_comboBox.Text;
                 var title = title_textBox_add.Text;
-                var watch_version = watch_version_textBox_add.Text;
-                var mechanism_type = mechanism_type_textBox_add.Text;
-                var housing_material = housing_material_textBox_add.Text;
-                var belt_material = belt_material_textBox_add.Text;
+                var watch_version = version_comboBox.Text;
+                var mechanism_type = mechanism_comboBox.Text;
+                var housing_material = caseMaterial_comboBox.Text;
+                var belt_material = beltMaterial_comboBox.Text;
                 decimal price;
                 double case_diameter;
-                var case_color = case_color_textBox_add.Text;
-                var case_shape = case_shape_textBox_add.Text;
-                var water_resistance = water_resistance_textBox_add.Text;
-                var dial_color = dial_color_textBox_add.Text;
-                var glass_type = glass_type_textBox_add.Text;
-                var indication_type = indication_type_textBox_add.Text;
-                var indication_view = indication_view_textBox_add.Text;
+                var case_color = caseColor_comboBox.Text;
+                var case_shape = caseShape_comboBox.Text;
+                var water_resistance = waterRistance_comboBox.Text;
+                var dial_color = dialColor_comboBox.Text;
+                var glass_type = glassType_comboBofx.Text;
+                var indication_type = indicationType_comboBox.Text;
+                var indication_view = indicationView_comboBox.Text;
                 int stock_quantity;
                 var description = description_textBox_add.Text;
+                var gender = gender_comboBox.Text;
 
                 string errorMessage = null;
 
@@ -69,10 +70,10 @@ namespace WatchHub
 
                 var addQuery = $"INSERT INTO watch (brand, title, watch_version, mechanism_type, housing_material, belt_material, price, " +
                                $"case_diameter, case_color, case_shape, water_resistance, dial_color, glass_type, indication_type, " +
-                               $"indication_view, stock_quantity, description) VALUES " +
+                               $"indication_view, stock_quantity, description,gender) VALUES " +
                                $"('{brand}', '{title}', '{watch_version}', '{mechanism_type}', '{housing_material}', '{belt_material}', " +
                                $"'{price}', '{case_diameter}', '{case_color}', '{case_shape}', '{water_resistance}', '{dial_color}', " +
-                               $"'{glass_type}', '{indication_type}', '{indication_view}', '{stock_quantity}', '{description}')";
+                               $"'{glass_type}', '{indication_type}', '{indication_view}', '{stock_quantity}', '{description}', '{gender}')";
 
                 var command = new SqlCommand(addQuery, dataBase.getConnection());
                 command.ExecuteNonQuery();
