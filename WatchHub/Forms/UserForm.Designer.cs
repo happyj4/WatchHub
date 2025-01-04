@@ -111,7 +111,6 @@
             this.checkBoxSiriy_ciferblat = new System.Windows.Forms.CheckBox();
             this.checkBoxSiniy_ciferblat = new System.Windows.Forms.CheckBox();
             this.checkBoxRozhevy_ciferblat = new System.Windows.Forms.CheckBox();
-            this.checkBoxBrown_ciferblat = new System.Windows.Forms.CheckBox();
             this.checkBoxColorovy_ciferblat = new System.Windows.Forms.CheckBox();
             this.checkBoxZolotusty_ciferblat = new System.Windows.Forms.CheckBox();
             this.checkBoxGreen_ciferblat = new System.Windows.Forms.CheckBox();
@@ -313,7 +312,8 @@
             // 
             this.buttonFindByPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
             this.buttonFindByPrice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFindByPrice.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonFindByPrice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonFindByPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFindByPrice.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
             this.buttonFindByPrice.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonFindByPrice.Location = new System.Drawing.Point(339, 220);
@@ -322,6 +322,7 @@
             this.buttonFindByPrice.TabIndex = 19;
             this.buttonFindByPrice.Text = "OK";
             this.buttonFindByPrice.UseVisualStyleBackColor = false;
+            this.buttonFindByPrice.Click += new System.EventHandler(this.buttonFindByPrice_Click);
             // 
             // label21
             // 
@@ -379,6 +380,7 @@
             this.checkBoxSaphirove_glass.Name = "checkBoxSaphirove_glass";
             this.checkBoxSaphirove_glass.Size = new System.Drawing.Size(97, 22);
             this.checkBoxSaphirove_glass.TabIndex = 7;
+            this.checkBoxSaphirove_glass.Tag = "Сапфірове";
             this.checkBoxSaphirove_glass.Text = "Сапфірове";
             this.checkBoxSaphirove_glass.UseVisualStyleBackColor = true;
             // 
@@ -389,6 +391,7 @@
             this.checkBoxMineralne_glass.Name = "checkBoxMineralne_glass";
             this.checkBoxMineralne_glass.Size = new System.Drawing.Size(104, 22);
             this.checkBoxMineralne_glass.TabIndex = 6;
+            this.checkBoxMineralne_glass.Tag = "Мінеральне";
             this.checkBoxMineralne_glass.Text = "Мінеральне";
             this.checkBoxMineralne_glass.UseVisualStyleBackColor = true;
             // 
@@ -399,6 +402,7 @@
             this.checkBoxZagartowane_glass.Name = "checkBoxZagartowane_glass";
             this.checkBoxZagartowane_glass.Size = new System.Drawing.Size(111, 22);
             this.checkBoxZagartowane_glass.TabIndex = 5;
+            this.checkBoxZagartowane_glass.Tag = "Загартоване";
             this.checkBoxZagartowane_glass.Text = "Загартоване";
             this.checkBoxZagartowane_glass.UseVisualStyleBackColor = true;
             // 
@@ -409,6 +413,7 @@
             this.checkBoxAkril_glass.Name = "checkBoxAkril_glass";
             this.checkBoxAkril_glass.Size = new System.Drawing.Size(67, 22);
             this.checkBoxAkril_glass.TabIndex = 4;
+            this.checkBoxAkril_glass.Tag = "Акрил";
             this.checkBoxAkril_glass.Text = "Акрил";
             this.checkBoxAkril_glass.UseVisualStyleBackColor = true;
             // 
@@ -419,6 +424,7 @@
             this.checkBoxPower_glass.Name = "checkBoxPower_glass";
             this.checkBoxPower_glass.Size = new System.Drawing.Size(99, 22);
             this.checkBoxPower_glass.TabIndex = 3;
+            this.checkBoxPower_glass.Tag = "Power glass";
             this.checkBoxPower_glass.Text = "Power glass";
             this.checkBoxPower_glass.UseVisualStyleBackColor = true;
             // 
@@ -429,6 +435,7 @@
             this.checkBoxLonX_glass.Name = "checkBoxLonX_glass";
             this.checkBoxLonX_glass.Size = new System.Drawing.Size(177, 22);
             this.checkBoxLonX_glass.TabIndex = 2;
+            this.checkBoxLonX_glass.Tag = "lon-x";
             this.checkBoxLonX_glass.Text = "lon -x stengthened glass";
             this.checkBoxLonX_glass.UseVisualStyleBackColor = true;
             // 
@@ -439,6 +446,7 @@
             this.checkBoxGorilla_glass.Name = "checkBoxGorilla_glass";
             this.checkBoxGorilla_glass.Size = new System.Drawing.Size(100, 22);
             this.checkBoxGorilla_glass.TabIndex = 1;
+            this.checkBoxGorilla_glass.Tag = "Gorilla glass";
             this.checkBoxGorilla_glass.Text = "Gorilla glass";
             this.checkBoxGorilla_glass.UseVisualStyleBackColor = true;
             // 
@@ -449,6 +457,7 @@
             this.checkBoxCorningGlass_glass.Name = "checkBoxCorningGlass_glass";
             this.checkBoxCorningGlass_glass.Size = new System.Drawing.Size(110, 22);
             this.checkBoxCorningGlass_glass.TabIndex = 0;
+            this.checkBoxCorningGlass_glass.Tag = "Corning glass";
             this.checkBoxCorningGlass_glass.Text = "Corning glass";
             this.checkBoxCorningGlass_glass.UseVisualStyleBackColor = true;
             // 
@@ -532,6 +541,7 @@
             this.checkBoxMechanic_mechanismType.Name = "checkBoxMechanic_mechanismType";
             this.checkBoxMechanic_mechanismType.Size = new System.Drawing.Size(103, 22);
             this.checkBoxMechanic_mechanismType.TabIndex = 3;
+            this.checkBoxMechanic_mechanismType.Tag = "Механічний";
             this.checkBoxMechanic_mechanismType.Text = "Механічний";
             this.checkBoxMechanic_mechanismType.UseVisualStyleBackColor = true;
             // 
@@ -542,6 +552,7 @@
             this.checkBoxMexanikaZAvtopid_mechanismType.Name = "checkBoxMexanikaZAvtopid_mechanismType";
             this.checkBoxMexanikaZAvtopid_mechanismType.Size = new System.Drawing.Size(205, 22);
             this.checkBoxMexanikaZAvtopid_mechanismType.TabIndex = 2;
+            this.checkBoxMexanikaZAvtopid_mechanismType.Tag = "Механіка з автопідзаводом";
             this.checkBoxMexanikaZAvtopid_mechanismType.Text = "Механіка з автопідзаводом";
             this.checkBoxMexanikaZAvtopid_mechanismType.UseVisualStyleBackColor = true;
             // 
@@ -552,6 +563,7 @@
             this.checkBoxKvarc_mechanismType.Name = "checkBoxKvarc_mechanismType";
             this.checkBoxKvarc_mechanismType.Size = new System.Drawing.Size(98, 22);
             this.checkBoxKvarc_mechanismType.TabIndex = 1;
+            this.checkBoxKvarc_mechanismType.Tag = "Кварцевий";
             this.checkBoxKvarc_mechanismType.Text = "Кварцевий";
             this.checkBoxKvarc_mechanismType.UseVisualStyleBackColor = true;
             // 
@@ -562,6 +574,7 @@
             this.checkBoxAvtoKvarc_mechanismType.Name = "checkBoxAvtoKvarc_mechanismType";
             this.checkBoxAvtoKvarc_mechanismType.Size = new System.Drawing.Size(127, 22);
             this.checkBoxAvtoKvarc_mechanismType.TabIndex = 0;
+            this.checkBoxAvtoKvarc_mechanismType.Tag = "Автокварцевий";
             this.checkBoxAvtoKvarc_mechanismType.Text = "Автокварцевий";
             this.checkBoxAvtoKvarc_mechanismType.UseVisualStyleBackColor = true;
             // 
@@ -1043,7 +1056,6 @@
             this.panel9.Controls.Add(this.checkBoxSiriy_ciferblat);
             this.panel9.Controls.Add(this.checkBoxSiniy_ciferblat);
             this.panel9.Controls.Add(this.checkBoxRozhevy_ciferblat);
-            this.panel9.Controls.Add(this.checkBoxBrown_ciferblat);
             this.panel9.Controls.Add(this.checkBoxColorovy_ciferblat);
             this.panel9.Controls.Add(this.checkBoxZolotusty_ciferblat);
             this.panel9.Controls.Add(this.checkBoxGreen_ciferblat);
@@ -1054,13 +1066,13 @@
             this.panel9.Font = new System.Drawing.Font("Microsoft Tai Le", 10.25F);
             this.panel9.Location = new System.Drawing.Point(0, 1968);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(246, 377);
+            this.panel9.Size = new System.Drawing.Size(246, 356);
             this.panel9.TabIndex = 29;
             // 
             // checkBoxRed_ciferblat
             // 
             this.checkBoxRed_ciferblat.AutoSize = true;
-            this.checkBoxRed_ciferblat.Location = new System.Drawing.Point(8, 347);
+            this.checkBoxRed_ciferblat.Location = new System.Drawing.Point(8, 324);
             this.checkBoxRed_ciferblat.Name = "checkBoxRed_ciferblat";
             this.checkBoxRed_ciferblat.Size = new System.Drawing.Size(92, 22);
             this.checkBoxRed_ciferblat.TabIndex = 13;
@@ -1070,7 +1082,7 @@
             // checkBoxFiolet_ciferblat
             // 
             this.checkBoxFiolet_ciferblat.AutoSize = true;
-            this.checkBoxFiolet_ciferblat.Location = new System.Drawing.Point(8, 320);
+            this.checkBoxFiolet_ciferblat.Location = new System.Drawing.Point(8, 297);
             this.checkBoxFiolet_ciferblat.Name = "checkBoxFiolet_ciferblat";
             this.checkBoxFiolet_ciferblat.Size = new System.Drawing.Size(105, 22);
             this.checkBoxFiolet_ciferblat.TabIndex = 12;
@@ -1080,7 +1092,7 @@
             // checkBoxSriblyasty_ciferblat
             // 
             this.checkBoxSriblyasty_ciferblat.AutoSize = true;
-            this.checkBoxSriblyasty_ciferblat.Location = new System.Drawing.Point(8, 291);
+            this.checkBoxSriblyasty_ciferblat.Location = new System.Drawing.Point(8, 268);
             this.checkBoxSriblyasty_ciferblat.Name = "checkBoxSriblyasty_ciferblat";
             this.checkBoxSriblyasty_ciferblat.Size = new System.Drawing.Size(101, 22);
             this.checkBoxSriblyasty_ciferblat.TabIndex = 11;
@@ -1090,7 +1102,7 @@
             // checkBoxSiriy_ciferblat
             // 
             this.checkBoxSiriy_ciferblat.AutoSize = true;
-            this.checkBoxSiriy_ciferblat.Location = new System.Drawing.Point(8, 264);
+            this.checkBoxSiriy_ciferblat.Location = new System.Drawing.Point(8, 241);
             this.checkBoxSiriy_ciferblat.Name = "checkBoxSiriy_ciferblat";
             this.checkBoxSiriy_ciferblat.Size = new System.Drawing.Size(63, 22);
             this.checkBoxSiriy_ciferblat.TabIndex = 10;
@@ -1100,7 +1112,7 @@
             // checkBoxSiniy_ciferblat
             // 
             this.checkBoxSiniy_ciferblat.AutoSize = true;
-            this.checkBoxSiniy_ciferblat.Location = new System.Drawing.Point(8, 236);
+            this.checkBoxSiniy_ciferblat.Location = new System.Drawing.Point(8, 213);
             this.checkBoxSiniy_ciferblat.Name = "checkBoxSiniy_ciferblat";
             this.checkBoxSiniy_ciferblat.Size = new System.Drawing.Size(63, 22);
             this.checkBoxSiniy_ciferblat.TabIndex = 9;
@@ -1110,22 +1122,12 @@
             // checkBoxRozhevy_ciferblat
             // 
             this.checkBoxRozhevy_ciferblat.AutoSize = true;
-            this.checkBoxRozhevy_ciferblat.Location = new System.Drawing.Point(8, 210);
+            this.checkBoxRozhevy_ciferblat.Location = new System.Drawing.Point(8, 187);
             this.checkBoxRozhevy_ciferblat.Name = "checkBoxRozhevy_ciferblat";
             this.checkBoxRozhevy_ciferblat.Size = new System.Drawing.Size(84, 22);
             this.checkBoxRozhevy_ciferblat.TabIndex = 8;
             this.checkBoxRozhevy_ciferblat.Text = "Рожевий";
             this.checkBoxRozhevy_ciferblat.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxBrown_ciferblat
-            // 
-            this.checkBoxBrown_ciferblat.AutoSize = true;
-            this.checkBoxBrown_ciferblat.Location = new System.Drawing.Point(8, 187);
-            this.checkBoxBrown_ciferblat.Name = "checkBoxBrown_ciferblat";
-            this.checkBoxBrown_ciferblat.Size = new System.Drawing.Size(107, 22);
-            this.checkBoxBrown_ciferblat.TabIndex = 7;
-            this.checkBoxBrown_ciferblat.Text = "Коричневий";
-            this.checkBoxBrown_ciferblat.UseVisualStyleBackColor = true;
             // 
             // checkBoxColorovy_ciferblat
             // 
@@ -1669,6 +1671,7 @@
             this.checkBoxSport.Name = "checkBoxSport";
             this.checkBoxSport.Size = new System.Drawing.Size(67, 22);
             this.checkBoxSport.TabIndex = 3;
+            this.checkBoxSport.Tag = "Sport";
             this.checkBoxSport.Text = "Спорт";
             this.checkBoxSport.UseVisualStyleBackColor = true;
             // 
@@ -1679,6 +1682,7 @@
             this.checkBoxClassic.Name = "checkBoxClassic";
             this.checkBoxClassic.Size = new System.Drawing.Size(82, 22);
             this.checkBoxClassic.TabIndex = 2;
+            this.checkBoxClassic.Tag = "Classic";
             this.checkBoxClassic.Text = "Класика";
             this.checkBoxClassic.UseVisualStyleBackColor = true;
             // 
@@ -1689,6 +1693,7 @@
             this.checkBoxKids.Name = "checkBoxKids";
             this.checkBoxKids.Size = new System.Drawing.Size(72, 22);
             this.checkBoxKids.TabIndex = 1;
+            this.checkBoxKids.Tag = "Kids";
             this.checkBoxKids.Text = "Дитячі";
             this.checkBoxKids.UseVisualStyleBackColor = true;
             // 
@@ -1699,6 +1704,7 @@
             this.checkBoxFashion.Name = "checkBoxFashion";
             this.checkBoxFashion.Size = new System.Drawing.Size(74, 22);
             this.checkBoxFashion.TabIndex = 0;
+            this.checkBoxFashion.Tag = "Fashion";
             this.checkBoxFashion.Text = "Fashion";
             this.checkBoxFashion.UseVisualStyleBackColor = true;
             // 
@@ -1754,7 +1760,7 @@
             // 
             // buttonMen
             // 
-            this.buttonMen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMen.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.buttonMen.Image = global::WatchHub.Properties.Resources.image_removebg_preview__16_;
             this.buttonMen.Location = new System.Drawing.Point(310, 40);
@@ -1762,10 +1768,11 @@
             this.buttonMen.Size = new System.Drawing.Size(145, 121);
             this.buttonMen.TabIndex = 7;
             this.buttonMen.UseVisualStyleBackColor = true;
+            this.buttonMen.Click += new System.EventHandler(this.buttonMen_Click);
             // 
             // buttonUniSex
             // 
-            this.buttonUniSex.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUniSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUniSex.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.buttonUniSex.Image = global::WatchHub.Properties.Resources.image_removebg_preview__17_;
             this.buttonUniSex.Location = new System.Drawing.Point(159, 40);
@@ -1773,11 +1780,12 @@
             this.buttonUniSex.Size = new System.Drawing.Size(145, 121);
             this.buttonUniSex.TabIndex = 6;
             this.buttonUniSex.UseVisualStyleBackColor = true;
+            this.buttonUniSex.Click += new System.EventHandler(this.buttonUniSex_Click);
             // 
             // buttonWomen
             // 
             this.buttonWomen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonWomen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonWomen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWomen.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.buttonWomen.Image = global::WatchHub.Properties.Resources.image_removebg_preview__14_;
             this.buttonWomen.Location = new System.Drawing.Point(8, 40);
@@ -1785,6 +1793,7 @@
             this.buttonWomen.Size = new System.Drawing.Size(145, 121);
             this.buttonWomen.TabIndex = 5;
             this.buttonWomen.UseVisualStyleBackColor = true;
+            this.buttonWomen.Click += new System.EventHandler(this.buttonWomen_Click);
             // 
             // label5
             // 
@@ -1947,6 +1956,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1124, 458);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick_1);
             // 
             // UserForm
             // 
@@ -2111,7 +2121,6 @@
         private System.Windows.Forms.CheckBox checkBoxSiriy_ciferblat;
         private System.Windows.Forms.CheckBox checkBoxSiniy_ciferblat;
         private System.Windows.Forms.CheckBox checkBoxRozhevy_ciferblat;
-        private System.Windows.Forms.CheckBox checkBoxBrown_ciferblat;
         private System.Windows.Forms.CheckBox checkBoxColorovy_ciferblat;
         private System.Windows.Forms.CheckBox checkBoxZolotusty_ciferblat;
         private System.Windows.Forms.CheckBox checkBoxGreen_ciferblat;
