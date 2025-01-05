@@ -103,6 +103,16 @@ namespace WatchHub.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _9054423_bx_arrow_back_icon {
+            get {
+                object obj = ResourceManager.GetObject("9054423_bx_arrow_back_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _977EEDCA_F3A8_43FA_A8AB_A2778A7FB239__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("_977EEDCA-F3A8-43FA-A8AB-A2778A7FB239_-removebg-preview", resourceCulture);

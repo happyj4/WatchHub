@@ -24,20 +24,16 @@ namespace WatchHub
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-
-
-
-
         }
 
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void createAcSignUpForm_Click(object sender, EventArgs e)
         {
-         
+            if (checkuser())
+            {
+                return; // Зупиняємо виконання, якщо користувач уже існує
+            }
 
             var login = loginTextBoxSignUp.Text;
             var first_name = nameTextBoxSignUp.Text;
@@ -50,58 +46,81 @@ namespace WatchHub
             var password = passwordTextBoxSignUp.Text;
             var phonenum = phoneNumberTextBoxSignUp.Text;
 
-            string querystring = $"insert into users(first_name, last_name, email, city, country, street, house_number, password, login,phone_number) values('{first_name}','{last_name}','{email}','{city}','{country}','{street}','{houseNum}','{password}','{login}','{phonenum}')";
-
+            string querystring = "INSERT INTO users(first_name, last_name, email, city, country, street, house_number, password, login, phone_number) " +
+                                 "VALUES(@first_name, @last_name, @email, @city, @country, @street, @houseNum, @password, @login, @phonenum)";
 
             SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
+            command.Parameters.AddWithValue("@first_name", first_name);
+            command.Parameters.AddWithValue("@last_name", last_name);
+            command.Parameters.AddWithValue("@email", email);
+            command.Parameters.AddWithValue("@city", city);
+            command.Parameters.AddWithValue("@country", country);
+            command.Parameters.AddWithValue("@street", street);
+            command.Parameters.AddWithValue("@houseNum", houseNum);
+            command.Parameters.AddWithValue("@password", password);
+            command.Parameters.AddWithValue("@login", login);
+            command.Parameters.AddWithValue("@phonenum", phonenum);
 
             dataBase.openConnection();
 
-            if (command.ExecuteNonQuery() == 1)   
+            try
             {
-                MessageBox.Show("Акаунт успешно создан","Успех!");
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-                Hide();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Акаунт створено", "Успіх!");
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Акаунт не створено!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Акаунт не создан!");
+                MessageBox.Show($"Помилка: {ex.Message}");
             }
-            dataBase.closeConnection();
-
-
-
-
+            finally
+            {
+                dataBase.closeConnection();
+            }
         }
+
+
 
         private Boolean checkuser()
         {
             var loginUser = loginTextBoxSignUp.Text;
-           
             var emailUser = emailTextBoxSignUp.Text;
-           
             var phonenumUser = phoneNumberTextBoxSignUp.Text;
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
-            string querystring = $"select user_id, login, email, phone_number from users where login = '{loginUser}', email = '{emailUser}', phone_number = '{phonenumUser}'";
+
+            // Перевірка на унікальність login, email і phone_number
+            string querystring = "SELECT user_id FROM users WHERE login = @login OR email = @email OR phone_number = @phone";
+
             SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
+            command.Parameters.AddWithValue("@login", loginUser);
+            command.Parameters.AddWithValue("@email", emailUser);
+            command.Parameters.AddWithValue("@phone", phonenumUser);
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Пользователь уже существует!");
-                return true;
+                MessageBox.Show("Користувач з таким логіном, електронною поштою або номером телефону вже існує!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true; // Користувач існує
             }
             else
             {
-                return false;
+                return false; // Користувач не існує
             }
-          
         }
+
+
 
         private void SignUpForm_Load(object sender, EventArgs e)
         {
@@ -110,212 +129,204 @@ namespace WatchHub
         }
 
 
-        private void loginTextBoxSignUp_TextChanged(object sender, EventArgs e)
+        // Встановлюємо текст за замовчуванням у поля
+        private void SetDefaultText(TextBox textBox, string defaultText)
         {
-
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = defaultText;
+            }
         }
-        // name 
+
+        private void ClearDefaultText(TextBox textBox, string defaultText)
+        {
+            if (textBox.Text == defaultText)
+            {
+                textBox.Text = "";
+            }
+        }
+
+        private void ValidateText(TextBox textBox, string regexPattern, string errorMessage, int minLength = 2)
+        {
+            if (!Regex.IsMatch(textBox.Text, regexPattern))
+            {
+                MessageBox.Show(errorMessage, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox.Text = "";
+            }
+            else if (textBox.Text.Length < minLength)
+            {
+                MessageBox.Show($"Помилка: значення повинно бути більше {minLength - 1} символів.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox.Text = "";
+            }
+        }
+
+
+        // Обробка для імені
         private void nameTextBoxSignUp_Enter(object sender, EventArgs e)
         {
-            nameTextBoxSignUp.Text = "";
+            ClearDefaultText(nameTextBoxSignUp, "Ім'я");
         }
 
         private void nameTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (nameTextBoxSignUp.Text == "")
+            SetDefaultText(nameTextBoxSignUp, "Ім'я");
+            if (nameTextBoxSignUp.Text != "Ім'я")
             {
-                nameTextBoxSignUp.Text = "Ім'я";
+                ValidateText(nameTextBoxSignUp, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$", "Помилка: ім'я повинно складатися тільки з літер.", 2);
             }
-
-           else if  (!(Regex.IsMatch(nameTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$") )) {
-
-                MessageBox.Show("Помилка: ім'я повинно складатися тільки з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                nameTextBoxSignUp.Text = "";
-            }
-            else if (nameTextBoxSignUp.Text.Length == 1)
-            {
-                MessageBox.Show("Помилка: ім'я повинно бути більше однієї літери.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                nameTextBoxSignUp.Text = "";
-            }
-
         }
 
-        // surname
+        // Обробка для прізвища
+        private void surnameTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            ClearDefaultText(surnameTextBoxSignUp, "Прізвище");
+        }
+
         private void surnameTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (surnameTextBoxSignUp.Text == "")
+            SetDefaultText(surnameTextBoxSignUp, "Прізвище");
+            if (surnameTextBoxSignUp.Text != "Прізвище")
             {
-                surnameTextBoxSignUp.Text = "Прізвище";
-            }
-            else if (!(Regex.IsMatch(surnameTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$")))
-            {
-                MessageBox.Show("Помилка: прізвище повинно складатися тільки з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                surnameTextBoxSignUp.Text = "";
-            }
-            else if (surnameTextBoxSignUp.Text.Length < 2)
-            {
-                MessageBox.Show("Помилка: прізвище повинно бути більше однієї літери.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                surnameTextBoxSignUp.Text = "";
+                ValidateText(surnameTextBoxSignUp, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$", "Помилка: прізвище повинно складатися тільки з літер.", 2);
             }
         }
 
-        // email
+
+        // Обробка для електронної пошти
+        private void emailTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            ClearDefaultText(emailTextBoxSignUp, "Електронна пошта");
+        }
+
         private void emailTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (emailTextBoxSignUp.Text == "")
+            SetDefaultText(emailTextBoxSignUp, "Електронна пошта");
+            if (emailTextBoxSignUp.Text != "Електронна пошта")
             {
-                emailTextBoxSignUp.Text = "Електронна пошта";
-            }
-            else if (!(Regex.IsMatch(emailTextBoxSignUp.Text, @"^[^\s@]+@[^\s@]+\.[^\s@]+$")))
-            {
-                MessageBox.Show("Помилка: введіть коректну електронну адресу.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                emailTextBoxSignUp.Text = "";
+                ValidateText(emailTextBoxSignUp, @"^[^\s@]+@[^\s@]+\.[^\s@]+$", "Помилка: введіть коректну електронну адресу.", 5);
             }
         }
 
+        // Обробка для міста
+        private void cityTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            ClearDefaultText(cityTextBoxSignUp, "Місто");
+        }
 
-        // city
         private void cityTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (cityTextBoxSignUp.Text == "")
+            SetDefaultText(cityTextBoxSignUp, "Місто");
+            if (cityTextBoxSignUp.Text != "Місто")
             {
-                cityTextBoxSignUp.Text = "Місто";
-            }
-            else if (!(Regex.IsMatch(cityTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$")))
-            {
-                MessageBox.Show("Помилка: місто повинно складатися тільки з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cityTextBoxSignUp.Text = "";
-            }
-            else if (cityTextBoxSignUp.Text.Length < 2)
-            {
-                MessageBox.Show("Помилка: назва міста повинна бути більше однієї літери.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cityTextBoxSignUp.Text = "";
+                ValidateText(cityTextBoxSignUp, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$", "Помилка: місто повинно складатися тільки з літер.", 2);
             }
         }
 
-        // country
+        // Країна
         private void countryTextBoxSignUp_Enter(object sender, EventArgs e)
         {
-            countryTextBoxSignUp.Text = "";
+            ClearDefaultText(countryTextBoxSignUp, "Країна");
         }
 
         private void countryTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (countryTextBoxSignUp.Text == "")
+            SetDefaultText(countryTextBoxSignUp, "Країна");
+            if (countryTextBoxSignUp.Text != "Країна")
             {
-                countryTextBoxSignUp.Text = "Країна";
-            }
-
-            else if (!(Regex.IsMatch(countryTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$")))
-            {
-
-                MessageBox.Show("Помилка: країна не може складатися  з чисел.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                countryTextBoxSignUp.Text = "";
-            }
-            else if (countryTextBoxSignUp.Text.Length < 3)
-            {
-                MessageBox.Show("Помилка: Країна повинно бути більше трьох літери.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                countryTextBoxSignUp.Text = "";
+                ValidateText(countryTextBoxSignUp, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$", "Помилка: країна повинна складатися тільки з літер.", 3);
             }
         }
 
-        // street
+
+        // Вулиця
+        private void streetTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            ClearDefaultText(streetTextBoxSignUp, "Вулиця");
+        }
+
         private void streetTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (streetTextBoxSignUp.Text == "")
+            SetDefaultText(streetTextBoxSignUp, "Вулиця");
+            if (streetTextBoxSignUp.Text != "Вулиця")
             {
-                streetTextBoxSignUp.Text = "Вулиця";
-            }
-            else if (!(Regex.IsMatch(streetTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\s]+$")))
-            {
-                MessageBox.Show("Помилка: назва вулиці повинна складатися тільки з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                streetTextBoxSignUp.Text = "";
-            }
-            else if (streetTextBoxSignUp.Text.Length < 2)
-            {
-                MessageBox.Show("Помилка: назва вулиці повинна бути більше однієї літери.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                streetTextBoxSignUp.Text = "";
+                ValidateText(streetTextBoxSignUp, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\s]+$", "Помилка: назва вулиці повинна складатися тільки з літер.", 2);
             }
         }
 
+        // Номер будинку
+        private void houseNumberTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            ClearDefaultText(houseNumberTextBoxSignUp, "Номер будинку");
+        }
 
-        // house_number
         private void houseNumberTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (houseNumberTextBoxSignUp.Text == "")
+            SetDefaultText(houseNumberTextBoxSignUp, "Номер будинку");
+            if (houseNumberTextBoxSignUp.Text != "Номер будинку")
             {
-                houseNumberTextBoxSignUp.Text = "Номер будинку";
-            }
-            else if (!(Regex.IsMatch(houseNumberTextBoxSignUp.Text, @"^\d+$")))
-            {
-                MessageBox.Show("Помилка: номер будинку повинен містити тільки цифри.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                houseNumberTextBoxSignUp.Text = "";
+                ValidateText(houseNumberTextBoxSignUp, @"^\d+$", "Помилка: номер будинку повинен містити тільки цифри.");
             }
         }
 
 
-        
-
-        // password
-        private void passwordTextBoxSignUp_Leave(object sender, EventArgs e)
-        {
-            passwordTextBoxSignUp.UseSystemPasswordChar = false;
-
-        }
 
 
+        // Пароль
         private void passwordTextBoxSignUp_Enter(object sender, EventArgs e)
         {
             passwordTextBoxSignUp.Text = "";
             passwordTextBoxSignUp.UseSystemPasswordChar = true;
         }
 
-        // login
-        private void loginTextBoxSignUp_Leave(object sender, EventArgs e)
+        private void passwordTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (loginTextBoxSignUp.Text == "")
+            if (string.IsNullOrWhiteSpace(passwordTextBoxSignUp.Text))
             {
-                loginTextBoxSignUp.Text = "Логін";
-            }
-            else if (!(Regex.IsMatch(loginTextBoxSignUp.Text, @"^[a-zA-Z0-9_]+$")))
-            {
-                MessageBox.Show("Помилка: логін може містити тільки літери, цифри та підкреслення.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                loginTextBoxSignUp.Text = "";
-            }
-            else if (loginTextBoxSignUp.Text.Length < 3)
-            {
-                MessageBox.Show("Помилка: логін повинен бути більше трьох символів.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                loginTextBoxSignUp.Text = "";
+                passwordTextBoxSignUp.UseSystemPasswordChar = false;
+                passwordTextBoxSignUp.Text = "Пароль";
             }
         }
 
 
-        //phone_num
 
+       
+        // Логін
+        private void loginTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            ClearDefaultText(loginTextBoxSignUp, "Логін");
+        }
+
+        private void loginTextBoxSignUp_Leave(object sender, EventArgs e)
+        {
+            SetDefaultText(loginTextBoxSignUp, "Логін");
+            if (loginTextBoxSignUp.Text != "Логін")
+            {
+                ValidateText(loginTextBoxSignUp, @"^[a-zA-Z0-9_]+$", "Помилка: логін може містити тільки літери, цифри та підкреслення.", 3);
+            }
+        }
+
+
+        //  для номера телефону
         private void phoneNumberTextBoxSignUp_Enter(object sender, EventArgs e)
         {
-           
-            phoneNumberTextBoxSignUp.Text = "";
-
+            ClearDefaultText(phoneNumberTextBoxSignUp, "Номер телефону");
         }
 
         private void phoneNumberTextBoxSignUp_Leave(object sender, EventArgs e)
         {
-            if (phoneNumberTextBoxSignUp.Text == "")
+            SetDefaultText(phoneNumberTextBoxSignUp, "Номер телефону");
+            if (phoneNumberTextBoxSignUp.Text != "Номер телефону")
             {
-                phoneNumberTextBoxSignUp.Text = "Номер телефону";
-            }
-
-            else if ((Regex.IsMatch(phoneNumberTextBoxSignUp.Text, @"^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+$")))
-            {
-
-                MessageBox.Show("Помилка: номер телефону не може складатися  з літер.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                phoneNumberTextBoxSignUp.Text = "";
-            }
-            else if (phoneNumberTextBoxSignUp.Text.Length < 12)
-            {
-                MessageBox.Show("Помилка: Країна повинно бути більше тринадцяти символів.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                phoneNumberTextBoxSignUp.Text = "";
+                if (!Regex.IsMatch(phoneNumberTextBoxSignUp.Text, @"^\d+$"))
+                {
+                    MessageBox.Show("Помилка: номер телефону повинен містити тільки цифри.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    phoneNumberTextBoxSignUp.Text = "";
+                }
+                else if (phoneNumberTextBoxSignUp.Text.Length < 10)
+                {
+                    MessageBox.Show("Помилка: номер телефону повинен бути не менше 10 цифр.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    phoneNumberTextBoxSignUp.Text = "";
+                }
             }
         }
 
@@ -333,24 +344,13 @@ namespace WatchHub
             pictureBoxClosed.Visible = false;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+      
+
+        private void button_backToLogin_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            LoginForm login_form = new LoginForm();
+            login_form.Show();
+            Hide();
         }
     }
 }

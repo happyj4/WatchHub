@@ -71,7 +71,7 @@
             this.loginButtonLoginForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.loginButtonLoginForm.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
             this.loginButtonLoginForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginButtonLoginForm.Location = new System.Drawing.Point(132, 312);
+            this.loginButtonLoginForm.Location = new System.Drawing.Point(121, 312);
             this.loginButtonLoginForm.Name = "loginButtonLoginForm";
             this.loginButtonLoginForm.Size = new System.Drawing.Size(142, 67);
             this.loginButtonLoginForm.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.linkToSingUp.AutoSize = true;
             this.linkToSingUp.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
             this.linkToSingUp.LinkColor = System.Drawing.Color.Transparent;
-            this.linkToSingUp.Location = new System.Drawing.Point(129, 410);
+            this.linkToSingUp.Location = new System.Drawing.Point(107, 410);
             this.linkToSingUp.Name = "linkToSingUp";
             this.linkToSingUp.Size = new System.Drawing.Size(185, 22);
             this.linkToSingUp.TabIndex = 4;

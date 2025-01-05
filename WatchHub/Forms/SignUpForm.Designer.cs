@@ -40,9 +40,8 @@
             this.loginTextBoxSignUp = new System.Windows.Forms.TextBox();
             this.createAcSignUpForm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_backToLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClosed = new System.Windows.Forms.PictureBox();
-            this.pictureBoxOpen = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +52,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBoxClosed = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOpen = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClosed)).BeginInit();
@@ -82,6 +83,7 @@
             this.surnameTextBoxSignUp.Size = new System.Drawing.Size(142, 29);
             this.surnameTextBoxSignUp.TabIndex = 1;
             this.surnameTextBoxSignUp.Text = "Прізвище";
+            this.surnameTextBoxSignUp.Enter += new System.EventHandler(this.surnameTextBoxSignUp_Enter);
             this.surnameTextBoxSignUp.Leave += new System.EventHandler(this.surnameTextBoxSignUp_Leave);
             // 
             // emailTextBoxSignUp
@@ -93,7 +95,8 @@
             this.emailTextBoxSignUp.Name = "emailTextBoxSignUp";
             this.emailTextBoxSignUp.Size = new System.Drawing.Size(142, 29);
             this.emailTextBoxSignUp.TabIndex = 2;
-            this.emailTextBoxSignUp.Text = "Email";
+            this.emailTextBoxSignUp.Text = "Електронна пошта";
+            this.emailTextBoxSignUp.Enter += new System.EventHandler(this.emailTextBoxSignUp_Enter);
             this.emailTextBoxSignUp.Leave += new System.EventHandler(this.emailTextBoxSignUp_Leave);
             // 
             // countryTextBoxSignUp
@@ -119,6 +122,7 @@
             this.streetTextBoxSignUp.Size = new System.Drawing.Size(142, 29);
             this.streetTextBoxSignUp.TabIndex = 4;
             this.streetTextBoxSignUp.Text = "Вулиця";
+            this.streetTextBoxSignUp.Enter += new System.EventHandler(this.streetTextBoxSignUp_Enter);
             this.streetTextBoxSignUp.Leave += new System.EventHandler(this.streetTextBoxSignUp_Leave);
             // 
             // houseNumberTextBoxSignUp
@@ -131,6 +135,7 @@
             this.houseNumberTextBoxSignUp.Size = new System.Drawing.Size(192, 29);
             this.houseNumberTextBoxSignUp.TabIndex = 5;
             this.houseNumberTextBoxSignUp.Text = "Номер будинку";
+            this.houseNumberTextBoxSignUp.Enter += new System.EventHandler(this.houseNumberTextBoxSignUp_Enter);
             this.houseNumberTextBoxSignUp.Leave += new System.EventHandler(this.houseNumberTextBoxSignUp_Leave);
             // 
             // passwordTextBoxSignUp
@@ -156,6 +161,7 @@
             this.cityTextBoxSignUp.Size = new System.Drawing.Size(142, 29);
             this.cityTextBoxSignUp.TabIndex = 7;
             this.cityTextBoxSignUp.Text = "Місто";
+            this.cityTextBoxSignUp.Enter += new System.EventHandler(this.cityTextBoxSignUp_Enter);
             this.cityTextBoxSignUp.Leave += new System.EventHandler(this.cityTextBoxSignUp_Leave);
             // 
             // phoneNumberTextBoxSignUp
@@ -168,7 +174,6 @@
             this.phoneNumberTextBoxSignUp.Size = new System.Drawing.Size(203, 29);
             this.phoneNumberTextBoxSignUp.TabIndex = 8;
             this.phoneNumberTextBoxSignUp.Text = "Номер телефону";
-            this.phoneNumberTextBoxSignUp.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             this.phoneNumberTextBoxSignUp.Enter += new System.EventHandler(this.phoneNumberTextBoxSignUp_Enter);
             this.phoneNumberTextBoxSignUp.Leave += new System.EventHandler(this.phoneNumberTextBoxSignUp_Leave);
             // 
@@ -182,7 +187,7 @@
             this.loginTextBoxSignUp.Size = new System.Drawing.Size(142, 29);
             this.loginTextBoxSignUp.TabIndex = 9;
             this.loginTextBoxSignUp.Text = "Логін";
-            this.loginTextBoxSignUp.TextChanged += new System.EventHandler(this.loginTextBoxSignUp_TextChanged);
+            this.loginTextBoxSignUp.Enter += new System.EventHandler(this.loginTextBoxSignUp_Enter);
             this.loginTextBoxSignUp.Leave += new System.EventHandler(this.loginTextBoxSignUp_Leave);
             // 
             // createAcSignUpForm
@@ -201,12 +206,27 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.button_backToLogin);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 152);
             this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button_backToLogin
+            // 
+            this.button_backToLogin.BackColor = System.Drawing.Color.Transparent;
+            this.button_backToLogin.BackgroundImage = global::WatchHub.Properties.Resources._9054423_bx_arrow_back_icon;
+            this.button_backToLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_backToLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_backToLogin.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.button_backToLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button_backToLogin.Location = new System.Drawing.Point(14, 12);
+            this.button_backToLogin.Name = "button_backToLogin";
+            this.button_backToLogin.Size = new System.Drawing.Size(87, 38);
+            this.button_backToLogin.TabIndex = 1;
+            this.button_backToLogin.UseVisualStyleBackColor = false;
+            this.button_backToLogin.Click += new System.EventHandler(this.button_backToLogin_Click);
             // 
             // pictureBox1
             // 
@@ -217,28 +237,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(139, 76);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxClosed
-            // 
-            this.pictureBoxClosed.BackgroundImage = global::WatchHub.Properties.Resources._3844477_disable_eye_inactive_see_show_icon;
-            this.pictureBoxClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxClosed.Location = new System.Drawing.Point(242, 266);
-            this.pictureBoxClosed.Name = "pictureBoxClosed";
-            this.pictureBoxClosed.Size = new System.Drawing.Size(17, 22);
-            this.pictureBoxClosed.TabIndex = 13;
-            this.pictureBoxClosed.TabStop = false;
-            this.pictureBoxClosed.Click += new System.EventHandler(this.pictureBoxClosed_Click);
-            // 
-            // pictureBoxOpen
-            // 
-            this.pictureBoxOpen.BackgroundImage = global::WatchHub.Properties.Resources._3844476_eye_see_show_view_watch_icon;
-            this.pictureBoxOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxOpen.Location = new System.Drawing.Point(242, 266);
-            this.pictureBoxOpen.Name = "pictureBoxOpen";
-            this.pictureBoxOpen.Size = new System.Drawing.Size(17, 22);
-            this.pictureBoxOpen.TabIndex = 12;
-            this.pictureBoxOpen.TabStop = false;
-            this.pictureBoxOpen.Click += new System.EventHandler(this.pictureBoxOpen_Click);
             // 
             // label1
             // 
@@ -259,7 +257,6 @@
             this.label2.Size = new System.Drawing.Size(64, 22);
             this.label2.TabIndex = 15;
             this.label2.Text = " - Логін";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -270,7 +267,6 @@
             this.label3.Size = new System.Drawing.Size(76, 22);
             this.label3.TabIndex = 16;
             this.label3.Text = " - Пароль";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -301,7 +297,6 @@
             this.label6.Size = new System.Drawing.Size(91, 22);
             this.label6.TabIndex = 19;
             this.label6.Text = " - Прізвище";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -342,6 +337,28 @@
             this.label10.Size = new System.Drawing.Size(133, 22);
             this.label10.TabIndex = 23;
             this.label10.Text = " - Номер будинку";
+            // 
+            // pictureBoxClosed
+            // 
+            this.pictureBoxClosed.BackgroundImage = global::WatchHub.Properties.Resources._3844477_disable_eye_inactive_see_show_icon;
+            this.pictureBoxClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxClosed.Location = new System.Drawing.Point(242, 266);
+            this.pictureBoxClosed.Name = "pictureBoxClosed";
+            this.pictureBoxClosed.Size = new System.Drawing.Size(17, 22);
+            this.pictureBoxClosed.TabIndex = 13;
+            this.pictureBoxClosed.TabStop = false;
+            this.pictureBoxClosed.Click += new System.EventHandler(this.pictureBoxClosed_Click);
+            // 
+            // pictureBoxOpen
+            // 
+            this.pictureBoxOpen.BackgroundImage = global::WatchHub.Properties.Resources._3844476_eye_see_show_view_watch_icon;
+            this.pictureBoxOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxOpen.Location = new System.Drawing.Point(242, 266);
+            this.pictureBoxOpen.Name = "pictureBoxOpen";
+            this.pictureBoxOpen.Size = new System.Drawing.Size(17, 22);
+            this.pictureBoxOpen.TabIndex = 12;
+            this.pictureBoxOpen.TabStop = false;
+            this.pictureBoxOpen.Click += new System.EventHandler(this.pictureBoxOpen_Click);
             // 
             // SignUpForm
             // 
@@ -413,5 +430,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button_backToLogin;
     }
 }
