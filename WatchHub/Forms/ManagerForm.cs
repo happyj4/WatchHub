@@ -486,9 +486,17 @@ ORDER BY SUM(oi.quantity) DESC;
             }
         }
 
+        private void buttonOrdersSum_Click(object sender, EventArgs e)
+        {
+            OrdersSumStatistics ordersSumStatistics = new OrdersSumStatistics();
+            ordersSumStatistics.ShowDialog();
+        }
 
-
-
+        private void buttonAvgPriceWatch_Click(object sender, EventArgs e)
+        {
+            WatchAvgPriceStatistics watchAvgPriceStatistics = new WatchAvgPriceStatistics();
+            watchAvgPriceStatistics.ShowDialog();   
+        }
 
 
 
@@ -1757,5 +1765,17 @@ WHERE 1=1"; // Базова умова, яка завжди істинна
             }
         }
 
+        private void buttonWatchCountStatist_Click(object sender, EventArgs e)
+        {
+            WatchStorageCountStatistics watchStorageCountStatistics = new WatchStorageCountStatistics();
+            watchStorageCountStatistics.ShowDialog();
+            
+        }
+
+        private void buttonGuarantee_Click(object sender, EventArgs e)
+        {
+            OrderGuarantee orderGuarantee = new OrderGuarantee();
+            orderGuarantee.ShowDialog();
+        }
     }
 }

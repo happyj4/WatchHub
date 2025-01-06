@@ -32,18 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonEpos = new System.Windows.Forms.Button();
-            this.buttonCertina = new System.Windows.Forms.Button();
-            this.buttonBreitling = new System.Windows.Forms.Button();
-            this.buttonRado = new System.Windows.Forms.Button();
-            this.buttonOrient = new System.Windows.Forms.Button();
-            this.buttonAtlantic = new System.Windows.Forms.Button();
-            this.buttonLongines = new System.Windows.Forms.Button();
-            this.buttonHamilton = new System.Windows.Forms.Button();
-            this.buttonCitizen = new System.Windows.Forms.Button();
-            this.buttonTissot = new System.Windows.Forms.Button();
-            this.buttonOris = new System.Windows.Forms.Button();
-            this.buttonCasio = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
             this.buttonFindByPrice = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
@@ -180,9 +168,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.buttonMen = new System.Windows.Forms.Button();
-            this.buttonUniSex = new System.Windows.Forms.Button();
-            this.buttonWomen = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -232,7 +217,6 @@
             this.changeBtn = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.refresh_btn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -242,6 +226,27 @@
             this.buttonTop10watch = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label42 = new System.Windows.Forms.Label();
+            this.buttonOrdersSum = new System.Windows.Forms.Button();
+            this.buttonAvgPriceWatch = new System.Windows.Forms.Button();
+            this.buttonWatchCountStatist = new System.Windows.Forms.Button();
+            this.buttonGuarantee = new System.Windows.Forms.Button();
+            this.buttonEpos = new System.Windows.Forms.Button();
+            this.buttonCertina = new System.Windows.Forms.Button();
+            this.buttonBreitling = new System.Windows.Forms.Button();
+            this.buttonRado = new System.Windows.Forms.Button();
+            this.buttonOrient = new System.Windows.Forms.Button();
+            this.buttonAtlantic = new System.Windows.Forms.Button();
+            this.buttonLongines = new System.Windows.Forms.Button();
+            this.buttonHamilton = new System.Windows.Forms.Button();
+            this.buttonCasio = new System.Windows.Forms.Button();
+            this.buttonCitizen = new System.Windows.Forms.Button();
+            this.buttonTissot = new System.Windows.Forms.Button();
+            this.buttonOris = new System.Windows.Forms.Button();
+            this.buttonMen = new System.Windows.Forms.Button();
+            this.buttonUniSex = new System.Windows.Forms.Button();
+            this.buttonWomen = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -261,11 +266,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -356,150 +361,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(567, 674);
             this.panel4.TabIndex = 19;
-            // 
-            // buttonEpos
-            // 
-            this.buttonEpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEpos.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonEpos.Image = global::WatchHub.Properties.Resources.image_removebg_preview__12_;
-            this.buttonEpos.Location = new System.Drawing.Point(364, 390);
-            this.buttonEpos.Name = "buttonEpos";
-            this.buttonEpos.Size = new System.Drawing.Size(145, 50);
-            this.buttonEpos.TabIndex = 60;
-            this.buttonEpos.UseVisualStyleBackColor = true;
-            this.buttonEpos.Click += new System.EventHandler(this.buttonEpos_Click);
-            // 
-            // buttonCertina
-            // 
-            this.buttonCertina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCertina.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonCertina.Image = global::WatchHub.Properties.Resources.image_removebg_preview__11_;
-            this.buttonCertina.Location = new System.Drawing.Point(194, 390);
-            this.buttonCertina.Name = "buttonCertina";
-            this.buttonCertina.Size = new System.Drawing.Size(145, 50);
-            this.buttonCertina.TabIndex = 59;
-            this.buttonCertina.UseVisualStyleBackColor = true;
-            this.buttonCertina.Click += new System.EventHandler(this.buttonCertina_Click);
-            // 
-            // buttonBreitling
-            // 
-            this.buttonBreitling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBreitling.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonBreitling.Image = global::WatchHub.Properties.Resources.image_removebg_preview__10_;
-            this.buttonBreitling.Location = new System.Drawing.Point(11, 390);
-            this.buttonBreitling.Name = "buttonBreitling";
-            this.buttonBreitling.Size = new System.Drawing.Size(145, 50);
-            this.buttonBreitling.TabIndex = 58;
-            this.buttonBreitling.UseVisualStyleBackColor = true;
-            this.buttonBreitling.Click += new System.EventHandler(this.buttonBreitling_Click);
-            // 
-            // buttonRado
-            // 
-            this.buttonRado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRado.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonRado.Image = global::WatchHub.Properties.Resources.image_removebg_preview__8_;
-            this.buttonRado.Location = new System.Drawing.Point(364, 266);
-            this.buttonRado.Name = "buttonRado";
-            this.buttonRado.Size = new System.Drawing.Size(145, 50);
-            this.buttonRado.TabIndex = 57;
-            this.buttonRado.UseVisualStyleBackColor = true;
-            this.buttonRado.Click += new System.EventHandler(this.buttonRado_Click);
-            // 
-            // buttonOrient
-            // 
-            this.buttonOrient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOrient.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonOrient.Image = global::WatchHub.Properties.Resources.image_removebg_preview__7_;
-            this.buttonOrient.Location = new System.Drawing.Point(181, 266);
-            this.buttonOrient.Name = "buttonOrient";
-            this.buttonOrient.Size = new System.Drawing.Size(145, 50);
-            this.buttonOrient.TabIndex = 56;
-            this.buttonOrient.UseVisualStyleBackColor = true;
-            this.buttonOrient.Click += new System.EventHandler(this.buttonOrient_Click);
-            // 
-            // buttonAtlantic
-            // 
-            this.buttonAtlantic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAtlantic.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonAtlantic.Image = global::WatchHub.Properties.Resources.image_removebg_preview__6_;
-            this.buttonAtlantic.Location = new System.Drawing.Point(10, 266);
-            this.buttonAtlantic.Name = "buttonAtlantic";
-            this.buttonAtlantic.Size = new System.Drawing.Size(145, 50);
-            this.buttonAtlantic.TabIndex = 55;
-            this.buttonAtlantic.UseVisualStyleBackColor = true;
-            this.buttonAtlantic.Click += new System.EventHandler(this.buttonAtlantic_Click);
-            // 
-            // buttonLongines
-            // 
-            this.buttonLongines.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLongines.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonLongines.Image = global::WatchHub.Properties.Resources.image_removebg_preview__5_;
-            this.buttonLongines.Location = new System.Drawing.Point(364, 158);
-            this.buttonLongines.Name = "buttonLongines";
-            this.buttonLongines.Size = new System.Drawing.Size(145, 50);
-            this.buttonLongines.TabIndex = 54;
-            this.buttonLongines.UseVisualStyleBackColor = true;
-            this.buttonLongines.Click += new System.EventHandler(this.buttonLongines_Click);
-            // 
-            // buttonHamilton
-            // 
-            this.buttonHamilton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHamilton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonHamilton.Image = global::WatchHub.Properties.Resources.image_removebg_preview__4_;
-            this.buttonHamilton.Location = new System.Drawing.Point(194, 158);
-            this.buttonHamilton.Name = "buttonHamilton";
-            this.buttonHamilton.Size = new System.Drawing.Size(145, 50);
-            this.buttonHamilton.TabIndex = 53;
-            this.buttonHamilton.UseVisualStyleBackColor = true;
-            this.buttonHamilton.Click += new System.EventHandler(this.buttonHamilton_Click);
-            // 
-            // buttonCitizen
-            // 
-            this.buttonCitizen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCitizen.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonCitizen.Image = global::WatchHub.Properties.Resources.image_removebg_preview__3_;
-            this.buttonCitizen.Location = new System.Drawing.Point(10, 158);
-            this.buttonCitizen.Name = "buttonCitizen";
-            this.buttonCitizen.Size = new System.Drawing.Size(145, 50);
-            this.buttonCitizen.TabIndex = 52;
-            this.buttonCitizen.UseVisualStyleBackColor = true;
-            this.buttonCitizen.Click += new System.EventHandler(this.buttonCitizen_Click);
-            // 
-            // buttonTissot
-            // 
-            this.buttonTissot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTissot.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonTissot.Image = global::WatchHub.Properties.Resources.image_removebg_preview__2_;
-            this.buttonTissot.Location = new System.Drawing.Point(364, 45);
-            this.buttonTissot.Name = "buttonTissot";
-            this.buttonTissot.Size = new System.Drawing.Size(145, 50);
-            this.buttonTissot.TabIndex = 51;
-            this.buttonTissot.UseVisualStyleBackColor = true;
-            this.buttonTissot.Click += new System.EventHandler(this.buttonTissot_Click);
-            // 
-            // buttonOris
-            // 
-            this.buttonOris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOris.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonOris.Image = global::WatchHub.Properties.Resources.image_removebg_preview__1_;
-            this.buttonOris.Location = new System.Drawing.Point(194, 45);
-            this.buttonOris.Name = "buttonOris";
-            this.buttonOris.Size = new System.Drawing.Size(145, 50);
-            this.buttonOris.TabIndex = 50;
-            this.buttonOris.UseVisualStyleBackColor = true;
-            this.buttonOris.Click += new System.EventHandler(this.buttonOris_Click);
-            // 
-            // buttonCasio
-            // 
-            this.buttonCasio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCasio.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonCasio.Image = global::WatchHub.Properties.Resources.image_removebg_preview;
-            this.buttonCasio.Location = new System.Drawing.Point(11, 45);
-            this.buttonCasio.Name = "buttonCasio";
-            this.buttonCasio.Size = new System.Drawing.Size(145, 50);
-            this.buttonCasio.TabIndex = 49;
-            this.buttonCasio.UseVisualStyleBackColor = true;
-            this.buttonCasio.Click += new System.EventHandler(this.buttonCasio_Click);
             // 
             // label41
             // 
@@ -1961,43 +1822,6 @@
             this.label39.TabIndex = 8;
             this.label39.Text = "ЖІНОЧІ";
             // 
-            // buttonMen
-            // 
-            this.buttonMen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMen.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonMen.Image = global::WatchHub.Properties.Resources.image_removebg_preview__16_;
-            this.buttonMen.Location = new System.Drawing.Point(314, 519);
-            this.buttonMen.Name = "buttonMen";
-            this.buttonMen.Size = new System.Drawing.Size(145, 121);
-            this.buttonMen.TabIndex = 7;
-            this.buttonMen.UseVisualStyleBackColor = true;
-            this.buttonMen.Click += new System.EventHandler(this.buttonMen_Click);
-            // 
-            // buttonUniSex
-            // 
-            this.buttonUniSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUniSex.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonUniSex.Image = global::WatchHub.Properties.Resources.image_removebg_preview__17_;
-            this.buttonUniSex.Location = new System.Drawing.Point(163, 519);
-            this.buttonUniSex.Name = "buttonUniSex";
-            this.buttonUniSex.Size = new System.Drawing.Size(145, 121);
-            this.buttonUniSex.TabIndex = 6;
-            this.buttonUniSex.UseVisualStyleBackColor = true;
-            this.buttonUniSex.Click += new System.EventHandler(this.buttonUniSex_Click);
-            // 
-            // buttonWomen
-            // 
-            this.buttonWomen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonWomen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonWomen.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonWomen.Image = global::WatchHub.Properties.Resources.image_removebg_preview__14_;
-            this.buttonWomen.Location = new System.Drawing.Point(12, 519);
-            this.buttonWomen.Name = "buttonWomen";
-            this.buttonWomen.Size = new System.Drawing.Size(145, 121);
-            this.buttonWomen.TabIndex = 5;
-            this.buttonWomen.UseVisualStyleBackColor = true;
-            this.buttonWomen.Click += new System.EventHandler(this.buttonWomen_Click);
-            // 
             // label40
             // 
             this.label40.AutoSize = true;
@@ -2619,16 +2443,6 @@
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1833, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 20);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // refresh_btn
             // 
             this.refresh_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
@@ -2656,7 +2470,13 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage3.Controls.Add(this.buttonGuarantee);
+            this.tabPage3.Controls.Add(this.buttonWatchCountStatist);
+            this.tabPage3.Controls.Add(this.buttonAvgPriceWatch);
+            this.tabPage3.Controls.Add(this.buttonOrdersSum);
+            this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.buttonTop10watch);
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
@@ -2678,10 +2498,9 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.buttonClientOrderZvit);
-            this.panel3.Controls.Add(this.buttonTop10watch);
             this.panel3.Location = new System.Drawing.Point(11, 58);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(160, 164);
+            this.panel3.Size = new System.Drawing.Size(160, 75);
             this.panel3.TabIndex = 5;
             // 
             // buttonClientOrderZvit
@@ -2706,11 +2525,11 @@
             this.buttonTop10watch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonTop10watch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
             this.buttonTop10watch.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTop10watch.Location = new System.Drawing.Point(3, 84);
+            this.buttonTop10watch.Location = new System.Drawing.Point(873, 61);
             this.buttonTop10watch.Name = "buttonTop10watch";
             this.buttonTop10watch.Size = new System.Drawing.Size(153, 75);
             this.buttonTop10watch.TabIndex = 2;
-            this.buttonTop10watch.Text = "Звіт - \"ТОП-10 годинників за продажою\"";
+            this.buttonTop10watch.Text = "\"ТОП-10 годинників за продажою\"";
             this.buttonTop10watch.UseVisualStyleBackColor = false;
             this.buttonTop10watch.Click += new System.EventHandler(this.buttonTop10watch_Click);
             // 
@@ -2731,6 +2550,267 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1524, 523);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label42.Location = new System.Drawing.Point(868, 18);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(190, 28);
+            this.label42.TabIndex = 6;
+            this.label42.Text = "СТАТИСТИКА";
+            // 
+            // buttonOrdersSum
+            // 
+            this.buttonOrdersSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonOrdersSum.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOrdersSum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonOrdersSum.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonOrdersSum.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonOrdersSum.Location = new System.Drawing.Point(1041, 61);
+            this.buttonOrdersSum.Name = "buttonOrdersSum";
+            this.buttonOrdersSum.Size = new System.Drawing.Size(153, 75);
+            this.buttonOrdersSum.TabIndex = 7;
+            this.buttonOrdersSum.Text = "\"Сума прибутку за замовлення\"";
+            this.buttonOrdersSum.UseVisualStyleBackColor = false;
+            this.buttonOrdersSum.Click += new System.EventHandler(this.buttonOrdersSum_Click);
+            // 
+            // buttonAvgPriceWatch
+            // 
+            this.buttonAvgPriceWatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonAvgPriceWatch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAvgPriceWatch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAvgPriceWatch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonAvgPriceWatch.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonAvgPriceWatch.Location = new System.Drawing.Point(873, 154);
+            this.buttonAvgPriceWatch.Name = "buttonAvgPriceWatch";
+            this.buttonAvgPriceWatch.Size = new System.Drawing.Size(153, 75);
+            this.buttonAvgPriceWatch.TabIndex = 8;
+            this.buttonAvgPriceWatch.Text = "\"Середня ціна за годинник\"";
+            this.buttonAvgPriceWatch.UseVisualStyleBackColor = false;
+            this.buttonAvgPriceWatch.Click += new System.EventHandler(this.buttonAvgPriceWatch_Click);
+            // 
+            // buttonWatchCountStatist
+            // 
+            this.buttonWatchCountStatist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonWatchCountStatist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWatchCountStatist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonWatchCountStatist.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonWatchCountStatist.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonWatchCountStatist.Location = new System.Drawing.Point(1042, 154);
+            this.buttonWatchCountStatist.Name = "buttonWatchCountStatist";
+            this.buttonWatchCountStatist.Size = new System.Drawing.Size(153, 75);
+            this.buttonWatchCountStatist.TabIndex = 9;
+            this.buttonWatchCountStatist.Text = "\"Кількість товару в наявності\"";
+            this.buttonWatchCountStatist.UseVisualStyleBackColor = false;
+            this.buttonWatchCountStatist.Click += new System.EventHandler(this.buttonWatchCountStatist_Click);
+            // 
+            // buttonGuarantee
+            // 
+            this.buttonGuarantee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonGuarantee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGuarantee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGuarantee.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonGuarantee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonGuarantee.Location = new System.Drawing.Point(177, 61);
+            this.buttonGuarantee.Name = "buttonGuarantee";
+            this.buttonGuarantee.Size = new System.Drawing.Size(153, 75);
+            this.buttonGuarantee.TabIndex = 10;
+            this.buttonGuarantee.Text = "Звіт - \"надання гарантії\"";
+            this.buttonGuarantee.UseVisualStyleBackColor = false;
+            this.buttonGuarantee.Click += new System.EventHandler(this.buttonGuarantee_Click);
+            // 
+            // buttonEpos
+            // 
+            this.buttonEpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEpos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonEpos.Image = global::WatchHub.Properties.Resources.image_removebg_preview__12_;
+            this.buttonEpos.Location = new System.Drawing.Point(364, 390);
+            this.buttonEpos.Name = "buttonEpos";
+            this.buttonEpos.Size = new System.Drawing.Size(145, 50);
+            this.buttonEpos.TabIndex = 60;
+            this.buttonEpos.UseVisualStyleBackColor = true;
+            this.buttonEpos.Click += new System.EventHandler(this.buttonEpos_Click);
+            // 
+            // buttonCertina
+            // 
+            this.buttonCertina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCertina.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonCertina.Image = global::WatchHub.Properties.Resources.image_removebg_preview__11_;
+            this.buttonCertina.Location = new System.Drawing.Point(194, 390);
+            this.buttonCertina.Name = "buttonCertina";
+            this.buttonCertina.Size = new System.Drawing.Size(145, 50);
+            this.buttonCertina.TabIndex = 59;
+            this.buttonCertina.UseVisualStyleBackColor = true;
+            this.buttonCertina.Click += new System.EventHandler(this.buttonCertina_Click);
+            // 
+            // buttonBreitling
+            // 
+            this.buttonBreitling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBreitling.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonBreitling.Image = global::WatchHub.Properties.Resources.image_removebg_preview__10_;
+            this.buttonBreitling.Location = new System.Drawing.Point(11, 390);
+            this.buttonBreitling.Name = "buttonBreitling";
+            this.buttonBreitling.Size = new System.Drawing.Size(145, 50);
+            this.buttonBreitling.TabIndex = 58;
+            this.buttonBreitling.UseVisualStyleBackColor = true;
+            this.buttonBreitling.Click += new System.EventHandler(this.buttonBreitling_Click);
+            // 
+            // buttonRado
+            // 
+            this.buttonRado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRado.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonRado.Image = global::WatchHub.Properties.Resources.image_removebg_preview__8_;
+            this.buttonRado.Location = new System.Drawing.Point(364, 266);
+            this.buttonRado.Name = "buttonRado";
+            this.buttonRado.Size = new System.Drawing.Size(145, 50);
+            this.buttonRado.TabIndex = 57;
+            this.buttonRado.UseVisualStyleBackColor = true;
+            this.buttonRado.Click += new System.EventHandler(this.buttonRado_Click);
+            // 
+            // buttonOrient
+            // 
+            this.buttonOrient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOrient.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonOrient.Image = global::WatchHub.Properties.Resources.image_removebg_preview__7_;
+            this.buttonOrient.Location = new System.Drawing.Point(181, 266);
+            this.buttonOrient.Name = "buttonOrient";
+            this.buttonOrient.Size = new System.Drawing.Size(145, 50);
+            this.buttonOrient.TabIndex = 56;
+            this.buttonOrient.UseVisualStyleBackColor = true;
+            this.buttonOrient.Click += new System.EventHandler(this.buttonOrient_Click);
+            // 
+            // buttonAtlantic
+            // 
+            this.buttonAtlantic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtlantic.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonAtlantic.Image = global::WatchHub.Properties.Resources.image_removebg_preview__6_;
+            this.buttonAtlantic.Location = new System.Drawing.Point(10, 266);
+            this.buttonAtlantic.Name = "buttonAtlantic";
+            this.buttonAtlantic.Size = new System.Drawing.Size(145, 50);
+            this.buttonAtlantic.TabIndex = 55;
+            this.buttonAtlantic.UseVisualStyleBackColor = true;
+            this.buttonAtlantic.Click += new System.EventHandler(this.buttonAtlantic_Click);
+            // 
+            // buttonLongines
+            // 
+            this.buttonLongines.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLongines.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonLongines.Image = global::WatchHub.Properties.Resources.image_removebg_preview__5_;
+            this.buttonLongines.Location = new System.Drawing.Point(364, 158);
+            this.buttonLongines.Name = "buttonLongines";
+            this.buttonLongines.Size = new System.Drawing.Size(145, 50);
+            this.buttonLongines.TabIndex = 54;
+            this.buttonLongines.UseVisualStyleBackColor = true;
+            this.buttonLongines.Click += new System.EventHandler(this.buttonLongines_Click);
+            // 
+            // buttonHamilton
+            // 
+            this.buttonHamilton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHamilton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonHamilton.Image = global::WatchHub.Properties.Resources.image_removebg_preview__4_;
+            this.buttonHamilton.Location = new System.Drawing.Point(194, 158);
+            this.buttonHamilton.Name = "buttonHamilton";
+            this.buttonHamilton.Size = new System.Drawing.Size(145, 50);
+            this.buttonHamilton.TabIndex = 53;
+            this.buttonHamilton.UseVisualStyleBackColor = true;
+            this.buttonHamilton.Click += new System.EventHandler(this.buttonHamilton_Click);
+            // 
+            // buttonCasio
+            // 
+            this.buttonCasio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCasio.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonCasio.Image = global::WatchHub.Properties.Resources.image_removebg_preview;
+            this.buttonCasio.Location = new System.Drawing.Point(11, 45);
+            this.buttonCasio.Name = "buttonCasio";
+            this.buttonCasio.Size = new System.Drawing.Size(145, 50);
+            this.buttonCasio.TabIndex = 49;
+            this.buttonCasio.UseVisualStyleBackColor = true;
+            this.buttonCasio.Click += new System.EventHandler(this.buttonCasio_Click);
+            // 
+            // buttonCitizen
+            // 
+            this.buttonCitizen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCitizen.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonCitizen.Image = global::WatchHub.Properties.Resources.image_removebg_preview__3_;
+            this.buttonCitizen.Location = new System.Drawing.Point(10, 158);
+            this.buttonCitizen.Name = "buttonCitizen";
+            this.buttonCitizen.Size = new System.Drawing.Size(145, 50);
+            this.buttonCitizen.TabIndex = 52;
+            this.buttonCitizen.UseVisualStyleBackColor = true;
+            this.buttonCitizen.Click += new System.EventHandler(this.buttonCitizen_Click);
+            // 
+            // buttonTissot
+            // 
+            this.buttonTissot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTissot.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonTissot.Image = global::WatchHub.Properties.Resources.image_removebg_preview__2_;
+            this.buttonTissot.Location = new System.Drawing.Point(364, 45);
+            this.buttonTissot.Name = "buttonTissot";
+            this.buttonTissot.Size = new System.Drawing.Size(145, 50);
+            this.buttonTissot.TabIndex = 51;
+            this.buttonTissot.UseVisualStyleBackColor = true;
+            this.buttonTissot.Click += new System.EventHandler(this.buttonTissot_Click);
+            // 
+            // buttonOris
+            // 
+            this.buttonOris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOris.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonOris.Image = global::WatchHub.Properties.Resources.image_removebg_preview__1_;
+            this.buttonOris.Location = new System.Drawing.Point(194, 45);
+            this.buttonOris.Name = "buttonOris";
+            this.buttonOris.Size = new System.Drawing.Size(145, 50);
+            this.buttonOris.TabIndex = 50;
+            this.buttonOris.UseVisualStyleBackColor = true;
+            this.buttonOris.Click += new System.EventHandler(this.buttonOris_Click);
+            // 
+            // buttonMen
+            // 
+            this.buttonMen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMen.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonMen.Image = global::WatchHub.Properties.Resources.image_removebg_preview__16_;
+            this.buttonMen.Location = new System.Drawing.Point(314, 519);
+            this.buttonMen.Name = "buttonMen";
+            this.buttonMen.Size = new System.Drawing.Size(145, 121);
+            this.buttonMen.TabIndex = 7;
+            this.buttonMen.UseVisualStyleBackColor = true;
+            this.buttonMen.Click += new System.EventHandler(this.buttonMen_Click);
+            // 
+            // buttonUniSex
+            // 
+            this.buttonUniSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUniSex.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonUniSex.Image = global::WatchHub.Properties.Resources.image_removebg_preview__17_;
+            this.buttonUniSex.Location = new System.Drawing.Point(163, 519);
+            this.buttonUniSex.Name = "buttonUniSex";
+            this.buttonUniSex.Size = new System.Drawing.Size(145, 121);
+            this.buttonUniSex.TabIndex = 6;
+            this.buttonUniSex.UseVisualStyleBackColor = true;
+            this.buttonUniSex.Click += new System.EventHandler(this.buttonUniSex_Click);
+            // 
+            // buttonWomen
+            // 
+            this.buttonWomen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonWomen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWomen.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonWomen.Image = global::WatchHub.Properties.Resources.image_removebg_preview__14_;
+            this.buttonWomen.Location = new System.Drawing.Point(12, 519);
+            this.buttonWomen.Name = "buttonWomen";
+            this.buttonWomen.Size = new System.Drawing.Size(145, 121);
+            this.buttonWomen.TabIndex = 5;
+            this.buttonWomen.UseVisualStyleBackColor = true;
+            this.buttonWomen.Click += new System.EventHandler(this.buttonWomen_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(1833, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // ManagerForm
             // 
@@ -2775,12 +2855,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2999,5 +3079,10 @@
         private System.Windows.Forms.Button buttonBreitling;
         private System.Windows.Forms.Button buttonCertina;
         private System.Windows.Forms.Button buttonEpos;
+        private System.Windows.Forms.Button buttonOrdersSum;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button buttonAvgPriceWatch;
+        private System.Windows.Forms.Button buttonWatchCountStatist;
+        private System.Windows.Forms.Button buttonGuarantee;
     }
 }

@@ -1372,5 +1372,49 @@ WHERE 1=1"; // Базова умова, яка завжди істинна
                 orderForm.ShowDialog(); // Показуємо форму
             }
         }
+
+
+
+        private void Search(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            string searchString = $"SELECT brand, title, watch_version, mechanism_type, housing_material, " +
+                        $"belt_material, price, case_diameter, case_color, case_shape, " +
+                        $"water_resistance, dial_color, glass_type, indication_type, " +
+                        $"indication_view, stock_quantity, description, gender " +
+                        $"FROM watch WHERE CONCAT(brand, title, watch_version, mechanism_type, housing_material, " +
+                        $"belt_material, price, case_diameter, case_color, case_shape, " +
+                        $"water_resistance, dial_color, glass_type, indication_type, " +
+                        $"indication_view, stock_quantity, description, gender) LIKE '%{textBox_search.Text}%'";
+
+
+            SqlCommand com = new SqlCommand(searchString, dataBase.getConnection());
+
+            dataBase.openConnection();
+            SqlDataReader read = com.ExecuteReader();
+
+            while (read.Read())
+            {
+                ReadSingleRow(dgw, read);
+
+            }
+
+            read.Close();
+
+        }
+
+        private void textBox_search_TextChanged(object sender, EventArgs e)
+        {
+            Search(dataGridView1);
+        }
+
+        private void ReadSingleRow(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(record.GetString(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetString(4),
+             record.GetString(5), record.GetDecimal(6), record.GetDouble(7),
+                 record.GetString(8), record.GetString(9), record.GetString(10), record.GetString(11), record.GetString(12),
+                record.GetString(13), record.GetString(14), record.GetInt32(15), record.GetString(16), record.GetString(17), RowState.ModifiedNew);
+        }
     }
 }
