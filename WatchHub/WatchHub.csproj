@@ -213,6 +213,12 @@
     <Compile Include="Forms\OrdersSumStatistics.Designer.cs">
       <DependentUpon>OrdersSumStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderSupllier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderSupllier.Designer.cs">
+      <DependentUpon>OrderSupllier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WatchAvgPriceStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrdersSumStatistics.resx">
       <DependentUpon>OrdersSumStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderSupllier.resx">
+      <DependentUpon>OrderSupllier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
@@ -379,6 +388,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\9054423_bx_arrow_back_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211863_minus_round_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211863_minus_round_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211863_minus_round_icon %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\172525_plus_icon %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

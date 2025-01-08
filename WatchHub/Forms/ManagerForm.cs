@@ -26,6 +26,8 @@ namespace WatchHub
         Deleted
     }
 
+    
+
 
     public partial class ManagerForm : Form
     {
@@ -74,6 +76,18 @@ namespace WatchHub
                 record.GetString(14), record.GetString(15), record.GetInt32(16), record.GetString(17), record.GetString(18), RowState.ModifiedNew);
         }
 
+
+        public void SetManagerName(string userName)
+        {
+           
+            label_manageLogin.Text = $"Привіт, {userName}!";
+            label_manageLogin2.Text = $"Привіт, {userName}!";
+            label_manageLogin3.Text = $"Привіт, {userName}!";
+            label_manageLogin4.Text = $"Привіт, {userName}!";
+
+        }
+
+
         private void RefreshDataGrid(DataGridView dgw)
         {
             dgw.Rows.Clear();
@@ -99,6 +113,15 @@ namespace WatchHub
         {
             CreateColumns();
             RefreshDataGrid(dataGridView1);
+
+            CreateColumnsForSuppliers();
+            RefreshDataGrid(dataGridView2);
+
+
+            CreateSuppliersColumns();
+
+         
+            RefreshSuppliersDataGrid(dataGridView2);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -498,7 +521,18 @@ ORDER BY SUM(oi.quantity) DESC;
             watchAvgPriceStatistics.ShowDialog();   
         }
 
+        private void buttonWatchCountStatist_Click(object sender, EventArgs e)
+        {
+            WatchStorageCountStatistics watchStorageCountStatistics = new WatchStorageCountStatistics();
+            watchStorageCountStatistics.ShowDialog();
 
+        }
+
+        private void buttonGuarantee_Click(object sender, EventArgs e)
+        {
+            OrderGuarantee orderGuarantee = new OrderGuarantee();
+            orderGuarantee.ShowDialog();
+        }
 
         private void InitializeCheckBoxes()
         {
@@ -1765,17 +1799,286 @@ WHERE 1=1"; // Базова умова, яка завжди істинна
             }
         }
 
-        private void buttonWatchCountStatist_Click(object sender, EventArgs e)
+        private void CreateSuppliersColumns()
         {
-            WatchStorageCountStatistics watchStorageCountStatistics = new WatchStorageCountStatistics();
-            watchStorageCountStatistics.ShowDialog();
-            
+            dataGridView2.Columns.Add("supplier_id", "ID Постачальника");
+            dataGridView2.Columns.Add("name", "Ім'я");
+            dataGridView2.Columns.Add("last_name", "Прізвище");
+            dataGridView2.Columns.Add("country", "Країна");
+            dataGridView2.Columns.Add("city", "Місто");
+            dataGridView2.Columns.Add("street", "Вулиця");
+            dataGridView2.Columns.Add("house_number", "Номер будинку");
+            dataGridView2.Columns.Add("phone_number", "Телефон");
+            dataGridView2.Columns.Add("email", "Email");
+            dataGridView2.Columns.Add("cooperation_terms", "Умови співпраці");
+            dataGridView2.Columns.Add("payment_terms", "Умови оплати");
         }
 
-        private void buttonGuarantee_Click(object sender, EventArgs e)
+
+        private void ReadSupplierRow(DataGridView dgw, IDataRecord record)
         {
-            OrderGuarantee orderGuarantee = new OrderGuarantee();
-            orderGuarantee.ShowDialog();
+            dgw.Rows.Add(
+                record.GetInt32(0), // supplier_id
+                record.GetString(1), // name
+                record.GetString(2), // last_name
+                record.GetString(3), // country
+                record.GetString(4), // city
+                record.GetString(5), // street
+                record.GetString(6), // house_number
+                record.GetString(7), // phone_number
+                record.GetString(8), // email
+                record.GetString(9), // cooperation_terms
+                record.GetString(10) // payment_terms
+            );
+        }
+
+
+        private void RefreshSuppliersDataGrid(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            string queryString = "SELECT * FROM suppliers";
+
+            SqlCommand command = new SqlCommand(queryString, dataBase.getConnection());
+
+            dataBase.openConnection();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSupplierRow(dgw, reader);
+            }
+
+            reader.Close();
+            dataBase.closeConnection();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Переконайтеся, що натиснута комірка не є заголовком
+            {
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+
+                // Присвойте значення вибраного рядка у відповідні Labels
+                nameLabel.Text = row.Cells["name"].Value?.ToString() ?? string.Empty;
+                lastNameLabel.Text = row.Cells["last_name"].Value?.ToString() ?? string.Empty;
+                countryLabel.Text = row.Cells["country"].Value?.ToString() ?? string.Empty;
+                CityLabel.Text = row.Cells["city"].Value?.ToString() ?? string.Empty;
+                StreetLabel.Text = row.Cells["street"].Value?.ToString() ?? string.Empty;
+                houseNumberLabel.Text = row.Cells["house_number"].Value?.ToString() ?? string.Empty;
+                PhoneNumLabel.Text = row.Cells["phone_number"].Value?.ToString() ?? string.Empty;
+                emailLabel.Text = row.Cells["email"].Value?.ToString() ?? string.Empty;
+                cooperation_terms_label.Text = row.Cells["cooperation_terms"].Value?.ToString() ?? string.Empty;
+                payment_terms_label.Text = row.Cells["payment_terms"].Value?.ToString() ?? string.Empty;
+            }
+        }
+
+
+
+        private void SearchSupplier(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            // Запит для пошуку в таблиці suppliers
+            string searchString = $"SELECT supplier_id, name, last_name, country, city, street, house_number, " +
+                                  $"phone_number, email, cooperation_terms, payment_terms " +
+                                  $"FROM suppliers WHERE CONCAT(supplier_id, name, last_name, country, city, street, " +
+                                  $"house_number, phone_number, email, cooperation_terms, payment_terms) LIKE '%{textBoxSearchSupllier.Text}%'";
+
+            SqlCommand com = new SqlCommand(searchString, dataBase.getConnection());
+
+            dataBase.openConnection();
+            SqlDataReader read = com.ExecuteReader();
+
+            // Читання результатів і додавання в DataGridView
+            while (read.Read())
+            {
+                ReadSingleRowSupplier(dgw, read);
+            }
+
+            read.Close();
+        }
+
+        private void textBoxSearchSupllier_TextChanged(object sender, EventArgs e)
+        {
+            SearchSupplier(dataGridView2);
+        }
+
+        private void ReadSingleRowSupplier(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(record.GetInt32(0),  // supplier_id
+                         record.GetString(1), // name
+                         record.GetString(2), // last_name
+                         record.GetString(3), // country
+                         record.GetString(4), // city
+                         record.GetString(5), // street
+                         record.GetString(6), // house_number
+                         record.GetString(7), // phone_number
+                         record.GetString(8), // email
+                         record.GetString(9), // cooperation_terms
+                         record.GetString(10) // payment_terms
+            );
+        }
+
+        private void CreateColumnsForSuppliers()
+        {
+            dataGridView2.Columns.Add("supplier_id", "ID Постачальника");
+            dataGridView2.Columns.Add("name", "Ім'я");
+            dataGridView2.Columns.Add("last_name", "Прізвище");
+            dataGridView2.Columns.Add("country", "Країна");
+            dataGridView2.Columns.Add("city", "Місто");
+            dataGridView2.Columns.Add("street", "Вулиця");
+            dataGridView2.Columns.Add("house_number", "Номер будинку");
+            dataGridView2.Columns.Add("phone_number", "Номер телефону");
+            dataGridView2.Columns.Add("email", "Email");
+            dataGridView2.Columns.Add("cooperation_terms", "Умови співпраці");
+            dataGridView2.Columns.Add("payment_terms", "Умови оплати");
+        }
+
+
+
+      
+            private void buttonSearchSup_Click(object sender, EventArgs e)
+            {
+                // Перевірка, чи всі ComboBox мають значення "default"
+                if (comboBoxCountry.Text == "" ||   comboBoxCity.Text == "" ||
+                    comboBoxCooperation_terms.Text == "" || comboBoxPayment_terms.Text == "")
+                {
+                    MessageBox.Show("Оберіть хоча б один параметр для фільтрації. Якщо бажаете фільтрувати не за всіма фільтрами, оберіть default", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Очищення DataGridView перед завантаженням нових даних
+                dataGridView2.Rows.Clear();
+
+            // Основна частина SQL-запиту
+            string query = "SELECT supplier_id, name, last_name, country, city, street, house_number, " +
+            "phone_number, email, cooperation_terms, payment_terms FROM suppliers WHERE 1=1";
+
+            // Колекція для умов фільтрації
+            List<string> conditions = new List<string>();
+
+            // Додавання умов до колекції залежно від вибраних значень ComboBox
+            if (comboBoxCountry.Text != "default")
+            {
+                conditions.Add($"country = '{comboBoxCountry.Text}'");
+            }
+
+            if (comboBoxCity.Text != "default")
+            {
+                conditions.Add($"city = '{comboBoxCity.Text}'");
+            }
+
+            if (comboBoxCooperation_terms.Text != "default")
+            {
+                conditions.Add($"cooperation_terms = '{comboBoxCooperation_terms.Text}'");
+            }
+
+            if (comboBoxPayment_terms.Text != "default")
+            {
+                conditions.Add($"payment_terms = '{comboBoxPayment_terms.Text}'");
+            }
+
+            // Додавання умов до запиту
+            if (conditions.Count > 0)
+            {
+                query += " AND " + string.Join(" AND ", conditions);
+            }
+
+            try
+                {
+                    // Виконання SQL-запиту
+                    SqlCommand command = new SqlCommand(query, dataBase.getConnection());
+                    dataBase.openConnection();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // Додавання записів у DataGridView
+                    while (reader.Read())
+                    {
+                        ReadSingleRowSup(dataGridView2, reader);
+                    }
+
+                    reader.Close();
+
+                    // Перевірка, чи були знайдені результати
+                    if (dataGridView2.Rows.Count == 0)
+                    {
+                        MessageBox.Show("За заданими параметрами фільтрації записів не знайдено.", "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Помилка при фільтрації: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    dataBase.closeConnection();
+                }
+            }
+
+
+
+        private void ReadSingleRowSup(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(
+                record.GetValue(0) != DBNull.Value ? Convert.ToInt32(record.GetValue(0)) : 0,  // supplier_id
+                record.GetValue(1) != DBNull.Value ? record.GetString(1) : "Не указано",     // name
+                record.GetValue(2) != DBNull.Value ? record.GetString(2) : "Не указано",     // last_name
+                record.GetValue(3) != DBNull.Value ? record.GetString(3) : "Не указано",     // country
+                record.GetValue(4) != DBNull.Value ? record.GetString(4) : "Не указано",     // city
+                record.GetValue(5) != DBNull.Value ? record.GetString(5) : "Не указано",     // street
+                record.GetValue(6) != DBNull.Value ? record.GetString(6) : "Не указано",     // house_number
+                record.GetValue(7) != DBNull.Value ? record.GetString(7) : "Не указано",     // phone_number
+                record.GetValue(8) != DBNull.Value ? record.GetString(8) : "Не указано",     // email
+                record.GetValue(9) != DBNull.Value ? record.GetString(9) : "Не указано",     // cooperation_terms
+                record.GetValue(10) != DBNull.Value ? record.GetString(10) : "Не указано"    // payment_terms
+            );
+        }
+
+
+        private void supplierOrderBtn_Click(object sender, EventArgs e)
+        {
+            // Перевірка, чи всі поля заповнені
+            if (string.IsNullOrEmpty(nameLabel.Text) ||
+                string.IsNullOrEmpty(lastNameLabel.Text) ||
+                string.IsNullOrEmpty(countryLabel.Text) ||
+                string.IsNullOrEmpty(CityLabel.Text) ||
+                string.IsNullOrEmpty(StreetLabel.Text) ||
+                string.IsNullOrEmpty(houseNumberLabel.Text) ||
+                string.IsNullOrEmpty(PhoneNumLabel.Text) ||
+                string.IsNullOrEmpty(emailLabel.Text) ||
+                string.IsNullOrEmpty(cooperation_terms_label.Text) ||
+                string.IsNullOrEmpty(payment_terms_label.Text))
+            {
+                // Виведення повідомлення про помилку, якщо хоча б одне поле порожнє
+                MessageBox.Show("Будь ласка, оберіть постачальника", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Відкриття форми, якщо всі поля заповнені
+                OrderSupllier orderSupllier = new OrderSupllier();
+                orderSupllier.SetManagerName(label_manageLogin4.Text);
+                orderSupllier.SetSupInformation(nameLabel.Text, lastNameLabel.Text, countryLabel.Text, CityLabel.Text, StreetLabel.Text, houseNumberLabel.Text, PhoneNumLabel.Text,
+                    emailLabel.Text, cooperation_terms_label.Text, payment_terms_label.Text);
+                orderSupllier.ShowDialog();
+            }
+        }
+
+
+
+
+  
+
+
+
+
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
         }
     }
+
 }

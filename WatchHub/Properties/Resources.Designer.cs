@@ -63,9 +63,49 @@ namespace WatchHub.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _172525_plus_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("172525_plus_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _172628_user_male_icon {
             get {
                 object obj = ResourceManager.GetObject("172628_user_male_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _211863_minus_round_icon {
+            get {
+                object obj = ResourceManager.GetObject("211863_minus_round_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _211863_minus_round_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("211863_minus_round_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _211863_minus_round_icon__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("211863_minus_round_icon (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

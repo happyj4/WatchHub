@@ -17,7 +17,8 @@ namespace WatchHub
         Database dataBase = new Database();
 
         private bool isManager, isUser;
-   
+       
+        
         
         public LoginForm()
         {
@@ -76,6 +77,7 @@ namespace WatchHub
                 {
                     MessageBox.Show("Ви успішно увійшли!", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ManagerForm managerForm = new ManagerForm();
+                    managerForm.SetManagerName(userName);
                     this.Hide();
                     managerForm.Show();
                     

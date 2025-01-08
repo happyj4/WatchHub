@@ -220,17 +220,49 @@
             this.refresh_btn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonGuarantee = new System.Windows.Forms.Button();
+            this.buttonWatchCountStatist = new System.Windows.Forms.Button();
+            this.buttonAvgPriceWatch = new System.Windows.Forms.Button();
+            this.buttonOrdersSum = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.buttonTop10watch = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonClientOrderZvit = new System.Windows.Forms.Button();
-            this.buttonTop10watch = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label42 = new System.Windows.Forms.Label();
-            this.buttonOrdersSum = new System.Windows.Forms.Button();
-            this.buttonAvgPriceWatch = new System.Windows.Forms.Button();
-            this.buttonWatchCountStatist = new System.Windows.Forms.Button();
-            this.buttonGuarantee = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.payment_terms_label = new System.Windows.Forms.Label();
+            this.cooperation_terms_label = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.PhoneNumLabel = new System.Windows.Forms.Label();
+            this.houseNumberLabel = new System.Windows.Forms.Label();
+            this.StreetLabel = new System.Windows.Forms.Label();
+            this.CityLabel = new System.Windows.Forms.Label();
+            this.countryLabel = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.supplierOrderBtn = new System.Windows.Forms.Button();
+            this.textBoxSearchSupllier = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.comboBoxCountry = new System.Windows.Forms.ComboBox();
+            this.comboBoxCity = new System.Windows.Forms.ComboBox();
+            this.comboBoxCooperation_terms = new System.Windows.Forms.ComboBox();
+            this.comboBoxPayment_terms = new System.Windows.Forms.ComboBox();
+            this.buttonSearchSup = new System.Windows.Forms.Button();
             this.buttonEpos = new System.Windows.Forms.Button();
             this.buttonCertina = new System.Windows.Forms.Button();
             this.buttonBreitling = new System.Windows.Forms.Button();
@@ -247,6 +279,11 @@
             this.buttonUniSex = new System.Windows.Forms.Button();
             this.buttonWomen = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label_manageLogin = new System.Windows.Forms.Label();
+            this.label_manageLogin2 = new System.Windows.Forms.Label();
+            this.label_manageLogin3 = new System.Windows.Forms.Label();
+            this.label_manageLogin4 = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -266,11 +303,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -289,6 +329,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage1.Controls.Add(this.label_manageLogin);
             this.tabPage1.Controls.Add(this.panel4);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -2366,7 +2407,7 @@
             // 
             // textBox_search
             // 
-            this.textBox_search.Location = new System.Drawing.Point(1670, 6);
+            this.textBox_search.Location = new System.Drawing.Point(1670, 66);
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(157, 29);
             this.textBox_search.TabIndex = 7;
@@ -2449,7 +2490,7 @@
             this.refresh_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.refresh_btn.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
             this.refresh_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.refresh_btn.Location = new System.Drawing.Point(1674, 41);
+            this.refresh_btn.Location = new System.Drawing.Point(1674, 101);
             this.refresh_btn.Name = "refresh_btn";
             this.refresh_btn.Size = new System.Drawing.Size(153, 60);
             this.refresh_btn.TabIndex = 3;
@@ -2460,6 +2501,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage2.Controls.Add(this.label_manageLogin2);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -2470,6 +2512,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage3.Controls.Add(this.label_manageLogin3);
             this.tabPage3.Controls.Add(this.buttonGuarantee);
             this.tabPage3.Controls.Add(this.buttonWatchCountStatist);
             this.tabPage3.Controls.Add(this.buttonAvgPriceWatch);
@@ -2485,6 +2528,76 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Статистика та звітності";
             // 
+            // buttonGuarantee
+            // 
+            this.buttonGuarantee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonGuarantee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGuarantee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGuarantee.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonGuarantee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonGuarantee.Location = new System.Drawing.Point(177, 61);
+            this.buttonGuarantee.Name = "buttonGuarantee";
+            this.buttonGuarantee.Size = new System.Drawing.Size(153, 75);
+            this.buttonGuarantee.TabIndex = 10;
+            this.buttonGuarantee.Text = "Звіт - \"надання гарантії\"";
+            this.buttonGuarantee.UseVisualStyleBackColor = false;
+            this.buttonGuarantee.Click += new System.EventHandler(this.buttonGuarantee_Click);
+            // 
+            // buttonWatchCountStatist
+            // 
+            this.buttonWatchCountStatist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonWatchCountStatist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWatchCountStatist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonWatchCountStatist.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonWatchCountStatist.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonWatchCountStatist.Location = new System.Drawing.Point(1042, 154);
+            this.buttonWatchCountStatist.Name = "buttonWatchCountStatist";
+            this.buttonWatchCountStatist.Size = new System.Drawing.Size(153, 75);
+            this.buttonWatchCountStatist.TabIndex = 9;
+            this.buttonWatchCountStatist.Text = "\"Кількість товару в наявності\"";
+            this.buttonWatchCountStatist.UseVisualStyleBackColor = false;
+            this.buttonWatchCountStatist.Click += new System.EventHandler(this.buttonWatchCountStatist_Click);
+            // 
+            // buttonAvgPriceWatch
+            // 
+            this.buttonAvgPriceWatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonAvgPriceWatch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAvgPriceWatch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAvgPriceWatch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonAvgPriceWatch.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonAvgPriceWatch.Location = new System.Drawing.Point(873, 154);
+            this.buttonAvgPriceWatch.Name = "buttonAvgPriceWatch";
+            this.buttonAvgPriceWatch.Size = new System.Drawing.Size(153, 75);
+            this.buttonAvgPriceWatch.TabIndex = 8;
+            this.buttonAvgPriceWatch.Text = "\"Середня ціна за годинник\"";
+            this.buttonAvgPriceWatch.UseVisualStyleBackColor = false;
+            this.buttonAvgPriceWatch.Click += new System.EventHandler(this.buttonAvgPriceWatch_Click);
+            // 
+            // buttonOrdersSum
+            // 
+            this.buttonOrdersSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonOrdersSum.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOrdersSum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonOrdersSum.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonOrdersSum.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonOrdersSum.Location = new System.Drawing.Point(1041, 61);
+            this.buttonOrdersSum.Name = "buttonOrdersSum";
+            this.buttonOrdersSum.Size = new System.Drawing.Size(153, 75);
+            this.buttonOrdersSum.TabIndex = 7;
+            this.buttonOrdersSum.Text = "\"Сума прибутку за замовлення\"";
+            this.buttonOrdersSum.UseVisualStyleBackColor = false;
+            this.buttonOrdersSum.Click += new System.EventHandler(this.buttonOrdersSum_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label42.Location = new System.Drawing.Point(868, 18);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(190, 28);
+            this.label42.TabIndex = 6;
+            this.label42.Text = "СТАТИСТИКА";
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -2494,6 +2607,21 @@
             this.label21.Size = new System.Drawing.Size(90, 28);
             this.label21.TabIndex = 4;
             this.label21.Text = "ЗВІТИ";
+            // 
+            // buttonTop10watch
+            // 
+            this.buttonTop10watch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonTop10watch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTop10watch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonTop10watch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonTop10watch.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonTop10watch.Location = new System.Drawing.Point(873, 61);
+            this.buttonTop10watch.Name = "buttonTop10watch";
+            this.buttonTop10watch.Size = new System.Drawing.Size(153, 75);
+            this.buttonTop10watch.TabIndex = 2;
+            this.buttonTop10watch.Text = "\"ТОП-10 годинників за продажою\"";
+            this.buttonTop10watch.UseVisualStyleBackColor = false;
+            this.buttonTop10watch.Click += new System.EventHandler(this.buttonTop10watch_Click);
             // 
             // panel3
             // 
@@ -2518,108 +2646,393 @@
             this.buttonClientOrderZvit.UseVisualStyleBackColor = false;
             this.buttonClientOrderZvit.Click += new System.EventHandler(this.buttonClientOrderZvit_Click);
             // 
-            // buttonTop10watch
-            // 
-            this.buttonTop10watch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonTop10watch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonTop10watch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonTop10watch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonTop10watch.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTop10watch.Location = new System.Drawing.Point(873, 61);
-            this.buttonTop10watch.Name = "buttonTop10watch";
-            this.buttonTop10watch.Size = new System.Drawing.Size(153, 75);
-            this.buttonTop10watch.TabIndex = 2;
-            this.buttonTop10watch.Text = "\"ТОП-10 годинників за продажою\"";
-            this.buttonTop10watch.UseVisualStyleBackColor = false;
-            this.buttonTop10watch.Click += new System.EventHandler(this.buttonTop10watch_Click);
-            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage4.Controls.Add(this.label_manageLogin4);
+            this.tabPage4.Controls.Add(this.buttonSearchSup);
+            this.tabPage4.Controls.Add(this.panel17);
+            this.tabPage4.Controls.Add(this.textBoxSearchSupllier);
+            this.tabPage4.Controls.Add(this.pictureBox2);
+            this.tabPage4.Controls.Add(this.supplierOrderBtn);
+            this.tabPage4.Controls.Add(this.payment_terms_label);
+            this.tabPage4.Controls.Add(this.cooperation_terms_label);
+            this.tabPage4.Controls.Add(this.emailLabel);
+            this.tabPage4.Controls.Add(this.PhoneNumLabel);
+            this.tabPage4.Controls.Add(this.houseNumberLabel);
+            this.tabPage4.Controls.Add(this.StreetLabel);
+            this.tabPage4.Controls.Add(this.CityLabel);
+            this.tabPage4.Controls.Add(this.countryLabel);
+            this.tabPage4.Controls.Add(this.lastNameLabel);
+            this.tabPage4.Controls.Add(this.nameLabel);
+            this.tabPage4.Controls.Add(this.label51);
+            this.tabPage4.Controls.Add(this.label52);
+            this.tabPage4.Controls.Add(this.label47);
+            this.tabPage4.Controls.Add(this.label48);
+            this.tabPage4.Controls.Add(this.label49);
+            this.tabPage4.Controls.Add(this.label50);
+            this.tabPage4.Controls.Add(this.label45);
+            this.tabPage4.Controls.Add(this.label46);
+            this.tabPage4.Controls.Add(this.label44);
+            this.tabPage4.Controls.Add(this.label43);
             this.tabPage4.Controls.Add(this.dataGridView2);
             this.tabPage4.Location = new System.Drawing.Point(4, 31);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1882, 1000);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Поставки";
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(25, 14);
+            this.dataGridView2.Location = new System.Drawing.Point(21, 13);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1524, 523);
+            this.dataGridView2.Size = new System.Drawing.Size(1149, 523);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
-            // label42
+            // label43
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label42.Location = new System.Drawing.Point(868, 18);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(190, 28);
-            this.label42.TabIndex = 6;
-            this.label42.Text = "СТАТИСТИКА";
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(17, 551);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(54, 22);
+            this.label43.TabIndex = 1;
+            this.label43.Text = "Ім\'я - ";
             // 
-            // buttonOrdersSum
+            // label44
             // 
-            this.buttonOrdersSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonOrdersSum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOrdersSum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonOrdersSum.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonOrdersSum.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonOrdersSum.Location = new System.Drawing.Point(1041, 61);
-            this.buttonOrdersSum.Name = "buttonOrdersSum";
-            this.buttonOrdersSum.Size = new System.Drawing.Size(153, 75);
-            this.buttonOrdersSum.TabIndex = 7;
-            this.buttonOrdersSum.Text = "\"Сума прибутку за замовлення\"";
-            this.buttonOrdersSum.UseVisualStyleBackColor = false;
-            this.buttonOrdersSum.Click += new System.EventHandler(this.buttonOrdersSum_Click);
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(17, 590);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(87, 22);
+            this.label44.TabIndex = 2;
+            this.label44.Text = "Прізвище -";
             // 
-            // buttonAvgPriceWatch
+            // label45
             // 
-            this.buttonAvgPriceWatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonAvgPriceWatch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAvgPriceWatch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAvgPriceWatch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonAvgPriceWatch.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonAvgPriceWatch.Location = new System.Drawing.Point(873, 154);
-            this.buttonAvgPriceWatch.Name = "buttonAvgPriceWatch";
-            this.buttonAvgPriceWatch.Size = new System.Drawing.Size(153, 75);
-            this.buttonAvgPriceWatch.TabIndex = 8;
-            this.buttonAvgPriceWatch.Text = "\"Середня ціна за годинник\"";
-            this.buttonAvgPriceWatch.UseVisualStyleBackColor = false;
-            this.buttonAvgPriceWatch.Click += new System.EventHandler(this.buttonAvgPriceWatch_Click);
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(17, 662);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(67, 22);
+            this.label45.TabIndex = 4;
+            this.label45.Text = "Місто -";
             // 
-            // buttonWatchCountStatist
+            // label46
             // 
-            this.buttonWatchCountStatist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonWatchCountStatist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonWatchCountStatist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonWatchCountStatist.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonWatchCountStatist.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonWatchCountStatist.Location = new System.Drawing.Point(1042, 154);
-            this.buttonWatchCountStatist.Name = "buttonWatchCountStatist";
-            this.buttonWatchCountStatist.Size = new System.Drawing.Size(153, 75);
-            this.buttonWatchCountStatist.TabIndex = 9;
-            this.buttonWatchCountStatist.Text = "\"Кількість товару в наявності\"";
-            this.buttonWatchCountStatist.UseVisualStyleBackColor = false;
-            this.buttonWatchCountStatist.Click += new System.EventHandler(this.buttonWatchCountStatist_Click);
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(17, 623);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(70, 22);
+            this.label46.TabIndex = 3;
+            this.label46.Text = "Країна -";
             // 
-            // buttonGuarantee
+            // label47
             // 
-            this.buttonGuarantee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonGuarantee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonGuarantee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGuarantee.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonGuarantee.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonGuarantee.Location = new System.Drawing.Point(177, 61);
-            this.buttonGuarantee.Name = "buttonGuarantee";
-            this.buttonGuarantee.Size = new System.Drawing.Size(153, 75);
-            this.buttonGuarantee.TabIndex = 10;
-            this.buttonGuarantee.Text = "Звіт - \"надання гарантії\"";
-            this.buttonGuarantee.UseVisualStyleBackColor = false;
-            this.buttonGuarantee.Click += new System.EventHandler(this.buttonGuarantee_Click);
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(17, 812);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(61, 22);
+            this.label47.TabIndex = 8;
+            this.label47.Text = "Email -";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(17, 773);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(141, 22);
+            this.label48.TabIndex = 7;
+            this.label48.Text = "Номер телефону -";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(17, 740);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(129, 22);
+            this.label49.TabIndex = 6;
+            this.label49.Text = "Номер будинку -";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(17, 701);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(73, 22);
+            this.label50.TabIndex = 5;
+            this.label50.Text = "Вулиця -";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(17, 889);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(136, 22);
+            this.label51.TabIndex = 10;
+            this.label51.Text = "Умови платежу -";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(17, 850);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(139, 22);
+            this.label52.TabIndex = 9;
+            this.label52.Text = "Умови співпраці -";
+            // 
+            // payment_terms_label
+            // 
+            this.payment_terms_label.AutoSize = true;
+            this.payment_terms_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.payment_terms_label.Location = new System.Drawing.Point(185, 889);
+            this.payment_terms_label.Name = "payment_terms_label";
+            this.payment_terms_label.Size = new System.Drawing.Size(0, 22);
+            this.payment_terms_label.TabIndex = 20;
+            // 
+            // cooperation_terms_label
+            // 
+            this.cooperation_terms_label.AutoSize = true;
+            this.cooperation_terms_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cooperation_terms_label.Location = new System.Drawing.Point(185, 850);
+            this.cooperation_terms_label.Name = "cooperation_terms_label";
+            this.cooperation_terms_label.Size = new System.Drawing.Size(0, 22);
+            this.cooperation_terms_label.TabIndex = 19;
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.emailLabel.Location = new System.Drawing.Point(185, 812);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(0, 22);
+            this.emailLabel.TabIndex = 18;
+            // 
+            // PhoneNumLabel
+            // 
+            this.PhoneNumLabel.AutoSize = true;
+            this.PhoneNumLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PhoneNumLabel.Location = new System.Drawing.Point(185, 773);
+            this.PhoneNumLabel.Name = "PhoneNumLabel";
+            this.PhoneNumLabel.Size = new System.Drawing.Size(0, 22);
+            this.PhoneNumLabel.TabIndex = 17;
+            // 
+            // houseNumberLabel
+            // 
+            this.houseNumberLabel.AutoSize = true;
+            this.houseNumberLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.houseNumberLabel.Location = new System.Drawing.Point(185, 740);
+            this.houseNumberLabel.Name = "houseNumberLabel";
+            this.houseNumberLabel.Size = new System.Drawing.Size(0, 22);
+            this.houseNumberLabel.TabIndex = 16;
+            // 
+            // StreetLabel
+            // 
+            this.StreetLabel.AutoSize = true;
+            this.StreetLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.StreetLabel.Location = new System.Drawing.Point(185, 701);
+            this.StreetLabel.Name = "StreetLabel";
+            this.StreetLabel.Size = new System.Drawing.Size(0, 22);
+            this.StreetLabel.TabIndex = 15;
+            // 
+            // CityLabel
+            // 
+            this.CityLabel.AutoSize = true;
+            this.CityLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.CityLabel.Location = new System.Drawing.Point(185, 662);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(0, 22);
+            this.CityLabel.TabIndex = 14;
+            // 
+            // countryLabel
+            // 
+            this.countryLabel.AutoSize = true;
+            this.countryLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.countryLabel.Location = new System.Drawing.Point(185, 623);
+            this.countryLabel.Name = "countryLabel";
+            this.countryLabel.Size = new System.Drawing.Size(0, 22);
+            this.countryLabel.TabIndex = 13;
+            // 
+            // lastNameLabel
+            // 
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lastNameLabel.Location = new System.Drawing.Point(185, 590);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(0, 22);
+            this.lastNameLabel.TabIndex = 12;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.nameLabel.Location = new System.Drawing.Point(185, 551);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(0, 22);
+            this.nameLabel.TabIndex = 11;
+            // 
+            // supplierOrderBtn
+            // 
+            this.supplierOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.supplierOrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.supplierOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.supplierOrderBtn.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.supplierOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.supplierOrderBtn.Location = new System.Drawing.Point(21, 927);
+            this.supplierOrderBtn.Name = "supplierOrderBtn";
+            this.supplierOrderBtn.Size = new System.Drawing.Size(333, 60);
+            this.supplierOrderBtn.TabIndex = 21;
+            this.supplierOrderBtn.Text = "Замовити в цього постачальника";
+            this.supplierOrderBtn.UseVisualStyleBackColor = false;
+            this.supplierOrderBtn.Click += new System.EventHandler(this.supplierOrderBtn_Click);
+            // 
+            // textBoxSearchSupllier
+            // 
+            this.textBoxSearchSupllier.Location = new System.Drawing.Point(1230, 13);
+            this.textBoxSearchSupllier.Name = "textBoxSearchSupllier";
+            this.textBoxSearchSupllier.Size = new System.Drawing.Size(157, 29);
+            this.textBoxSearchSupllier.TabIndex = 23;
+            this.textBoxSearchSupllier.TextChanged += new System.EventHandler(this.textBoxSearchSupllier_TextChanged);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(32, 105);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(62, 22);
+            this.label53.TabIndex = 25;
+            this.label53.Text = "Місто ";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(32, 18);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(61, 22);
+            this.label54.TabIndex = 24;
+            this.label54.Text = "Країна";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(32, 285);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(131, 22);
+            this.label57.TabIndex = 27;
+            this.label57.Text = "Умови платежу ";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(33, 198);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(130, 22);
+            this.label58.TabIndex = 26;
+            this.label58.Text = "Умови співпраці";
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.comboBoxPayment_terms);
+            this.panel17.Controls.Add(this.comboBoxCooperation_terms);
+            this.panel17.Controls.Add(this.comboBoxCity);
+            this.panel17.Controls.Add(this.comboBoxCountry);
+            this.panel17.Controls.Add(this.label54);
+            this.panel17.Controls.Add(this.label57);
+            this.panel17.Controls.Add(this.label53);
+            this.panel17.Controls.Add(this.label58);
+            this.panel17.Location = new System.Drawing.Point(1194, 89);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(479, 377);
+            this.panel17.TabIndex = 28;
+            // 
+            // comboBoxCountry
+            // 
+            this.comboBoxCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCountry.FormattingEnabled = true;
+            this.comboBoxCountry.Items.AddRange(new object[] {
+            "Ukraine",
+            "Poland",
+            "default"});
+            this.comboBoxCountry.Location = new System.Drawing.Point(36, 54);
+            this.comboBoxCountry.Name = "comboBoxCountry";
+            this.comboBoxCountry.Size = new System.Drawing.Size(190, 30);
+            this.comboBoxCountry.TabIndex = 28;
+            // 
+            // comboBoxCity
+            // 
+            this.comboBoxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCity.FormattingEnabled = true;
+            this.comboBoxCity.Items.AddRange(new object[] {
+            "Kyiv",
+            "Lviv",
+            "Odesa",
+            "Dnipro",
+            "Kharkiv",
+            "Vinnytsia",
+            "Ivano-Frankivsk",
+            "Cherkasy",
+            "Zaporizhzhia",
+            "Rivne",
+            "Uzhhorod",
+            "Ternopil",
+            "Chernivtsi",
+            "Sumy",
+            "Lutsk",
+            "Kropyvnytskyi",
+            "Kherson",
+            "Mykolaiv",
+            "Chernihiv",
+            "default"});
+            this.comboBoxCity.Location = new System.Drawing.Point(36, 130);
+            this.comboBoxCity.Name = "comboBoxCity";
+            this.comboBoxCity.Size = new System.Drawing.Size(190, 30);
+            this.comboBoxCity.TabIndex = 29;
+            // 
+            // comboBoxCooperation_terms
+            // 
+            this.comboBoxCooperation_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCooperation_terms.FormattingEnabled = true;
+            this.comboBoxCooperation_terms.Items.AddRange(new object[] {
+            "Long-term",
+            "Exclusive ",
+            "Yearly Contract",
+            "Seasonal ",
+            "Flexible",
+            "default"});
+            this.comboBoxCooperation_terms.Location = new System.Drawing.Point(36, 223);
+            this.comboBoxCooperation_terms.Name = "comboBoxCooperation_terms";
+            this.comboBoxCooperation_terms.Size = new System.Drawing.Size(190, 30);
+            this.comboBoxCooperation_terms.TabIndex = 30;
+            // 
+            // comboBoxPayment_terms
+            // 
+            this.comboBoxPayment_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPayment_terms.FormattingEnabled = true;
+            this.comboBoxPayment_terms.Items.AddRange(new object[] {
+            "Bank Transfer",
+            "Cash on Delivery",
+            "Credit Card",
+            "default"});
+            this.comboBoxPayment_terms.Location = new System.Drawing.Point(37, 310);
+            this.comboBoxPayment_terms.Name = "comboBoxPayment_terms";
+            this.comboBoxPayment_terms.Size = new System.Drawing.Size(190, 30);
+            this.comboBoxPayment_terms.TabIndex = 31;
+            // 
+            // buttonSearchSup
+            // 
+            this.buttonSearchSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonSearchSup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearchSup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSearchSup.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonSearchSup.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonSearchSup.Location = new System.Drawing.Point(1270, 476);
+            this.buttonSearchSup.Name = "buttonSearchSup";
+            this.buttonSearchSup.Size = new System.Drawing.Size(333, 60);
+            this.buttonSearchSup.TabIndex = 29;
+            this.buttonSearchSup.Text = "Пошук";
+            this.buttonSearchSup.UseVisualStyleBackColor = false;
+            this.buttonSearchSup.Click += new System.EventHandler(this.buttonSearchSup_Click);
             // 
             // buttonEpos
             // 
@@ -2806,11 +3219,61 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1833, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(1833, 66);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 20);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(1393, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label_manageLogin
+            // 
+            this.label_manageLogin.AutoSize = true;
+            this.label_manageLogin.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_manageLogin.Location = new System.Drawing.Point(1645, 16);
+            this.label_manageLogin.Name = "label_manageLogin";
+            this.label_manageLogin.Size = new System.Drawing.Size(16, 22);
+            this.label_manageLogin.TabIndex = 20;
+            this.label_manageLogin.Text = "/";
+            // 
+            // label_manageLogin2
+            // 
+            this.label_manageLogin2.AutoSize = true;
+            this.label_manageLogin2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_manageLogin2.Location = new System.Drawing.Point(1645, 16);
+            this.label_manageLogin2.Name = "label_manageLogin2";
+            this.label_manageLogin2.Size = new System.Drawing.Size(16, 22);
+            this.label_manageLogin2.TabIndex = 21;
+            this.label_manageLogin2.Text = "/";
+            // 
+            // label_manageLogin3
+            // 
+            this.label_manageLogin3.AutoSize = true;
+            this.label_manageLogin3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_manageLogin3.Location = new System.Drawing.Point(1645, 16);
+            this.label_manageLogin3.Name = "label_manageLogin3";
+            this.label_manageLogin3.Size = new System.Drawing.Size(16, 22);
+            this.label_manageLogin3.TabIndex = 22;
+            this.label_manageLogin3.Text = "/";
+            // 
+            // label_manageLogin4
+            // 
+            this.label_manageLogin4.AutoSize = true;
+            this.label_manageLogin4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_manageLogin4.Location = new System.Drawing.Point(1645, 16);
+            this.label_manageLogin4.Name = "label_manageLogin4";
+            this.label_manageLogin4.Size = new System.Drawing.Size(16, 22);
+            this.label_manageLogin4.TabIndex = 30;
+            this.label_manageLogin4.Text = "/";
             // 
             // ManagerForm
             // 
@@ -2855,12 +3318,18 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3084,5 +3553,42 @@
         private System.Windows.Forms.Button buttonAvgPriceWatch;
         private System.Windows.Forms.Button buttonWatchCountStatist;
         private System.Windows.Forms.Button buttonGuarantee;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label payment_terms_label;
+        private System.Windows.Forms.Label cooperation_terms_label;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label PhoneNumLabel;
+        private System.Windows.Forms.Label houseNumberLabel;
+        private System.Windows.Forms.Label StreetLabel;
+        private System.Windows.Forms.Label CityLabel;
+        private System.Windows.Forms.Label countryLabel;
+        private System.Windows.Forms.Label lastNameLabel;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Button supplierOrderBtn;
+        private System.Windows.Forms.TextBox textBoxSearchSupllier;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.ComboBox comboBoxPayment_terms;
+        private System.Windows.Forms.ComboBox comboBoxCooperation_terms;
+        private System.Windows.Forms.ComboBox comboBoxCity;
+        private System.Windows.Forms.ComboBox comboBoxCountry;
+        private System.Windows.Forms.Button buttonSearchSup;
+        private System.Windows.Forms.Label label_manageLogin;
+        private System.Windows.Forms.Label label_manageLogin2;
+        private System.Windows.Forms.Label label_manageLogin3;
+        private System.Windows.Forms.Label label_manageLogin4;
     }
 }

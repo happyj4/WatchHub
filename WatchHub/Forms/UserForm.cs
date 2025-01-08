@@ -1369,6 +1369,14 @@ WHERE 1=1"; // Базова умова, яка завжди істинна
                     price, caseDiameter, caseColor, caseShape, waterResistance, dialColor,
                     glassType, indicationType, indicationView, description, gender, quantity);
 
+                string userLogin = labelUserName.Text;
+
+                // Видаляємо частину "Привіт, " і залишаємо лише логін
+                if (userLogin.StartsWith("Привіт, "))
+                {
+                    userLogin = userLogin.Replace("Привіт, ", "").Trim('"').TrimEnd('!');
+                }
+                orderForm.SetName(userLogin);
                 orderForm.ShowDialog(); // Показуємо форму
             }
         }
