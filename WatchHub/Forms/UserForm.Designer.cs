@@ -190,6 +190,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.refresh_btn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -1980,6 +1981,20 @@
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
+            // refresh_btn
+            // 
+            this.refresh_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.refresh_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.refresh_btn.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.refresh_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.refresh_btn.Location = new System.Drawing.Point(1591, 718);
+            this.refresh_btn.Name = "refresh_btn";
+            this.refresh_btn.Size = new System.Drawing.Size(153, 60);
+            this.refresh_btn.TabIndex = 22;
+            this.refresh_btn.Text = "Оновити";
+            this.refresh_btn.UseVisualStyleBackColor = false;
+            this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1987,6 +2002,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1859, 888);
+            this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
@@ -2208,5 +2224,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button refresh_btn;
     }
 }

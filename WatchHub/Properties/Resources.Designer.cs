@@ -143,6 +143,46 @@ namespace WatchHub.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4172394_goods_merchandise_stock_supply_vendibles_icon {
+            get {
+                object obj = ResourceManager.GetObject("4172394_goods_merchandise_stock_supply_vendibles_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7791667_necktie_businessman_suit_manager_employee_icon {
+            get {
+                object obj = ResourceManager.GetObject("7791667_necktie_businessman_suit_manager_employee_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7791667_necktie_businessman_suit_manager_employee_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("7791667_necktie_businessman_suit_manager_employee_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7791667_necktie_businessman_suit_manager_employee_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("7791667_necktie_businessman_suit_manager_employee_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9054423_bx_arrow_back_icon {
             get {
                 object obj = ResourceManager.GetObject("9054423_bx_arrow_back_icon", resourceCulture);

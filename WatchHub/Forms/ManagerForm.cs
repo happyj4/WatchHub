@@ -111,17 +111,23 @@ namespace WatchHub
 
         private void ManagerForm_Load(object sender, EventArgs e)
         {
+            InitializeDataGridViewUser();
+            InitializeDataGridViewOrder();
             CreateColumns();
+            CreateSuppliersColumns();
             RefreshDataGrid(dataGridView1);
-
+            LoadOrders(dataGridViewOrder);
             CreateColumnsForSuppliers();
             RefreshDataGrid(dataGridView2);
+           
+          
 
+            LoadUsers();
 
-            CreateSuppliersColumns();
-
-         
             RefreshSuppliersDataGrid(dataGridView2);
+
+            SetupDataGridView();
+            LoadManagers();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2069,16 +2075,762 @@ WHERE 1=1"; // Базова умова, яка завжди істинна
 
 
 
-  
+
+
+
+
+        private void SetupDataGridView()
+        {
+            dataGridView3.Columns.Add("manager_id", "ID");
+            dataGridView3.Columns.Add("first_name", "First Name");
+            dataGridView3.Columns.Add("last_name", "Last Name");
+            dataGridView3.Columns.Add("email", "Email");
+            dataGridView3.Columns.Add("phone_number", "Phone Number");
+            dataGridView3.Columns.Add("login", "Login");
+            dataGridView3.Columns.Add("password", "Password");
+
+            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView3.MultiSelect = false;
+            dataGridView3.AllowUserToAddRows = false;
+        }
+
+        private void LoadManagers()
+        {
+            dataGridView3.Rows.Clear();
+            string query = "SELECT * FROM manager";
+
+            try
+            {
+                dataBase.openConnection();
+                using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        dataGridView3.Rows.Add(
+                            reader.GetInt32(0), // manager_id
+                            reader.GetString(1), // first_name
+                            reader.GetString(2), // last_name
+                            reader.GetString(3), // email
+                            reader.GetString(4), // phone_number
+                            reader.GetString(5), // login
+                            reader.GetString(6)  // password
+                        );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading managers: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
 
 
 
 
 
-        private void tabPage4_Click(object sender, EventArgs e)
+
+
+
+
+      
+        private void buttonCheackSupply_Click(object sender, EventArgs e)
+        {
+            CheackSupply cheackSupply = new CheackSupply();
+            cheackSupply.ShowDialog();
+        }
+
+        private void buttonCheckSupplier_Click(object sender, EventArgs e)
+        {
+             CheckSuppliers checkSuppliers = new CheckSuppliers();
+            checkSuppliers.ShowDialog();
+        }
+
+        
+
+        private void buttonChangeManager_Click(object sender, EventArgs e)
+        {
+            if (dataGridView3.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView3.SelectedRows[0];
+                int managerId = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+                try
+                {
+                    dataBase.openConnection();
+                    string query = "UPDATE manager SET first_name = @first_name, last_name = @last_name, email = @email, " +
+                                   "phone_number = @phone_number, login = @login, password = @password WHERE manager_id = @manager_id";
+
+                    using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                    {
+                        command.Parameters.AddWithValue("@manager_id", managerId);
+                        command.Parameters.AddWithValue("@first_name", textBox_ManagerName.Text);
+                        command.Parameters.AddWithValue("@last_name", textBoxManagerLastName.Text);
+                        command.Parameters.AddWithValue("@email", textBoxEmail.Text);
+                        command.Parameters.AddWithValue("@phone_number", textBox_managerPhoneNumber.Text);
+                        command.Parameters.AddWithValue("@login", textBoxManagerLogin.Text);
+                        command.Parameters.AddWithValue("@password", textBoxManagerPassword.Text);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Інформацію оновлено!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadManagers();
+                    ClearFields();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Помилка: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    dataBase.closeConnection();
+                }
+            }
+        }
+
+        private void buttonDeleteManager_Click(object sender, EventArgs e)
+        {
+            if (dataGridView3.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView3.SelectedRows[0];
+                int managerId = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+                var confirmResult = MessageBox.Show("Ви точно бажаєте видалити цбого менеджера?",
+                                                     "Підтвердити видалення",
+                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        dataBase.openConnection();
+                        string query = "DELETE FROM manager WHERE manager_id = @manager_id";
+
+                        using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                        {
+                            command.Parameters.AddWithValue("@manager_id", managerId);
+                            command.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Mенеджера видалено!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadManagers();
+                        ClearFieldsManager();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error deleting manager: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        dataBase.closeConnection();
+                    }
+                }
+            }
+
+        }
+
+        private void ClearFieldsManager()
+        {
+            textBoxManagerID.Clear();
+            textBox_ManagerName.Clear();
+            textBoxManagerLastName.Clear();
+            textBoxEmail.Clear();
+            textBox_managerPhoneNumber.Clear();
+            textBoxManagerLogin.Clear();
+            textBoxManagerPassword.Clear();
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = dataGridView3.Rows[e.RowIndex];
+                textBoxManagerID.Text = row.Cells[0].Value.ToString();
+                textBox_ManagerName.Text = row.Cells[1].Value.ToString();
+                textBoxManagerLastName.Text = row.Cells[2].Value.ToString();
+                textBoxEmail.Text = row.Cells[3].Value.ToString();
+                textBox_managerPhoneNumber.Text = row.Cells[4].Value.ToString();
+                textBoxManagerLogin.Text = row.Cells[5].Value.ToString();
+                textBoxManagerPassword.Text = row.Cells[6].Value.ToString();
+            }
+        }
+
+        private void buttonAddNewManager_Click(object sender, EventArgs e)
+        {
+            AddNewManager addNewManager = new AddNewManager();
+            addNewManager.ShowDialog(); 
+        }
+
+        private void buttonRefreshDataManager_Click(object sender, EventArgs e)
+        {
+            
+                LoadManagers();
+            ClearFieldsManager();
+            
+        }
+
+        private void SearchManagers(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            // Пошуковий запит для таблиці managers
+            string searchString = $"SELECT * FROM manager WHERE CONCAT(first_name, last_name, login, email, phone_number) LIKE @search";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(searchString, dataBase.getConnection());
+                command.Parameters.AddWithValue("@search", $"%{textBoxSearchManager.Text}%");
+
+                dataBase.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Зчитуємо дані рядок за рядком
+                while (reader.Read())
+                {
+                    ReadSingleRowManager(dgw, reader);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка під час пошуку: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+
+        // Обробник події для текстового поля пошуку менеджерів
+        private void textBoxSearchManager_TextChanged(object sender, EventArgs e)
+        {
+            SearchManagers(dataGridView3);
+        }
+
+        // Додавання одного рядка до DataGridView для таблиці managers
+        private void ReadSingleRowManager(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(
+                record.GetInt32(0),        // manager_id
+                record.GetString(1),       // first_name
+                record.GetString(2),       // last_name
+                record.GetString(3),       // login
+                record.GetString(4),       // password (за потреби, можна прибрати)
+                record.GetString(5),       // email
+                record.GetString(6)        // phone_number
+            );
+        }
+
+
+        private void LoadUsers()
+        {
+            try
+            {
+                // Очищення рядків DataGridView
+                dataGridViewUsers.Rows.Clear();
+
+                // SQL-запит для отримання даних
+                string query = "SELECT user_id, first_name, last_name, email, city, country, street, house_number, password, login, phone_number FROM users";
+                using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                {
+                    // Відкриття з'єднання
+                    dataBase.openConnection();
+
+                    // Читання даних із бази
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            dataGridViewUsers.Rows.Add(
+                                reader["user_id"],
+                                reader["first_name"],
+                                reader["last_name"],
+                                reader["email"],
+                                reader["city"],
+                                reader["country"],
+                                reader["street"],
+                                reader["house_number"],
+                                reader["password"],
+                                reader["login"],
+                                reader["phone_number"]
+                            );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка завантаження користувачів: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Закриття з'єднання
+                dataBase.closeConnection();
+            }
+        }
+
+
+        private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Переконаємось, що натискання було в межах рядків
+            {
+                DataGridViewRow row = dataGridViewUsers.Rows[e.RowIndex];
+
+                // Заповнення міток інформацією
+                label_user_id.Text = row.Cells[0].Value.ToString();          // user_id
+                label_userName.Text = row.Cells[1].Value.ToString();         // first_name
+                label_surnameUser.Text = row.Cells[2].Value.ToString();      // last_name
+                label_userEmail.Text = row.Cells[3].Value.ToString();        // email
+                labelCityUser.Text = row.Cells[4].Value.ToString();          // city
+                label_countryUser.Text = row.Cells[5].Value.ToString();      // country
+                label_streetUser.Text = row.Cells[6].Value.ToString();       // street
+                label_houseNumberUser.Text = row.Cells[7].Value.ToString();  // house_number
+                label_loginUser.Text = row.Cells[9].Value.ToString();        // login
+                label_phoneNumberUser.Text = row.Cells[10].Value.ToString(); // phone_number
+            }
+        }
+
+        private void InitializeDataGridViewUser()
+        {
+            dataGridViewUsers.Columns.Clear();
+
+            dataGridViewUsers.Columns.Add("user_id", "ID");
+            dataGridViewUsers.Columns.Add("first_name", "Ім'я");
+            dataGridViewUsers.Columns.Add("last_name", "Прізвище");
+            dataGridViewUsers.Columns.Add("email", "Email");
+            dataGridViewUsers.Columns.Add("city", "Місто");
+            dataGridViewUsers.Columns.Add("country", "Країна");
+            dataGridViewUsers.Columns.Add("street", "Вулиця");
+            dataGridViewUsers.Columns.Add("house_number", "№ будинку");
+            dataGridViewUsers.Columns.Add("password", "Пароль");
+            dataGridViewUsers.Columns.Add("login", "Логін");
+            dataGridViewUsers.Columns.Add("phone_number", "Телефон");
+
+            dataGridViewUsers.ReadOnly = true;
+            dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Завантаження даних
+            LoadUsers();
+        }
+
+        private void buttonDeleteUsers_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(label_user_id.Text))
+            {
+                int userId;
+
+                // Перевіряємо, чи значення в `label_user_id` можна конвертувати у число
+                if (int.TryParse(label_user_id.Text, out userId))
+                {
+                    var confirmResult = MessageBox.Show(
+                        "Ви впевнені, що хочете видалити цього користувача?",
+                        "Підтвердження видалення",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            dataBase.openConnection();
+
+                            string query = "DELETE FROM users WHERE user_id = @user_id";
+
+                            using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                            {
+                                command.Parameters.AddWithValue("@user_id", userId);
+                                int rowsAffected = command.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Користувача успішно видалено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Користувача не знайдено у базі даних.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+
+                            // Оновлюємо таблицю після видалення
+                            LoadUsers();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Помилка видалення: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            dataBase.closeConnection();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Некоректний ID користувача.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Будь ласка, оберіть користувача для видалення.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ClearUserFields()
+        {
+            label_user_id.Text = "";
+            label_userName.Text = "";
+            label_surnameUser.Text = "";
+            label_loginUser.Text = "";
+            labelCityUser.Text = "";
+            label_countryUser.Text = "";
+            label_streetUser.Text = "";
+            label_houseNumberUser.Text = "";
+            label_phoneNumberUser.Text = "";
+            label_userEmail.Text = "";
+        }
+
+
+        private void SearchUsers(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            // Пошуковий запит для таблиці users
+            string searchString = $"SELECT * FROM users WHERE CONCAT(first_name, last_name, email, city, country, street, house_number, login, phone_number) LIKE @search";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(searchString, dataBase.getConnection());
+                command.Parameters.AddWithValue("@search", $"%{textBoxSearchUser.Text}%");
+
+                dataBase.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Зчитуємо дані рядок за рядком
+                while (reader.Read())
+                {
+                    ReadSingleRowUsers(dgw, reader);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка під час пошуку: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+
+        // Обробник події для текстового поля пошуку
+        private void textBoxSearchUser_TextChanged(object sender, EventArgs e)
+        {
+            SearchUsers(dataGridViewUsers);
+        }
+
+        // Додавання одного рядка до DataGridView для таблиці users
+        private void ReadSingleRowUsers(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(
+                record.GetInt32(0),        // user_id
+                record.GetString(1),       // first_name
+                record.GetString(2),       // last_name
+                record.GetString(3),       // email
+                record.GetString(4),       // city
+                record.GetString(5),       // country
+                record.GetString(6),       // street
+                record.GetString(7),       // house_number
+                record.GetString(8),       // password
+                record.GetString(9),       // login
+                record.GetString(10)       // phone_number
+            );
+        }
+
+        private void label_houseNumberUser_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void buttonChangeOrder_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_order_id.Text) ||
+                string.IsNullOrWhiteSpace(textBox_totalAmount.Text) ||
+                string.IsNullOrWhiteSpace(textBox_idUser.Text) ||
+                string.IsNullOrWhiteSpace(textBox_managerId.Text))
+            {
+                MessageBox.Show("Будь ласка, заповніть всі поля перед редагуванням.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int orderId = Convert.ToInt32(textBox_order_id.Text);
+                DateTime orderDate = dateTimePickerOrder.Value; // Використання DateTimePicker для отримання дати
+                decimal totalAmount = Convert.ToDecimal(textBox_totalAmount.Text);
+                int userId = Convert.ToInt32(textBox_idUser.Text);
+                int managerId = Convert.ToInt32(textBox_managerId.Text);
+
+                // Перевірка на існування `id_user` в таблиці `users`
+                if (!CheckIfIdExists("users", "user_id", userId))
+                {
+                    MessageBox.Show("Вказаний id користувача не існує у таблиці users.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Перевірка на існування `id_manager` в таблиці `managers`
+                if (!CheckIfIdExists("managers", "manager_id", managerId))
+                {
+                    MessageBox.Show("Вказаний id менеджера не існує у таблиці managers.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Перевірка на існування `order_id` в таблиці `orders`
+                if (!CheckIfIdExists("orders", "order_id", orderId))
+                {
+                    MessageBox.Show("Вказаний id замовлення не існує у таблиці orders.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string query = "UPDATE orders SET order_date = @order_date, total_amount = @total_amount, id_user = @id_user, id_manager = @id_manager WHERE order_id = @order_id";
+
+                using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                {
+                    command.Parameters.AddWithValue("@order_id", orderId);
+                    command.Parameters.AddWithValue("@order_date", orderDate);
+                    command.Parameters.AddWithValue("@total_amount", totalAmount);
+                    command.Parameters.AddWithValue("@id_user", userId);
+                    command.Parameters.AddWithValue("@id_manager", managerId);
+
+                    dataBase.openConnection();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Замовлення успішно оновлено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadOrders(dataGridViewOrder); // Перезавантажити дані в таблиці
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не вдалося знайти замовлення для оновлення.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка під час оновлення замовлення: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+
+      
+        private bool CheckIfIdExists(string tableName, string columnName, int id)
+        {
+            string query = $"SELECT COUNT(1) FROM {tableName} WHERE {columnName} = @id";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    dataBase.openConnection();
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка перевірки ID: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+
+
+       
+
+        private void dataGridViewOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Перевіряємо, що натискання було на рядок, а не на заголовок
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridViewOrder.Rows.Count)
+            {
+                // Отримуємо вибраний рядок
+                DataGridViewRow row = dataGridViewOrder.Rows[e.RowIndex];
+
+                // Заповнюємо текстові поля значеннями з відповідних колонок
+                textBox_order_id.Text = row.Cells["order_id"].Value.ToString();
+                dateTimePickerOrder.Value = Convert.ToDateTime(row.Cells["order_date"].Value); // Використання DateTimePicker
+                textBox_totalAmount.Text = row.Cells["total_amount"].Value.ToString();
+                textBox_idUser.Text = row.Cells["id_user"].Value.ToString();
+                textBox_managerId.Text = row.Cells["id_manager"].Value.ToString();
+            }
+        }
+
+
+        private void buttonDeleteOrder_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_order_id.Text))
+            {
+                MessageBox.Show("Будь ласка, введіть ID замовлення для видалення.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int orderId = Convert.ToInt32(textBox_order_id.Text);
+
+                var confirmResult = MessageBox.Show(
+                    "Ви впевнені, що хочете видалити це замовлення?",
+                    "Підтвердження видалення",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    string query = "DELETE FROM orders WHERE order_id = @order_id";
+
+                    using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                    {
+                        command.Parameters.AddWithValue("@order_id", orderId);
+
+                        dataBase.openConnection();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Замовлення успішно видалено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadOrders(dataGridViewOrder); // Перезавантажити дані в таблиці
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не вдалося знайти замовлення для видалення.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка під час видалення замовлення: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+
+        private void LoadOrders(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            string query = "SELECT order_id, order_date, total_amount, id_user, id_manager FROM orders";
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, dataBase.getConnection()))
+                {
+                    dataBase.openConnection();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            dgw.Rows.Add(
+                                reader["order_id"],
+                                reader["order_date"],
+                                reader["total_amount"],
+                                reader["id_user"],
+                                reader["id_manager"]
+                            );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка завантаження замовлень: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+        private void InitializeDataGridViewOrder()
+        {
+            dataGridViewOrder.Columns.Clear();
+
+            dataGridViewOrder.Columns.Add("order_id", "ID Замовлення");
+            dataGridViewOrder.Columns.Add("order_date", "Дата Замовлення");
+            dataGridViewOrder.Columns.Add("total_amount", "Сума");
+            dataGridViewOrder.Columns.Add("id_user", "ID Користувача");
+            dataGridViewOrder.Columns.Add("id_manager", "ID Менеджера");
+
+            dataGridViewOrder.ReadOnly = true;
+            dataGridViewOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void SearchOrders(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            // Пошуковий запит для таблиці orders
+            string searchString = $"SELECT * FROM orders WHERE CONCAT(order_id, order_date, total_amount, id_user, id_manager) LIKE @search";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(searchString, dataBase.getConnection());
+                command.Parameters.AddWithValue("@search", $"%{textBoxSearchOrder.Text}%");
+
+                dataBase.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Зчитуємо дані рядок за рядком
+                while (reader.Read())
+                {
+                    ReadSingleRowOrders(dgw, reader);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка під час пошуку: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+
+        // Обробник події для текстового поля пошуку
+        private void textBoxSearchOrder_TextChanged(object sender, EventArgs e)
+        {
+            SearchOrders(dataGridViewOrder);
+        }
+
+        // Додавання одного рядка до DataGridView
+        private void ReadSingleRowOrders(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(
+                record.GetInt32(0),        // order_id
+                record.GetDateTime(1).ToString("yyyy-MM-dd"), // order_date
+                record.GetDecimal(2),      // total_amount
+                record.GetInt32(3),        // id_user
+                record.GetInt32(4)         // id_manager
+            );
+        }
+
     }
 
 }

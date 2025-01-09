@@ -170,6 +170,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddNewManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewManager.Designer.cs">
+      <DependentUpon>AddNewManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewSupplier.Designer.cs">
+      <DependentUpon>AddNewSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddSupply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSupply.Designer.cs">
+      <DependentUpon>AddSupply.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Add_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +195,18 @@
       <DependentUpon>Add_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="Forms\CheackSupply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheackSupply.Designer.cs">
+      <DependentUpon>CheackSupply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CheckSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheckSuppliers.Designer.cs">
+      <DependentUpon>CheckSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClientOrderZvit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,8 +275,23 @@
     <Compile Include="Forms\UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AddNewManager.resx">
+      <DependentUpon>AddNewManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewSupplier.resx">
+      <DependentUpon>AddNewSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSupply.resx">
+      <DependentUpon>AddSupply.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Add_Form.resx">
       <DependentUpon>Add_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheackSupply.resx">
+      <DependentUpon>CheackSupply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheckSuppliers.resx">
+      <DependentUpon>CheckSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientOrderZvit.resx">
       <DependentUpon>ClientOrderZvit.cs</DependentUpon>
@@ -400,6 +445,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\172525_plus_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4172394_goods_merchandise_stock_supply_vendibles_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7791667_necktie_businessman_suit_manager_employee_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7791667_necktie_businessman_suit_manager_employee_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7791667_necktie_businessman_suit_manager_employee_icon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

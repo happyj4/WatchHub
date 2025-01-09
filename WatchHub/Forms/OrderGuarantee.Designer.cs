@@ -57,7 +57,7 @@
             this.buttonCreateGuarantZvit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCreateGuarantZvit.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
             this.buttonCreateGuarantZvit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonCreateGuarantZvit.Location = new System.Drawing.Point(68, 224);
+            this.buttonCreateGuarantZvit.Location = new System.Drawing.Point(121, 223);
             this.buttonCreateGuarantZvit.Name = "buttonCreateGuarantZvit";
             this.buttonCreateGuarantZvit.Size = new System.Drawing.Size(153, 60);
             this.buttonCreateGuarantZvit.TabIndex = 11;

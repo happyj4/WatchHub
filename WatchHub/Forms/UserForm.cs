@@ -1419,10 +1419,55 @@ WHERE 1=1"; // Базова умова, яка завжди істинна
 
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetString(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetString(4),
-             record.GetString(5), record.GetDecimal(6), record.GetDouble(7),
-                 record.GetString(8), record.GetString(9), record.GetString(10), record.GetString(11), record.GetString(12),
-                record.GetString(13), record.GetString(14), record.GetInt32(15), record.GetString(16), record.GetString(17), RowState.ModifiedNew);
+            dgw.Rows.Add(
+                record.GetString(0), // brand
+                record.GetString(1), // title
+                record.GetString(2), // watch_version
+                record.GetString(3), // mechanism_type
+                record.GetString(4), // housing_material
+                record.GetString(5), // belt_material
+                record.GetDecimal(6).ToString("F2"), // price (перетворюємо decimal у рядок із двома знаками після коми)
+                record.GetDouble(7).ToString("F2"), // case_diameter
+                record.GetString(8), // case_color
+                record.GetString(9), // case_shape
+                record.GetString(10), // water_resistance
+                record.GetString(11), // dial_color
+                record.GetString(12), // glass_type
+                record.GetString(13), // indication_type
+                record.GetString(14), // indication_view
+                record.GetInt32(15).ToString(), // stock_quantity (перетворюємо int у рядок)
+                record.GetString(16), // description
+                record.GetString(17), // gender
+                RowState.ModifiedNew // Row state
+            );
         }
+
+        private void refresh_btn_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(dataGridView1);
+        }
+
+        private void RefreshDataGrid(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            string queryString = $"SELECT brand, title, watch_version, mechanism_type, housing_material,belt_material, price, case_diameter, case_color, case_shape, water_resistance, dial_color, glass_type, indication_type, indication_view, stock_quantity, description, gender FROM watch";
+
+            SqlCommand command = new SqlCommand(queryString, dataBase.getConnection());
+
+            dataBase.openConnection();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSingleRow(dgw, reader);
+            }
+            reader.Close();
+        }
+
+      
+
+
     }
 }

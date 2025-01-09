@@ -556,6 +556,51 @@ VALUES (@supplyDate, @supplyVolume, @supplyPrice, @supplyTerms, @supplierId, @wa
         
         }
 
+        private void refresh_btn_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(dataGridView1);
+            ClearFields();
+        }
+
+         private void RefreshDataGrid(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            string queryString = $"select * from watch";
+
+            SqlCommand command = new SqlCommand(queryString, dataBase.getConnection());
+
+            dataBase.openConnection();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSingleRow(dgw, reader);
+            }
+            reader.Close();
+        }
+
+        private void ReadSingleRow(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetString(4), record.GetString(5),
+             record.GetString(6), record.GetDecimal(7), record.GetDouble(8),
+                 record.GetString(9), record.GetString(10), record.GetString(11), record.GetString(12), record.GetString(13),
+                record.GetString(14), record.GetString(15), record.GetInt32(16), record.GetString(17), record.GetString(18), RowState.ModifiedNew);
+        }
+
+
+        private void ClearFields()
+        {
+
+
+
+            label_id.Text = "";
+            label_title.Text = "";
+            label_brand.Text = "";
+            label_price.Text = "";
+            label_quantity.Text = "";
+        }
     }
 
 }

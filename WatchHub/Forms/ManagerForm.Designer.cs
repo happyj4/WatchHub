@@ -31,6 +31,7 @@
             System.Windows.Forms.TabControl tabControl1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label_manageLogin = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
             this.buttonFindByPrice = new System.Windows.Forms.Button();
@@ -219,28 +220,23 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.refresh_btn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.buttonGuarantee = new System.Windows.Forms.Button();
-            this.buttonWatchCountStatist = new System.Windows.Forms.Button();
-            this.buttonAvgPriceWatch = new System.Windows.Forms.Button();
-            this.buttonOrdersSum = new System.Windows.Forms.Button();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.buttonTop10watch = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonClientOrderZvit = new System.Windows.Forms.Button();
+            this.label_manageLogin2 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
+            this.buttonCheckSupplier = new System.Windows.Forms.Button();
+            this.buttonCheackSupply = new System.Windows.Forms.Button();
+            this.label_manageLogin4 = new System.Windows.Forms.Label();
+            this.buttonSearchSup = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.comboBoxPayment_terms = new System.Windows.Forms.ComboBox();
+            this.comboBoxCooperation_terms = new System.Windows.Forms.ComboBox();
+            this.comboBoxCity = new System.Windows.Forms.ComboBox();
+            this.comboBoxCountry = new System.Windows.Forms.ComboBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBoxSearchSupllier = new System.Windows.Forms.TextBox();
+            this.supplierOrderBtn = new System.Windows.Forms.Button();
             this.payment_terms_label = new System.Windows.Forms.Label();
             this.cooperation_terms_label = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
@@ -251,18 +247,50 @@
             this.countryLabel = new System.Windows.Forms.Label();
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.supplierOrderBtn = new System.Windows.Forms.Button();
-            this.textBoxSearchSupllier = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.comboBoxCountry = new System.Windows.Forms.ComboBox();
-            this.comboBoxCity = new System.Windows.Forms.ComboBox();
-            this.comboBoxCooperation_terms = new System.Windows.Forms.ComboBox();
-            this.comboBoxPayment_terms = new System.Windows.Forms.ComboBox();
-            this.buttonSearchSup = new System.Windows.Forms.Button();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label_manageLogin3 = new System.Windows.Forms.Label();
+            this.buttonGuarantee = new System.Windows.Forms.Button();
+            this.buttonWatchCountStatist = new System.Windows.Forms.Button();
+            this.buttonAvgPriceWatch = new System.Windows.Forms.Button();
+            this.buttonOrdersSum = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.buttonTop10watch = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonClientOrderZvit = new System.Windows.Forms.Button();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox_ManagerName = new System.Windows.Forms.TextBox();
+            this.textBox_managerPhoneNumber = new System.Windows.Forms.TextBox();
+            this.textBoxManagerPassword = new System.Windows.Forms.TextBox();
+            this.textBoxManagerLogin = new System.Windows.Forms.TextBox();
+            this.textBoxManagerLastName = new System.Windows.Forms.TextBox();
+            this.textBoxManagerID = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.buttonChangeManager = new System.Windows.Forms.Button();
+            this.buttonDeleteManager = new System.Windows.Forms.Button();
+            this.buttonAddNewManager = new System.Windows.Forms.Button();
+            this.buttonRefreshDataManager = new System.Windows.Forms.Button();
+            this.textBoxSearchManager = new System.Windows.Forms.TextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.buttonEpos = new System.Windows.Forms.Button();
             this.buttonCertina = new System.Windows.Forms.Button();
             this.buttonBreitling = new System.Windows.Forms.Button();
@@ -280,10 +308,50 @@
             this.buttonWomen = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label_manageLogin = new System.Windows.Forms.Label();
-            this.label_manageLogin2 = new System.Windows.Forms.Label();
-            this.label_manageLogin3 = new System.Windows.Forms.Label();
-            this.label_manageLogin4 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
+            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.textBoxSearchUser = new System.Windows.Forms.TextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.textBoxSearchOrder = new System.Windows.Forms.TextBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label_loginUser = new System.Windows.Forms.Label();
+            this.labelCityUser = new System.Windows.Forms.Label();
+            this.label_userEmail = new System.Windows.Forms.Label();
+            this.label_phoneNumberUser = new System.Windows.Forms.Label();
+            this.label_houseNumberUser = new System.Windows.Forms.Label();
+            this.label_streetUser = new System.Windows.Forms.Label();
+            this.label_surnameUser = new System.Windows.Forms.Label();
+            this.label_countryUser = new System.Windows.Forms.Label();
+            this.label_userName = new System.Windows.Forms.Label();
+            this.label_user_id = new System.Windows.Forms.Label();
+            this.buttonDeleteUsers = new System.Windows.Forms.Button();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.textBox_order_id = new System.Windows.Forms.TextBox();
+            this.textBox_totalAmount = new System.Windows.Forms.TextBox();
+            this.textBox_idUser = new System.Windows.Forms.TextBox();
+            this.textBox_managerId = new System.Windows.Forms.TextBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.buttonChangeOrder = new System.Windows.Forms.Button();
+            this.buttonDeleteOrder = new System.Windows.Forms.Button();
+            this.dateTimePickerOrder = new System.Windows.Forms.DateTimePicker();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -304,21 +372,31 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(this.tabPage1);
             tabControl1.Controls.Add(this.tabPage2);
-            tabControl1.Controls.Add(this.tabPage3);
             tabControl1.Controls.Add(this.tabPage4);
+            tabControl1.Controls.Add(this.tabPage5);
             tabControl1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             tabControl1.Location = new System.Drawing.Point(2, -6);
             tabControl1.Name = "tabControl1";
@@ -345,6 +423,16 @@
             this.tabPage1.Size = new System.Drawing.Size(1882, 1000);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Управління товарами";
+            // 
+            // label_manageLogin
+            // 
+            this.label_manageLogin.AutoSize = true;
+            this.label_manageLogin.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_manageLogin.Location = new System.Drawing.Point(1645, 16);
+            this.label_manageLogin.Name = "label_manageLogin";
+            this.label_manageLogin.Size = new System.Drawing.Size(16, 22);
+            this.label_manageLogin.TabIndex = 20;
+            this.label_manageLogin.Text = "/";
             // 
             // panel4
             // 
@@ -2389,11 +2477,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 15);
+            this.label2.Location = new System.Drawing.Point(138, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 22);
+            this.label2.Size = new System.Drawing.Size(39, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "ID";
+            this.label2.Text = "ID -";
             // 
             // label1
             // 
@@ -2501,6 +2589,45 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage2.Controls.Add(this.dateTimePickerOrder);
+            this.tabPage2.Controls.Add(this.label78);
+            this.tabPage2.Controls.Add(this.panel19);
+            this.tabPage2.Controls.Add(this.textBox_managerId);
+            this.tabPage2.Controls.Add(this.textBox_totalAmount);
+            this.tabPage2.Controls.Add(this.textBox_idUser);
+            this.tabPage2.Controls.Add(this.textBox_order_id);
+            this.tabPage2.Controls.Add(this.label75);
+            this.tabPage2.Controls.Add(this.label76);
+            this.tabPage2.Controls.Add(this.label77);
+            this.tabPage2.Controls.Add(this.label79);
+            this.tabPage2.Controls.Add(this.label80);
+            this.tabPage2.Controls.Add(this.buttonDeleteUsers);
+            this.tabPage2.Controls.Add(this.label_loginUser);
+            this.tabPage2.Controls.Add(this.labelCityUser);
+            this.tabPage2.Controls.Add(this.label_userEmail);
+            this.tabPage2.Controls.Add(this.label_phoneNumberUser);
+            this.tabPage2.Controls.Add(this.label_houseNumberUser);
+            this.tabPage2.Controls.Add(this.label_streetUser);
+            this.tabPage2.Controls.Add(this.label_surnameUser);
+            this.tabPage2.Controls.Add(this.label_countryUser);
+            this.tabPage2.Controls.Add(this.label_userName);
+            this.tabPage2.Controls.Add(this.label_user_id);
+            this.tabPage2.Controls.Add(this.label55);
+            this.tabPage2.Controls.Add(this.label56);
+            this.tabPage2.Controls.Add(this.label61);
+            this.tabPage2.Controls.Add(this.label68);
+            this.tabPage2.Controls.Add(this.label69);
+            this.tabPage2.Controls.Add(this.label70);
+            this.tabPage2.Controls.Add(this.label71);
+            this.tabPage2.Controls.Add(this.label72);
+            this.tabPage2.Controls.Add(this.label73);
+            this.tabPage2.Controls.Add(this.label74);
+            this.tabPage2.Controls.Add(this.textBoxSearchOrder);
+            this.tabPage2.Controls.Add(this.pictureBox7);
+            this.tabPage2.Controls.Add(this.textBoxSearchUser);
+            this.tabPage2.Controls.Add(this.pictureBox6);
+            this.tabPage2.Controls.Add(this.dataGridViewUsers);
+            this.tabPage2.Controls.Add(this.dataGridViewOrder);
             this.tabPage2.Controls.Add(this.label_manageLogin2);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
@@ -2509,151 +2636,25 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Робота з клієнтами";
             // 
-            // tabPage3
+            // label_manageLogin2
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
-            this.tabPage3.Controls.Add(this.label_manageLogin3);
-            this.tabPage3.Controls.Add(this.buttonGuarantee);
-            this.tabPage3.Controls.Add(this.buttonWatchCountStatist);
-            this.tabPage3.Controls.Add(this.buttonAvgPriceWatch);
-            this.tabPage3.Controls.Add(this.buttonOrdersSum);
-            this.tabPage3.Controls.Add(this.label42);
-            this.tabPage3.Controls.Add(this.label21);
-            this.tabPage3.Controls.Add(this.buttonTop10watch);
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1882, 1000);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Статистика та звітності";
-            // 
-            // buttonGuarantee
-            // 
-            this.buttonGuarantee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonGuarantee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonGuarantee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGuarantee.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonGuarantee.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonGuarantee.Location = new System.Drawing.Point(177, 61);
-            this.buttonGuarantee.Name = "buttonGuarantee";
-            this.buttonGuarantee.Size = new System.Drawing.Size(153, 75);
-            this.buttonGuarantee.TabIndex = 10;
-            this.buttonGuarantee.Text = "Звіт - \"надання гарантії\"";
-            this.buttonGuarantee.UseVisualStyleBackColor = false;
-            this.buttonGuarantee.Click += new System.EventHandler(this.buttonGuarantee_Click);
-            // 
-            // buttonWatchCountStatist
-            // 
-            this.buttonWatchCountStatist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonWatchCountStatist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonWatchCountStatist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonWatchCountStatist.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonWatchCountStatist.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonWatchCountStatist.Location = new System.Drawing.Point(1042, 154);
-            this.buttonWatchCountStatist.Name = "buttonWatchCountStatist";
-            this.buttonWatchCountStatist.Size = new System.Drawing.Size(153, 75);
-            this.buttonWatchCountStatist.TabIndex = 9;
-            this.buttonWatchCountStatist.Text = "\"Кількість товару в наявності\"";
-            this.buttonWatchCountStatist.UseVisualStyleBackColor = false;
-            this.buttonWatchCountStatist.Click += new System.EventHandler(this.buttonWatchCountStatist_Click);
-            // 
-            // buttonAvgPriceWatch
-            // 
-            this.buttonAvgPriceWatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonAvgPriceWatch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAvgPriceWatch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAvgPriceWatch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonAvgPriceWatch.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonAvgPriceWatch.Location = new System.Drawing.Point(873, 154);
-            this.buttonAvgPriceWatch.Name = "buttonAvgPriceWatch";
-            this.buttonAvgPriceWatch.Size = new System.Drawing.Size(153, 75);
-            this.buttonAvgPriceWatch.TabIndex = 8;
-            this.buttonAvgPriceWatch.Text = "\"Середня ціна за годинник\"";
-            this.buttonAvgPriceWatch.UseVisualStyleBackColor = false;
-            this.buttonAvgPriceWatch.Click += new System.EventHandler(this.buttonAvgPriceWatch_Click);
-            // 
-            // buttonOrdersSum
-            // 
-            this.buttonOrdersSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonOrdersSum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOrdersSum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonOrdersSum.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonOrdersSum.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonOrdersSum.Location = new System.Drawing.Point(1041, 61);
-            this.buttonOrdersSum.Name = "buttonOrdersSum";
-            this.buttonOrdersSum.Size = new System.Drawing.Size(153, 75);
-            this.buttonOrdersSum.TabIndex = 7;
-            this.buttonOrdersSum.Text = "\"Сума прибутку за замовлення\"";
-            this.buttonOrdersSum.UseVisualStyleBackColor = false;
-            this.buttonOrdersSum.Click += new System.EventHandler(this.buttonOrdersSum_Click);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label42.Location = new System.Drawing.Point(868, 18);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(190, 28);
-            this.label42.TabIndex = 6;
-            this.label42.Text = "СТАТИСТИКА";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(6, 18);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(90, 28);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "ЗВІТИ";
-            // 
-            // buttonTop10watch
-            // 
-            this.buttonTop10watch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonTop10watch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonTop10watch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonTop10watch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonTop10watch.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonTop10watch.Location = new System.Drawing.Point(873, 61);
-            this.buttonTop10watch.Name = "buttonTop10watch";
-            this.buttonTop10watch.Size = new System.Drawing.Size(153, 75);
-            this.buttonTop10watch.TabIndex = 2;
-            this.buttonTop10watch.Text = "\"ТОП-10 годинників за продажою\"";
-            this.buttonTop10watch.UseVisualStyleBackColor = false;
-            this.buttonTop10watch.Click += new System.EventHandler(this.buttonTop10watch_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.buttonClientOrderZvit);
-            this.panel3.Location = new System.Drawing.Point(11, 58);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(160, 75);
-            this.panel3.TabIndex = 5;
-            // 
-            // buttonClientOrderZvit
-            // 
-            this.buttonClientOrderZvit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonClientOrderZvit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClientOrderZvit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonClientOrderZvit.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonClientOrderZvit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonClientOrderZvit.Location = new System.Drawing.Point(3, 3);
-            this.buttonClientOrderZvit.Name = "buttonClientOrderZvit";
-            this.buttonClientOrderZvit.Size = new System.Drawing.Size(153, 75);
-            this.buttonClientOrderZvit.TabIndex = 1;
-            this.buttonClientOrderZvit.Text = "Звіт - \"конкретне замовлення клієнта\"";
-            this.buttonClientOrderZvit.UseVisualStyleBackColor = false;
-            this.buttonClientOrderZvit.Click += new System.EventHandler(this.buttonClientOrderZvit_Click);
+            this.label_manageLogin2.AutoSize = true;
+            this.label_manageLogin2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_manageLogin2.Location = new System.Drawing.Point(1624, 956);
+            this.label_manageLogin2.Name = "label_manageLogin2";
+            this.label_manageLogin2.Size = new System.Drawing.Size(16, 22);
+            this.label_manageLogin2.TabIndex = 21;
+            this.label_manageLogin2.Text = "/";
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage4.Controls.Add(this.buttonCheckSupplier);
+            this.tabPage4.Controls.Add(this.buttonCheackSupply);
             this.tabPage4.Controls.Add(this.label_manageLogin4);
             this.tabPage4.Controls.Add(this.buttonSearchSup);
             this.tabPage4.Controls.Add(this.panel17);
             this.tabPage4.Controls.Add(this.textBoxSearchSupllier);
-            this.tabPage4.Controls.Add(this.pictureBox2);
             this.tabPage4.Controls.Add(this.supplierOrderBtn);
             this.tabPage4.Controls.Add(this.payment_terms_label);
             this.tabPage4.Controls.Add(this.cooperation_terms_label);
@@ -2676,111 +2677,214 @@
             this.tabPage4.Controls.Add(this.label44);
             this.tabPage4.Controls.Add(this.label43);
             this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Controls.Add(this.pictureBox2);
             this.tabPage4.Location = new System.Drawing.Point(4, 31);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1882, 1000);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Поставки";
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
-            // dataGridView2
+            // buttonCheckSupplier
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(21, 13);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1149, 523);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.buttonCheckSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonCheckSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCheckSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCheckSupplier.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonCheckSupplier.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonCheckSupplier.Location = new System.Drawing.Point(1472, 73);
+            this.buttonCheckSupplier.Name = "buttonCheckSupplier";
+            this.buttonCheckSupplier.Size = new System.Drawing.Size(333, 60);
+            this.buttonCheckSupplier.TabIndex = 32;
+            this.buttonCheckSupplier.Text = "Переглянгути всіx постачальників";
+            this.buttonCheckSupplier.UseVisualStyleBackColor = false;
+            this.buttonCheckSupplier.Click += new System.EventHandler(this.buttonCheckSupplier_Click);
             // 
-            // label43
+            // buttonCheackSupply
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(17, 551);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(54, 22);
-            this.label43.TabIndex = 1;
-            this.label43.Text = "Ім\'я - ";
+            this.buttonCheackSupply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonCheackSupply.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCheackSupply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCheackSupply.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonCheackSupply.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonCheackSupply.Location = new System.Drawing.Point(1472, 160);
+            this.buttonCheackSupply.Name = "buttonCheackSupply";
+            this.buttonCheackSupply.Size = new System.Drawing.Size(333, 60);
+            this.buttonCheackSupply.TabIndex = 31;
+            this.buttonCheackSupply.Text = "Переглянгути всі поставки";
+            this.buttonCheackSupply.UseVisualStyleBackColor = false;
+            this.buttonCheackSupply.Click += new System.EventHandler(this.buttonCheackSupply_Click);
             // 
-            // label44
+            // label_manageLogin4
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(17, 590);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(87, 22);
-            this.label44.TabIndex = 2;
-            this.label44.Text = "Прізвище -";
+            this.label_manageLogin4.AutoSize = true;
+            this.label_manageLogin4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_manageLogin4.Location = new System.Drawing.Point(1645, 16);
+            this.label_manageLogin4.Name = "label_manageLogin4";
+            this.label_manageLogin4.Size = new System.Drawing.Size(16, 22);
+            this.label_manageLogin4.TabIndex = 30;
+            this.label_manageLogin4.Text = "/";
             // 
-            // label45
+            // buttonSearchSup
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(17, 662);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(67, 22);
-            this.label45.TabIndex = 4;
-            this.label45.Text = "Місто -";
+            this.buttonSearchSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonSearchSup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearchSup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSearchSup.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonSearchSup.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonSearchSup.Location = new System.Drawing.Point(1193, 473);
+            this.buttonSearchSup.Name = "buttonSearchSup";
+            this.buttonSearchSup.Size = new System.Drawing.Size(247, 60);
+            this.buttonSearchSup.TabIndex = 29;
+            this.buttonSearchSup.Text = "Пошук";
+            this.buttonSearchSup.UseVisualStyleBackColor = false;
+            this.buttonSearchSup.Click += new System.EventHandler(this.buttonSearchSup_Click);
             // 
-            // label46
+            // panel17
             // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(17, 623);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(70, 22);
-            this.label46.TabIndex = 3;
-            this.label46.Text = "Країна -";
+            this.panel17.Controls.Add(this.comboBoxPayment_terms);
+            this.panel17.Controls.Add(this.comboBoxCooperation_terms);
+            this.panel17.Controls.Add(this.comboBoxCity);
+            this.panel17.Controls.Add(this.comboBoxCountry);
+            this.panel17.Controls.Add(this.label54);
+            this.panel17.Controls.Add(this.label57);
+            this.panel17.Controls.Add(this.label53);
+            this.panel17.Controls.Add(this.label58);
+            this.panel17.Location = new System.Drawing.Point(1193, 74);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(247, 377);
+            this.panel17.TabIndex = 28;
             // 
-            // label47
+            // comboBoxPayment_terms
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(17, 812);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(61, 22);
-            this.label47.TabIndex = 8;
-            this.label47.Text = "Email -";
+            this.comboBoxPayment_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPayment_terms.FormattingEnabled = true;
+            this.comboBoxPayment_terms.Items.AddRange(new object[] {
+            "Bank Transfer",
+            "Cash on Delivery",
+            "Credit Card",
+            "default"});
+            this.comboBoxPayment_terms.Location = new System.Drawing.Point(37, 310);
+            this.comboBoxPayment_terms.Name = "comboBoxPayment_terms";
+            this.comboBoxPayment_terms.Size = new System.Drawing.Size(190, 30);
+            this.comboBoxPayment_terms.TabIndex = 31;
             // 
-            // label48
+            // comboBoxCooperation_terms
             // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(17, 773);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(141, 22);
-            this.label48.TabIndex = 7;
-            this.label48.Text = "Номер телефону -";
+            this.comboBoxCooperation_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCooperation_terms.FormattingEnabled = true;
+            this.comboBoxCooperation_terms.Items.AddRange(new object[] {
+            "Long-term",
+            "Exclusive ",
+            "Yearly Contract",
+            "Seasonal ",
+            "Flexible",
+            "default"});
+            this.comboBoxCooperation_terms.Location = new System.Drawing.Point(36, 223);
+            this.comboBoxCooperation_terms.Name = "comboBoxCooperation_terms";
+            this.comboBoxCooperation_terms.Size = new System.Drawing.Size(190, 30);
+            this.comboBoxCooperation_terms.TabIndex = 30;
             // 
-            // label49
+            // comboBoxCity
             // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(17, 740);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(129, 22);
-            this.label49.TabIndex = 6;
-            this.label49.Text = "Номер будинку -";
+            this.comboBoxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCity.FormattingEnabled = true;
+            this.comboBoxCity.Items.AddRange(new object[] {
+            "Kyiv",
+            "Lviv",
+            "Odesa",
+            "Dnipro",
+            "Kharkiv",
+            "Vinnytsia",
+            "Ivano-Frankivsk",
+            "Cherkasy",
+            "Zaporizhzhia",
+            "Rivne",
+            "Uzhhorod",
+            "Ternopil",
+            "Chernivtsi",
+            "Sumy",
+            "Lutsk",
+            "Kropyvnytskyi",
+            "Kherson",
+            "Mykolaiv",
+            "Chernihiv",
+            "default"});
+            this.comboBoxCity.Location = new System.Drawing.Point(36, 130);
+            this.comboBoxCity.Name = "comboBoxCity";
+            this.comboBoxCity.Size = new System.Drawing.Size(190, 30);
+            this.comboBoxCity.TabIndex = 29;
             // 
-            // label50
+            // comboBoxCountry
             // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(17, 701);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(73, 22);
-            this.label50.TabIndex = 5;
-            this.label50.Text = "Вулиця -";
+            this.comboBoxCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCountry.FormattingEnabled = true;
+            this.comboBoxCountry.Items.AddRange(new object[] {
+            "Ukraine",
+            "Poland",
+            "default"});
+            this.comboBoxCountry.Location = new System.Drawing.Point(36, 54);
+            this.comboBoxCountry.Name = "comboBoxCountry";
+            this.comboBoxCountry.Size = new System.Drawing.Size(190, 30);
+            this.comboBoxCountry.TabIndex = 28;
             // 
-            // label51
+            // label54
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(17, 889);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(136, 22);
-            this.label51.TabIndex = 10;
-            this.label51.Text = "Умови платежу -";
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(32, 18);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(61, 22);
+            this.label54.TabIndex = 24;
+            this.label54.Text = "Країна";
             // 
-            // label52
+            // label57
             // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(17, 850);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(139, 22);
-            this.label52.TabIndex = 9;
-            this.label52.Text = "Умови співпраці -";
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(32, 285);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(131, 22);
+            this.label57.TabIndex = 27;
+            this.label57.Text = "Умови платежу ";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(32, 105);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(62, 22);
+            this.label53.TabIndex = 25;
+            this.label53.Text = "Місто ";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(33, 198);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(130, 22);
+            this.label58.TabIndex = 26;
+            this.label58.Text = "Умови співпраці";
+            // 
+            // textBoxSearchSupllier
+            // 
+            this.textBoxSearchSupllier.Location = new System.Drawing.Point(1193, 13);
+            this.textBoxSearchSupllier.Name = "textBoxSearchSupllier";
+            this.textBoxSearchSupllier.Size = new System.Drawing.Size(157, 29);
+            this.textBoxSearchSupllier.TabIndex = 23;
+            this.textBoxSearchSupllier.TextChanged += new System.EventHandler(this.textBoxSearchSupllier_TextChanged);
+            // 
+            // supplierOrderBtn
+            // 
+            this.supplierOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.supplierOrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.supplierOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.supplierOrderBtn.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.supplierOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.supplierOrderBtn.Location = new System.Drawing.Point(21, 937);
+            this.supplierOrderBtn.Name = "supplierOrderBtn";
+            this.supplierOrderBtn.Size = new System.Drawing.Size(333, 60);
+            this.supplierOrderBtn.TabIndex = 21;
+            this.supplierOrderBtn.Text = "Замовити в цього постачальника";
+            this.supplierOrderBtn.UseVisualStyleBackColor = false;
+            this.supplierOrderBtn.Click += new System.EventHandler(this.supplierOrderBtn_Click);
             // 
             // payment_terms_label
             // 
@@ -2872,167 +2976,487 @@
             this.nameLabel.Size = new System.Drawing.Size(0, 22);
             this.nameLabel.TabIndex = 11;
             // 
-            // supplierOrderBtn
+            // label51
             // 
-            this.supplierOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.supplierOrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.supplierOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.supplierOrderBtn.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.supplierOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.supplierOrderBtn.Location = new System.Drawing.Point(21, 927);
-            this.supplierOrderBtn.Name = "supplierOrderBtn";
-            this.supplierOrderBtn.Size = new System.Drawing.Size(333, 60);
-            this.supplierOrderBtn.TabIndex = 21;
-            this.supplierOrderBtn.Text = "Замовити в цього постачальника";
-            this.supplierOrderBtn.UseVisualStyleBackColor = false;
-            this.supplierOrderBtn.Click += new System.EventHandler(this.supplierOrderBtn_Click);
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(17, 889);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(136, 22);
+            this.label51.TabIndex = 10;
+            this.label51.Text = "Умови платежу -";
             // 
-            // textBoxSearchSupllier
+            // label52
             // 
-            this.textBoxSearchSupllier.Location = new System.Drawing.Point(1230, 13);
-            this.textBoxSearchSupllier.Name = "textBoxSearchSupllier";
-            this.textBoxSearchSupllier.Size = new System.Drawing.Size(157, 29);
-            this.textBoxSearchSupllier.TabIndex = 23;
-            this.textBoxSearchSupllier.TextChanged += new System.EventHandler(this.textBoxSearchSupllier_TextChanged);
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(17, 850);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(139, 22);
+            this.label52.TabIndex = 9;
+            this.label52.Text = "Умови співпраці -";
             // 
-            // label53
+            // label47
             // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(32, 105);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(62, 22);
-            this.label53.TabIndex = 25;
-            this.label53.Text = "Місто ";
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(17, 812);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(61, 22);
+            this.label47.TabIndex = 8;
+            this.label47.Text = "Email -";
             // 
-            // label54
+            // label48
             // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(32, 18);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(61, 22);
-            this.label54.TabIndex = 24;
-            this.label54.Text = "Країна";
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(17, 773);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(141, 22);
+            this.label48.TabIndex = 7;
+            this.label48.Text = "Номер телефону -";
             // 
-            // label57
+            // label49
             // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(32, 285);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(131, 22);
-            this.label57.TabIndex = 27;
-            this.label57.Text = "Умови платежу ";
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(17, 740);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(129, 22);
+            this.label49.TabIndex = 6;
+            this.label49.Text = "Номер будинку -";
             // 
-            // label58
+            // label50
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(33, 198);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(130, 22);
-            this.label58.TabIndex = 26;
-            this.label58.Text = "Умови співпраці";
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(17, 701);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(73, 22);
+            this.label50.TabIndex = 5;
+            this.label50.Text = "Вулиця -";
             // 
-            // panel17
+            // label45
             // 
-            this.panel17.Controls.Add(this.comboBoxPayment_terms);
-            this.panel17.Controls.Add(this.comboBoxCooperation_terms);
-            this.panel17.Controls.Add(this.comboBoxCity);
-            this.panel17.Controls.Add(this.comboBoxCountry);
-            this.panel17.Controls.Add(this.label54);
-            this.panel17.Controls.Add(this.label57);
-            this.panel17.Controls.Add(this.label53);
-            this.panel17.Controls.Add(this.label58);
-            this.panel17.Location = new System.Drawing.Point(1194, 89);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(479, 377);
-            this.panel17.TabIndex = 28;
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(17, 662);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(67, 22);
+            this.label45.TabIndex = 4;
+            this.label45.Text = "Місто -";
             // 
-            // comboBoxCountry
+            // label46
             // 
-            this.comboBoxCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCountry.FormattingEnabled = true;
-            this.comboBoxCountry.Items.AddRange(new object[] {
-            "Ukraine",
-            "Poland",
-            "default"});
-            this.comboBoxCountry.Location = new System.Drawing.Point(36, 54);
-            this.comboBoxCountry.Name = "comboBoxCountry";
-            this.comboBoxCountry.Size = new System.Drawing.Size(190, 30);
-            this.comboBoxCountry.TabIndex = 28;
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(17, 623);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(70, 22);
+            this.label46.TabIndex = 3;
+            this.label46.Text = "Країна -";
             // 
-            // comboBoxCity
+            // label44
             // 
-            this.comboBoxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCity.FormattingEnabled = true;
-            this.comboBoxCity.Items.AddRange(new object[] {
-            "Kyiv",
-            "Lviv",
-            "Odesa",
-            "Dnipro",
-            "Kharkiv",
-            "Vinnytsia",
-            "Ivano-Frankivsk",
-            "Cherkasy",
-            "Zaporizhzhia",
-            "Rivne",
-            "Uzhhorod",
-            "Ternopil",
-            "Chernivtsi",
-            "Sumy",
-            "Lutsk",
-            "Kropyvnytskyi",
-            "Kherson",
-            "Mykolaiv",
-            "Chernihiv",
-            "default"});
-            this.comboBoxCity.Location = new System.Drawing.Point(36, 130);
-            this.comboBoxCity.Name = "comboBoxCity";
-            this.comboBoxCity.Size = new System.Drawing.Size(190, 30);
-            this.comboBoxCity.TabIndex = 29;
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(17, 590);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(87, 22);
+            this.label44.TabIndex = 2;
+            this.label44.Text = "Прізвище -";
             // 
-            // comboBoxCooperation_terms
+            // label43
             // 
-            this.comboBoxCooperation_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCooperation_terms.FormattingEnabled = true;
-            this.comboBoxCooperation_terms.Items.AddRange(new object[] {
-            "Long-term",
-            "Exclusive ",
-            "Yearly Contract",
-            "Seasonal ",
-            "Flexible",
-            "default"});
-            this.comboBoxCooperation_terms.Location = new System.Drawing.Point(36, 223);
-            this.comboBoxCooperation_terms.Name = "comboBoxCooperation_terms";
-            this.comboBoxCooperation_terms.Size = new System.Drawing.Size(190, 30);
-            this.comboBoxCooperation_terms.TabIndex = 30;
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(17, 551);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(54, 22);
+            this.label43.TabIndex = 1;
+            this.label43.Text = "Ім\'я - ";
             // 
-            // comboBoxPayment_terms
+            // dataGridView2
             // 
-            this.comboBoxPayment_terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPayment_terms.FormattingEnabled = true;
-            this.comboBoxPayment_terms.Items.AddRange(new object[] {
-            "Bank Transfer",
-            "Cash on Delivery",
-            "Credit Card",
-            "default"});
-            this.comboBoxPayment_terms.Location = new System.Drawing.Point(37, 310);
-            this.comboBoxPayment_terms.Name = "comboBoxPayment_terms";
-            this.comboBoxPayment_terms.Size = new System.Drawing.Size(190, 30);
-            this.comboBoxPayment_terms.TabIndex = 31;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(21, 13);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1149, 523);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
-            // buttonSearchSup
+            // tabPage5
             // 
-            this.buttonSearchSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.buttonSearchSup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearchSup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSearchSup.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
-            this.buttonSearchSup.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonSearchSup.Location = new System.Drawing.Point(1270, 476);
-            this.buttonSearchSup.Name = "buttonSearchSup";
-            this.buttonSearchSup.Size = new System.Drawing.Size(333, 60);
-            this.buttonSearchSup.TabIndex = 29;
-            this.buttonSearchSup.Text = "Пошук";
-            this.buttonSearchSup.UseVisualStyleBackColor = false;
-            this.buttonSearchSup.Click += new System.EventHandler(this.buttonSearchSup_Click);
+            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(112)))), ((int)(((byte)(94)))));
+            this.tabPage5.Controls.Add(this.pictureBox5);
+            this.tabPage5.Controls.Add(this.pictureBox4);
+            this.tabPage5.Controls.Add(this.label_manageLogin3);
+            this.tabPage5.Controls.Add(this.buttonGuarantee);
+            this.tabPage5.Controls.Add(this.buttonWatchCountStatist);
+            this.tabPage5.Controls.Add(this.buttonAvgPriceWatch);
+            this.tabPage5.Controls.Add(this.buttonOrdersSum);
+            this.tabPage5.Controls.Add(this.label42);
+            this.tabPage5.Controls.Add(this.label21);
+            this.tabPage5.Controls.Add(this.buttonTop10watch);
+            this.tabPage5.Controls.Add(this.panel3);
+            this.tabPage5.Controls.Add(this.textBoxEmail);
+            this.tabPage5.Controls.Add(this.label59);
+            this.tabPage5.Controls.Add(this.textBox_ManagerName);
+            this.tabPage5.Controls.Add(this.textBox_managerPhoneNumber);
+            this.tabPage5.Controls.Add(this.textBoxManagerPassword);
+            this.tabPage5.Controls.Add(this.textBoxManagerLogin);
+            this.tabPage5.Controls.Add(this.textBoxManagerLastName);
+            this.tabPage5.Controls.Add(this.textBoxManagerID);
+            this.tabPage5.Controls.Add(this.label60);
+            this.tabPage5.Controls.Add(this.label62);
+            this.tabPage5.Controls.Add(this.label63);
+            this.tabPage5.Controls.Add(this.label64);
+            this.tabPage5.Controls.Add(this.label65);
+            this.tabPage5.Controls.Add(this.label66);
+            this.tabPage5.Controls.Add(this.label67);
+            this.tabPage5.Controls.Add(this.panel18);
+            this.tabPage5.Controls.Add(this.buttonRefreshDataManager);
+            this.tabPage5.Controls.Add(this.textBoxSearchManager);
+            this.tabPage5.Controls.Add(this.pictureBox3);
+            this.tabPage5.Controls.Add(this.dataGridView3);
+            this.tabPage5.Location = new System.Drawing.Point(4, 31);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1882, 1000);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Система";
+            // 
+            // label_manageLogin3
+            // 
+            this.label_manageLogin3.AutoSize = true;
+            this.label_manageLogin3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_manageLogin3.Location = new System.Drawing.Point(1658, 22);
+            this.label_manageLogin3.Name = "label_manageLogin3";
+            this.label_manageLogin3.Size = new System.Drawing.Size(16, 22);
+            this.label_manageLogin3.TabIndex = 106;
+            this.label_manageLogin3.Text = "/";
+            // 
+            // buttonGuarantee
+            // 
+            this.buttonGuarantee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonGuarantee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGuarantee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGuarantee.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonGuarantee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonGuarantee.Location = new System.Drawing.Point(1244, 317);
+            this.buttonGuarantee.Name = "buttonGuarantee";
+            this.buttonGuarantee.Size = new System.Drawing.Size(153, 75);
+            this.buttonGuarantee.TabIndex = 105;
+            this.buttonGuarantee.Text = "Звіт - \"надання гарантії\"";
+            this.buttonGuarantee.UseVisualStyleBackColor = false;
+            this.buttonGuarantee.Click += new System.EventHandler(this.buttonGuarantee_Click);
+            // 
+            // buttonWatchCountStatist
+            // 
+            this.buttonWatchCountStatist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonWatchCountStatist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWatchCountStatist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonWatchCountStatist.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonWatchCountStatist.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonWatchCountStatist.Location = new System.Drawing.Point(1244, 152);
+            this.buttonWatchCountStatist.Name = "buttonWatchCountStatist";
+            this.buttonWatchCountStatist.Size = new System.Drawing.Size(153, 75);
+            this.buttonWatchCountStatist.TabIndex = 104;
+            this.buttonWatchCountStatist.Text = "\"Кількість товару в наявності\"";
+            this.buttonWatchCountStatist.UseVisualStyleBackColor = false;
+            this.buttonWatchCountStatist.Click += new System.EventHandler(this.buttonWatchCountStatist_Click);
+            // 
+            // buttonAvgPriceWatch
+            // 
+            this.buttonAvgPriceWatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonAvgPriceWatch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAvgPriceWatch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAvgPriceWatch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonAvgPriceWatch.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonAvgPriceWatch.Location = new System.Drawing.Point(1075, 152);
+            this.buttonAvgPriceWatch.Name = "buttonAvgPriceWatch";
+            this.buttonAvgPriceWatch.Size = new System.Drawing.Size(153, 75);
+            this.buttonAvgPriceWatch.TabIndex = 103;
+            this.buttonAvgPriceWatch.Text = "\"Середня ціна за годинник\"";
+            this.buttonAvgPriceWatch.UseVisualStyleBackColor = false;
+            this.buttonAvgPriceWatch.Click += new System.EventHandler(this.buttonAvgPriceWatch_Click);
+            // 
+            // buttonOrdersSum
+            // 
+            this.buttonOrdersSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonOrdersSum.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOrdersSum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonOrdersSum.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonOrdersSum.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonOrdersSum.Location = new System.Drawing.Point(1243, 59);
+            this.buttonOrdersSum.Name = "buttonOrdersSum";
+            this.buttonOrdersSum.Size = new System.Drawing.Size(153, 75);
+            this.buttonOrdersSum.TabIndex = 102;
+            this.buttonOrdersSum.Text = "\"Сума прибутку за замовлення\"";
+            this.buttonOrdersSum.UseVisualStyleBackColor = false;
+            this.buttonOrdersSum.Click += new System.EventHandler(this.buttonOrdersSum_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label42.Location = new System.Drawing.Point(1070, 16);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(190, 28);
+            this.label42.TabIndex = 101;
+            this.label42.Text = "СТАТИСТИКА";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(1073, 274);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(90, 28);
+            this.label21.TabIndex = 99;
+            this.label21.Text = "ЗВІТИ";
+            // 
+            // buttonTop10watch
+            // 
+            this.buttonTop10watch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonTop10watch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTop10watch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonTop10watch.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonTop10watch.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonTop10watch.Location = new System.Drawing.Point(1075, 59);
+            this.buttonTop10watch.Name = "buttonTop10watch";
+            this.buttonTop10watch.Size = new System.Drawing.Size(153, 75);
+            this.buttonTop10watch.TabIndex = 98;
+            this.buttonTop10watch.Text = "\"ТОП-10 годинників за продажою\"";
+            this.buttonTop10watch.UseVisualStyleBackColor = false;
+            this.buttonTop10watch.Click += new System.EventHandler(this.buttonTop10watch_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.buttonClientOrderZvit);
+            this.panel3.Location = new System.Drawing.Point(1078, 314);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(160, 75);
+            this.panel3.TabIndex = 100;
+            // 
+            // buttonClientOrderZvit
+            // 
+            this.buttonClientOrderZvit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonClientOrderZvit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClientOrderZvit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonClientOrderZvit.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonClientOrderZvit.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonClientOrderZvit.Location = new System.Drawing.Point(3, 3);
+            this.buttonClientOrderZvit.Name = "buttonClientOrderZvit";
+            this.buttonClientOrderZvit.Size = new System.Drawing.Size(153, 75);
+            this.buttonClientOrderZvit.TabIndex = 1;
+            this.buttonClientOrderZvit.Text = "Звіт - \"конкретне замовлення клієнта\"";
+            this.buttonClientOrderZvit.UseVisualStyleBackColor = false;
+            this.buttonClientOrderZvit.Click += new System.EventHandler(this.buttonClientOrderZvit_Click);
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(179, 552);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(138, 29);
+            this.textBoxEmail.TabIndex = 95;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.label59.Location = new System.Drawing.Point(112, 555);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(61, 22);
+            this.label59.TabIndex = 92;
+            this.label59.Text = "Email -";
+            // 
+            // textBox_ManagerName
+            // 
+            this.textBox_ManagerName.Location = new System.Drawing.Point(179, 486);
+            this.textBox_ManagerName.Name = "textBox_ManagerName";
+            this.textBox_ManagerName.Size = new System.Drawing.Size(138, 29);
+            this.textBox_ManagerName.TabIndex = 91;
+            // 
+            // textBox_managerPhoneNumber
+            // 
+            this.textBox_managerPhoneNumber.Location = new System.Drawing.Point(179, 587);
+            this.textBox_managerPhoneNumber.Name = "textBox_managerPhoneNumber";
+            this.textBox_managerPhoneNumber.Size = new System.Drawing.Size(138, 29);
+            this.textBox_managerPhoneNumber.TabIndex = 90;
+            // 
+            // textBoxManagerPassword
+            // 
+            this.textBoxManagerPassword.Location = new System.Drawing.Point(179, 658);
+            this.textBoxManagerPassword.Name = "textBoxManagerPassword";
+            this.textBoxManagerPassword.Size = new System.Drawing.Size(138, 29);
+            this.textBoxManagerPassword.TabIndex = 88;
+            // 
+            // textBoxManagerLogin
+            // 
+            this.textBoxManagerLogin.Location = new System.Drawing.Point(179, 622);
+            this.textBoxManagerLogin.Name = "textBoxManagerLogin";
+            this.textBoxManagerLogin.Size = new System.Drawing.Size(138, 29);
+            this.textBoxManagerLogin.TabIndex = 87;
+            // 
+            // textBoxManagerLastName
+            // 
+            this.textBoxManagerLastName.Location = new System.Drawing.Point(179, 521);
+            this.textBoxManagerLastName.Name = "textBoxManagerLastName";
+            this.textBoxManagerLastName.Size = new System.Drawing.Size(138, 29);
+            this.textBoxManagerLastName.TabIndex = 86;
+            // 
+            // textBoxManagerID
+            // 
+            this.textBoxManagerID.Location = new System.Drawing.Point(179, 451);
+            this.textBoxManagerID.Name = "textBoxManagerID";
+            this.textBoxManagerID.Size = new System.Drawing.Size(138, 29);
+            this.textBoxManagerID.TabIndex = 85;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.label60.Location = new System.Drawing.Point(32, 584);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(141, 22);
+            this.label60.TabIndex = 84;
+            this.label60.Text = "Номер телефону -";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.label62.Location = new System.Drawing.Point(100, 655);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(72, 22);
+            this.label62.TabIndex = 82;
+            this.label62.Text = "Пароль -";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.label63.Location = new System.Drawing.Point(86, 518);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(87, 22);
+            this.label63.TabIndex = 81;
+            this.label63.Text = "Прізвище -";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.label64.Location = new System.Drawing.Point(103, 626);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(60, 22);
+            this.label64.TabIndex = 80;
+            this.label64.Text = "Логін -";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.label65.Location = new System.Drawing.Point(123, 483);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(50, 22);
+            this.label65.TabIndex = 79;
+            this.label65.Text = "Ім\'я -";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.label66.Location = new System.Drawing.Point(134, 449);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(39, 22);
+            this.label66.TabIndex = 78;
+            this.label66.Text = "ID -";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label67.Location = new System.Drawing.Point(535, 415);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(228, 28);
+            this.label67.TabIndex = 77;
+            this.label67.Text = "Управління записами";
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.buttonChangeManager);
+            this.panel18.Controls.Add(this.buttonDeleteManager);
+            this.panel18.Controls.Add(this.buttonAddNewManager);
+            this.panel18.Location = new System.Drawing.Point(519, 476);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(265, 275);
+            this.panel18.TabIndex = 76;
+            // 
+            // buttonChangeManager
+            // 
+            this.buttonChangeManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonChangeManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChangeManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonChangeManager.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonChangeManager.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonChangeManager.Location = new System.Drawing.Point(60, 196);
+            this.buttonChangeManager.Name = "buttonChangeManager";
+            this.buttonChangeManager.Size = new System.Drawing.Size(153, 60);
+            this.buttonChangeManager.TabIndex = 2;
+            this.buttonChangeManager.Text = "Змінити";
+            this.buttonChangeManager.UseVisualStyleBackColor = false;
+            this.buttonChangeManager.Click += new System.EventHandler(this.buttonChangeManager_Click);
+            // 
+            // buttonDeleteManager
+            // 
+            this.buttonDeleteManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonDeleteManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeleteManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDeleteManager.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonDeleteManager.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonDeleteManager.Location = new System.Drawing.Point(60, 114);
+            this.buttonDeleteManager.Name = "buttonDeleteManager";
+            this.buttonDeleteManager.Size = new System.Drawing.Size(153, 60);
+            this.buttonDeleteManager.TabIndex = 1;
+            this.buttonDeleteManager.Text = "Видалити";
+            this.buttonDeleteManager.UseVisualStyleBackColor = false;
+            this.buttonDeleteManager.Click += new System.EventHandler(this.buttonDeleteManager_Click);
+            // 
+            // buttonAddNewManager
+            // 
+            this.buttonAddNewManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonAddNewManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddNewManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddNewManager.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonAddNewManager.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonAddNewManager.Location = new System.Drawing.Point(60, 42);
+            this.buttonAddNewManager.Name = "buttonAddNewManager";
+            this.buttonAddNewManager.Size = new System.Drawing.Size(153, 60);
+            this.buttonAddNewManager.TabIndex = 0;
+            this.buttonAddNewManager.Text = "Новий запис";
+            this.buttonAddNewManager.UseVisualStyleBackColor = false;
+            this.buttonAddNewManager.Click += new System.EventHandler(this.buttonAddNewManager_Click);
+            // 
+            // buttonRefreshDataManager
+            // 
+            this.buttonRefreshDataManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonRefreshDataManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRefreshDataManager.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonRefreshDataManager.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonRefreshDataManager.Location = new System.Drawing.Point(769, 54);
+            this.buttonRefreshDataManager.Name = "buttonRefreshDataManager";
+            this.buttonRefreshDataManager.Size = new System.Drawing.Size(153, 60);
+            this.buttonRefreshDataManager.TabIndex = 75;
+            this.buttonRefreshDataManager.Text = "Оновити";
+            this.buttonRefreshDataManager.UseVisualStyleBackColor = false;
+            this.buttonRefreshDataManager.Click += new System.EventHandler(this.buttonRefreshDataManager_Click);
+            // 
+            // textBoxSearchManager
+            // 
+            this.textBoxSearchManager.Location = new System.Drawing.Point(769, 19);
+            this.textBoxSearchManager.Name = "textBoxSearchManager";
+            this.textBoxSearchManager.Size = new System.Drawing.Size(157, 29);
+            this.textBoxSearchManager.TabIndex = 74;
+            this.textBoxSearchManager.TextChanged += new System.EventHandler(this.textBoxSearchManager_TextChanged);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(19, 16);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(744, 352);
+            this.dataGridView3.TabIndex = 72;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // buttonEpos
             // 
@@ -3229,51 +3653,455 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(1393, 13);
+            this.pictureBox2.Location = new System.Drawing.Point(1356, 16);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 20);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
             // 
-            // label_manageLogin
+            // pictureBox5
             // 
-            this.label_manageLogin.AutoSize = true;
-            this.label_manageLogin.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_manageLogin.Location = new System.Drawing.Point(1645, 16);
-            this.label_manageLogin.Name = "label_manageLogin";
-            this.label_manageLogin.Size = new System.Drawing.Size(16, 22);
-            this.label_manageLogin.TabIndex = 20;
-            this.label_manageLogin.Text = "/";
+            this.pictureBox5.BackgroundImage = global::WatchHub.Properties.Resources._7791667_necktie_businessman_suit_manager_employee_icon__1_;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(1016, 274);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(56, 47);
+            this.pictureBox5.TabIndex = 108;
+            this.pictureBox5.TabStop = false;
             // 
-            // label_manageLogin2
+            // pictureBox4
             // 
-            this.label_manageLogin2.AutoSize = true;
-            this.label_manageLogin2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_manageLogin2.Location = new System.Drawing.Point(1645, 16);
-            this.label_manageLogin2.Name = "label_manageLogin2";
-            this.label_manageLogin2.Size = new System.Drawing.Size(16, 22);
-            this.label_manageLogin2.TabIndex = 21;
-            this.label_manageLogin2.Text = "/";
+            this.pictureBox4.BackgroundImage = global::WatchHub.Properties.Resources._7791667_necktie_businessman_suit_manager_employee_icon__1_;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(1008, 16);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(56, 47);
+            this.pictureBox4.TabIndex = 107;
+            this.pictureBox4.TabStop = false;
             // 
-            // label_manageLogin3
+            // pictureBox3
             // 
-            this.label_manageLogin3.AutoSize = true;
-            this.label_manageLogin3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_manageLogin3.Location = new System.Drawing.Point(1645, 16);
-            this.label_manageLogin3.Name = "label_manageLogin3";
-            this.label_manageLogin3.Size = new System.Drawing.Size(16, 22);
-            this.label_manageLogin3.TabIndex = 22;
-            this.label_manageLogin3.Text = "/";
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(932, 19);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox3.TabIndex = 73;
+            this.pictureBox3.TabStop = false;
             // 
-            // label_manageLogin4
+            // dataGridViewOrder
             // 
-            this.label_manageLogin4.AutoSize = true;
-            this.label_manageLogin4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_manageLogin4.Location = new System.Drawing.Point(1645, 16);
-            this.label_manageLogin4.Name = "label_manageLogin4";
-            this.label_manageLogin4.Size = new System.Drawing.Size(16, 22);
-            this.label_manageLogin4.TabIndex = 30;
-            this.label_manageLogin4.Text = "/";
+            this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrder.Location = new System.Drawing.Point(19, 16);
+            this.dataGridViewOrder.Name = "dataGridViewOrder";
+            this.dataGridViewOrder.Size = new System.Drawing.Size(623, 405);
+            this.dataGridViewOrder.TabIndex = 22;
+            this.dataGridViewOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrder_CellClick);
+            // 
+            // dataGridViewUsers
+            // 
+            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsers.Location = new System.Drawing.Point(842, 16);
+            this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1016, 405);
+            this.dataGridViewUsers.TabIndex = 23;
+            this.dataGridViewUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellClick);
+            // 
+            // textBoxSearchUser
+            // 
+            this.textBoxSearchUser.Location = new System.Drawing.Point(1670, 427);
+            this.textBoxSearchUser.Name = "textBoxSearchUser";
+            this.textBoxSearchUser.Size = new System.Drawing.Size(157, 29);
+            this.textBoxSearchUser.TabIndex = 50;
+            this.textBoxSearchUser.TextChanged += new System.EventHandler(this.textBoxSearchUser_TextChanged);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Location = new System.Drawing.Point(1833, 427);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox6.TabIndex = 49;
+            this.pictureBox6.TabStop = false;
+            // 
+            // textBoxSearchOrder
+            // 
+            this.textBoxSearchOrder.Location = new System.Drawing.Point(648, 16);
+            this.textBoxSearchOrder.Name = "textBoxSearchOrder";
+            this.textBoxSearchOrder.Size = new System.Drawing.Size(157, 29);
+            this.textBoxSearchOrder.TabIndex = 52;
+            this.textBoxSearchOrder.TextChanged += new System.EventHandler(this.textBoxSearchOrder_TextChanged);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.Location = new System.Drawing.Point(811, 16);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox7.TabIndex = 51;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label55.Location = new System.Drawing.Point(1127, 556);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(85, 33);
+            this.label55.TabIndex = 78;
+            this.label55.Text = "Логін -";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label56.Location = new System.Drawing.Point(1112, 589);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(96, 33);
+            this.label56.TabIndex = 77;
+            this.label56.Text = "Місто -";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label61.Location = new System.Drawing.Point(1125, 812);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(87, 33);
+            this.label61.TabIndex = 76;
+            this.label61.Text = "Email -";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label68.Location = new System.Drawing.Point(1014, 766);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(198, 33);
+            this.label68.TabIndex = 75;
+            this.label68.Text = "Номер телефону -";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label69.Location = new System.Drawing.Point(1030, 733);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(182, 33);
+            this.label69.TabIndex = 74;
+            this.label69.Text = "Номер будинку -";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label70.Location = new System.Drawing.Point(1108, 674);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(104, 33);
+            this.label70.TabIndex = 73;
+            this.label70.Text = "Вулиця -";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label71.Location = new System.Drawing.Point(1088, 523);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(124, 33);
+            this.label71.TabIndex = 72;
+            this.label71.Text = "Прізвище -";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label72.Location = new System.Drawing.Point(1113, 622);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(99, 33);
+            this.label72.TabIndex = 71;
+            this.label72.Text = "Країна -";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label73.Location = new System.Drawing.Point(1139, 490);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(73, 33);
+            this.label73.TabIndex = 70;
+            this.label73.Text = "Ім\'я -";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label74.Location = new System.Drawing.Point(1154, 457);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(58, 33);
+            this.label74.TabIndex = 69;
+            this.label74.Text = "ID -";
+            // 
+            // label_loginUser
+            // 
+            this.label_loginUser.AutoSize = true;
+            this.label_loginUser.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_loginUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_loginUser.Location = new System.Drawing.Point(1259, 523);
+            this.label_loginUser.Name = "label_loginUser";
+            this.label_loginUser.Size = new System.Drawing.Size(21, 33);
+            this.label_loginUser.TabIndex = 88;
+            this.label_loginUser.Text = ".";
+            // 
+            // labelCityUser
+            // 
+            this.labelCityUser.AutoSize = true;
+            this.labelCityUser.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCityUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelCityUser.Location = new System.Drawing.Point(1259, 589);
+            this.labelCityUser.Name = "labelCityUser";
+            this.labelCityUser.Size = new System.Drawing.Size(21, 33);
+            this.labelCityUser.TabIndex = 87;
+            this.labelCityUser.Text = ".";
+            // 
+            // label_userEmail
+            // 
+            this.label_userEmail.AutoSize = true;
+            this.label_userEmail.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_userEmail.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_userEmail.Location = new System.Drawing.Point(1259, 812);
+            this.label_userEmail.Name = "label_userEmail";
+            this.label_userEmail.Size = new System.Drawing.Size(21, 33);
+            this.label_userEmail.TabIndex = 86;
+            this.label_userEmail.Text = ".";
+            // 
+            // label_phoneNumberUser
+            // 
+            this.label_phoneNumberUser.AutoSize = true;
+            this.label_phoneNumberUser.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_phoneNumberUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_phoneNumberUser.Location = new System.Drawing.Point(1259, 766);
+            this.label_phoneNumberUser.Name = "label_phoneNumberUser";
+            this.label_phoneNumberUser.Size = new System.Drawing.Size(21, 33);
+            this.label_phoneNumberUser.TabIndex = 85;
+            this.label_phoneNumberUser.Text = ".";
+            // 
+            // label_houseNumberUser
+            // 
+            this.label_houseNumberUser.AutoSize = true;
+            this.label_houseNumberUser.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_houseNumberUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_houseNumberUser.Location = new System.Drawing.Point(1259, 733);
+            this.label_houseNumberUser.Name = "label_houseNumberUser";
+            this.label_houseNumberUser.Size = new System.Drawing.Size(21, 33);
+            this.label_houseNumberUser.TabIndex = 84;
+            this.label_houseNumberUser.Text = ".";
+            this.label_houseNumberUser.Click += new System.EventHandler(this.label_houseNumberUser_Click);
+            // 
+            // label_streetUser
+            // 
+            this.label_streetUser.AutoSize = true;
+            this.label_streetUser.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_streetUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_streetUser.Location = new System.Drawing.Point(1259, 674);
+            this.label_streetUser.Name = "label_streetUser";
+            this.label_streetUser.Size = new System.Drawing.Size(21, 33);
+            this.label_streetUser.TabIndex = 83;
+            this.label_streetUser.Text = ".";
+            // 
+            // label_surnameUser
+            // 
+            this.label_surnameUser.AutoSize = true;
+            this.label_surnameUser.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_surnameUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_surnameUser.Location = new System.Drawing.Point(1259, 556);
+            this.label_surnameUser.Name = "label_surnameUser";
+            this.label_surnameUser.Size = new System.Drawing.Size(21, 33);
+            this.label_surnameUser.TabIndex = 82;
+            this.label_surnameUser.Text = ".";
+            // 
+            // label_countryUser
+            // 
+            this.label_countryUser.AutoSize = true;
+            this.label_countryUser.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_countryUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_countryUser.Location = new System.Drawing.Point(1259, 622);
+            this.label_countryUser.Name = "label_countryUser";
+            this.label_countryUser.Size = new System.Drawing.Size(21, 33);
+            this.label_countryUser.TabIndex = 81;
+            this.label_countryUser.Text = ".";
+            // 
+            // label_userName
+            // 
+            this.label_userName.AutoSize = true;
+            this.label_userName.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_userName.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_userName.Location = new System.Drawing.Point(1259, 490);
+            this.label_userName.Name = "label_userName";
+            this.label_userName.Size = new System.Drawing.Size(21, 33);
+            this.label_userName.TabIndex = 80;
+            this.label_userName.Text = ".";
+            // 
+            // label_user_id
+            // 
+            this.label_user_id.AutoSize = true;
+            this.label_user_id.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_user_id.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_user_id.Location = new System.Drawing.Point(1259, 457);
+            this.label_user_id.Name = "label_user_id";
+            this.label_user_id.Size = new System.Drawing.Size(21, 33);
+            this.label_user_id.TabIndex = 79;
+            this.label_user_id.Text = ".";
+            // 
+            // buttonDeleteUsers
+            // 
+            this.buttonDeleteUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonDeleteUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeleteUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDeleteUsers.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonDeleteUsers.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonDeleteUsers.Location = new System.Drawing.Point(1674, 478);
+            this.buttonDeleteUsers.Name = "buttonDeleteUsers";
+            this.buttonDeleteUsers.Size = new System.Drawing.Size(153, 60);
+            this.buttonDeleteUsers.TabIndex = 89;
+            this.buttonDeleteUsers.Text = "Видалити";
+            this.buttonDeleteUsers.UseVisualStyleBackColor = false;
+            this.buttonDeleteUsers.Click += new System.EventHandler(this.buttonDeleteUsers_Click);
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label75.Location = new System.Drawing.Point(20, 648);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(198, 33);
+            this.label75.TabIndex = 95;
+            this.label75.Text = "ID Користувача -";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label76.Location = new System.Drawing.Point(40, 693);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(178, 33);
+            this.label76.TabIndex = 94;
+            this.label76.Text = "ID Менеджеру -";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label77.Location = new System.Drawing.Point(45, 615);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(173, 33);
+            this.label77.TabIndex = 93;
+            this.label77.Text = "Загальна сума -";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label79.Location = new System.Drawing.Point(9, 587);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(209, 33);
+            this.label79.TabIndex = 91;
+            this.label79.Text = "Дата замовлення -";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label80.Location = new System.Drawing.Point(160, 535);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(58, 33);
+            this.label80.TabIndex = 90;
+            this.label80.Text = "ID -";
+            // 
+            // textBox_order_id
+            // 
+            this.textBox_order_id.Location = new System.Drawing.Point(224, 540);
+            this.textBox_order_id.Name = "textBox_order_id";
+            this.textBox_order_id.Size = new System.Drawing.Size(200, 29);
+            this.textBox_order_id.TabIndex = 96;
+            // 
+            // textBox_totalAmount
+            // 
+            this.textBox_totalAmount.Location = new System.Drawing.Point(224, 620);
+            this.textBox_totalAmount.Name = "textBox_totalAmount";
+            this.textBox_totalAmount.Size = new System.Drawing.Size(200, 29);
+            this.textBox_totalAmount.TabIndex = 99;
+            // 
+            // textBox_idUser
+            // 
+            this.textBox_idUser.Location = new System.Drawing.Point(224, 653);
+            this.textBox_idUser.Name = "textBox_idUser";
+            this.textBox_idUser.Size = new System.Drawing.Size(200, 29);
+            this.textBox_idUser.TabIndex = 98;
+            // 
+            // textBox_managerId
+            // 
+            this.textBox_managerId.Location = new System.Drawing.Point(224, 698);
+            this.textBox_managerId.Name = "textBox_managerId";
+            this.textBox_managerId.Size = new System.Drawing.Size(200, 29);
+            this.textBox_managerId.TabIndex = 100;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label78.Location = new System.Drawing.Point(556, 474);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(228, 28);
+            this.label78.TabIndex = 102;
+            this.label78.Text = "Управління записами";
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.buttonChangeOrder);
+            this.panel19.Controls.Add(this.buttonDeleteOrder);
+            this.panel19.Location = new System.Drawing.Point(540, 535);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(265, 172);
+            this.panel19.TabIndex = 101;
+            // 
+            // buttonChangeOrder
+            // 
+            this.buttonChangeOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonChangeOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChangeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonChangeOrder.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonChangeOrder.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonChangeOrder.Location = new System.Drawing.Point(60, 87);
+            this.buttonChangeOrder.Name = "buttonChangeOrder";
+            this.buttonChangeOrder.Size = new System.Drawing.Size(153, 60);
+            this.buttonChangeOrder.TabIndex = 2;
+            this.buttonChangeOrder.Text = "Змінити";
+            this.buttonChangeOrder.UseVisualStyleBackColor = false;
+            this.buttonChangeOrder.Click += new System.EventHandler(this.buttonChangeOrder_Click);
+            // 
+            // buttonDeleteOrder
+            // 
+            this.buttonDeleteOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.buttonDeleteOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeleteOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDeleteOrder.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic);
+            this.buttonDeleteOrder.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonDeleteOrder.Location = new System.Drawing.Point(60, 21);
+            this.buttonDeleteOrder.Name = "buttonDeleteOrder";
+            this.buttonDeleteOrder.Size = new System.Drawing.Size(153, 60);
+            this.buttonDeleteOrder.TabIndex = 1;
+            this.buttonDeleteOrder.Text = "Видалити";
+            this.buttonDeleteOrder.UseVisualStyleBackColor = false;
+            this.buttonDeleteOrder.Click += new System.EventHandler(this.buttonDeleteOrder_Click);
+            // 
+            // dateTimePickerOrder
+            // 
+            this.dateTimePickerOrder.Location = new System.Drawing.Point(224, 585);
+            this.dateTimePickerOrder.Name = "dateTimePickerOrder";
+            this.dateTimePickerOrder.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePickerOrder.TabIndex = 103;
             // 
             // ManagerForm
             // 
@@ -3320,23 +4148,31 @@
             this.panel2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panel19.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label20;
@@ -3375,10 +4211,6 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button refresh_btn;
-        private System.Windows.Forms.Button buttonClientOrderZvit;
-        private System.Windows.Forms.Button buttonTop10watch;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label22;
@@ -3548,11 +4380,6 @@
         private System.Windows.Forms.Button buttonBreitling;
         private System.Windows.Forms.Button buttonCertina;
         private System.Windows.Forms.Button buttonEpos;
-        private System.Windows.Forms.Button buttonOrdersSum;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Button buttonAvgPriceWatch;
-        private System.Windows.Forms.Button buttonWatchCountStatist;
-        private System.Windows.Forms.Button buttonGuarantee;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label47;
@@ -3588,7 +4415,85 @@
         private System.Windows.Forms.Button buttonSearchSup;
         private System.Windows.Forms.Label label_manageLogin;
         private System.Windows.Forms.Label label_manageLogin2;
-        private System.Windows.Forms.Label label_manageLogin3;
         private System.Windows.Forms.Label label_manageLogin4;
+        private System.Windows.Forms.Button buttonCheackSupply;
+        private System.Windows.Forms.Button buttonCheckSupplier;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button buttonGuarantee;
+        private System.Windows.Forms.Button buttonWatchCountStatist;
+        private System.Windows.Forms.Button buttonAvgPriceWatch;
+        private System.Windows.Forms.Button buttonOrdersSum;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button buttonTop10watch;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button buttonClientOrderZvit;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox textBox_ManagerName;
+        private System.Windows.Forms.TextBox textBox_managerPhoneNumber;
+        private System.Windows.Forms.TextBox textBoxManagerPassword;
+        private System.Windows.Forms.TextBox textBoxManagerLogin;
+        private System.Windows.Forms.TextBox textBoxManagerLastName;
+        private System.Windows.Forms.TextBox textBoxManagerID;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Button buttonChangeManager;
+        private System.Windows.Forms.Button buttonDeleteManager;
+        private System.Windows.Forms.Button buttonAddNewManager;
+        private System.Windows.Forms.Button buttonRefreshDataManager;
+        private System.Windows.Forms.TextBox textBoxSearchManager;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label_manageLogin3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.DataGridView dataGridViewOrder;
+        private System.Windows.Forms.DataGridView dataGridViewUsers;
+        private System.Windows.Forms.TextBox textBoxSearchOrder;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.TextBox textBoxSearchUser;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label label_loginUser;
+        private System.Windows.Forms.Label labelCityUser;
+        private System.Windows.Forms.Label label_userEmail;
+        private System.Windows.Forms.Label label_phoneNumberUser;
+        private System.Windows.Forms.Label label_houseNumberUser;
+        private System.Windows.Forms.Label label_streetUser;
+        private System.Windows.Forms.Label label_surnameUser;
+        private System.Windows.Forms.Label label_countryUser;
+        private System.Windows.Forms.Label label_userName;
+        private System.Windows.Forms.Label label_user_id;
+        private System.Windows.Forms.Button buttonDeleteUsers;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox textBox_managerId;
+        private System.Windows.Forms.TextBox textBox_totalAmount;
+        private System.Windows.Forms.TextBox textBox_idUser;
+        private System.Windows.Forms.TextBox textBox_order_id;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Button buttonChangeOrder;
+        private System.Windows.Forms.Button buttonDeleteOrder;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOrder;
     }
 }
